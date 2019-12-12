@@ -13,3 +13,17 @@ $font_family_second_base: "Roboto Condensed";
 $font_family_third_base: "Roboto";
 $font_family_extra: "Tahoma", sans-serif;
 $line_height: 1.64; // вычислить среднее !!!
+
+// отступы
+$padding_desktop: 0 247px;
+$padding_tablet: 0 25px;
+$padding_mobile: 0 15px;
+
+// Значения вьюпортов
+$width_desktop: 1024px;
+$width_tablet: 1023px;
+$width_mobile: 767px;
+
+// Ретинизация
+$retina_dpi: 144dpi;
+$retina_dppx: 1.5dppx;

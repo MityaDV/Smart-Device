@@ -1,0 +1,27 @@
+@mixin inner {
+  box-sizing: border-box;
+  width: $width_desktop;
+  margin: 0 auto;
+  padding: $padding_desktop;
+}
+
+@mixin fixed_inner() {
+  @include inner;
+
+  @media (max-width: $width_tablet) {
+    width: 100%;
+    padding: $padding_tablet;
+  }
+
+  @media (max-width: $width_mobile) {
+    width: 100%;
+    padding: $padding_mobile;
+  }
+}
+
+@mixin list() {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
