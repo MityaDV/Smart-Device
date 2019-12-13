@@ -1,6 +1,19 @@
 @import "../base/mixins.scss";
 @import "../base/vars.scss";
 
+.navigation {
+  display: flex;
+  flex-basis: 70%;
+  justify-content: flex-end;
+}
+
 .navigation__list {
   @include list;
+
+  display: flex;
+}
+
+.navigation__link {
+  line-height: $line_height_p_desktop_xxxs;
+  color: $color_white;
 }

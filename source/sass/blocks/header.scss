@@ -1,20 +1,49 @@
 @import "../base/mixins.scss";
 @import "../base/vars.scss";
 
+.header {
+  background: $color_blue_tangaroa;
+}
+
 .header__inner {
   @include fixed_inner;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.header__logo-link {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 52px;
 }
 
 .header__logo-text {
   @include indent_p;
 
   margin: 0;
+  padding: 7px 0 0 7px;
+
+  font-weight: $font_weight_bold;
+  font-size: $font_size_p_desktop_xl;
+  line-height: $line_height_p_desktop_l;
+  font-family: $font_family_second_base;
+  color: $color_white;
 }
 
 .header__logo-slogan {
   @include indent_p;
 
   margin: 0;
+  padding: 0 0 0 7px;
+
+  font-weight: $font_weight_medium;
+  font-size: $font_size_p_desktop_s;
+  line-height: $line_height_p_desktop_l;
+  font-family: $font_family_third_base;
+  color: $color_gray_light;
 }
 
 .header__text-product {

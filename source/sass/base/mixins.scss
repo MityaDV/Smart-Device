@@ -83,3 +83,10 @@
     line-height: $line_height_p_mobile;
   }
 }
+
+@mixin btn() {
+  color: white;
+
+  background: transparent;
+  border-radius: 5px;
+}
