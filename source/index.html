@@ -16,10 +16,47 @@
   <link rel="preload" href="fonts/ptmonoregular.woff" as="font" type="font/woff">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
+
 <body>
   <div style="display: none;">
     <include src="build/img/sprite_auto.svg"></include>
   </div>
-  <h1>Добро пожаловать в Лигу А.</h1>
+  <header class="header">
+    <h1 class="visually-hidden">Smart Device - производство, поставка, монтаж электронных комплектующих.</h1>
+    <div class="header__inner">
+      <a href="#" class="header__logo-link">
+        <img class="header__logo-image" src="img/logo.svg" alt="Логотип компании Smart Device" width="52" height="52">
+        <p class="header__logo-text">Smart Device</p>
+        <p class="header__logo-slogan">умные технологии</p>
+      </a>
+      <nav class="navigation">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">info@sd.ru</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">+7 (495) 000 52 52</a>
+          </li>
+        </ul>
+        <button class="navigation__button btn btn--call" type="button">Заказать звонок
+        </button>
+      </nav>
+      <div class="header__content">
+        <p class="header__text-product">Печатные платы</p>
+        <p class="header__text-services">производство и монтаж, поставка комплектующих, блоков и модулей</p>
+        <a class="header__button btn btn--consultation" href="#">Получить бесплатную консультацию</a>
+        <img class="header__image" src="img/circuit-desktop@1x.jpg" alt="Печатные платы" width="705" height="515">
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="advantage">
+      <div class="advantage__inner">
+        <h2 class="visually-hidden">Преимущества</h2>
+
+      </div>
+    </section>
+  </main>
 </body>
+
 </html>
