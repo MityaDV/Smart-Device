@@ -25,3 +25,24 @@
 
   list-style: none;
 }
+
+@mixin heading_h1 {
+  font-size: $font_size_h1_desktop;
+  line-height: $line_height_h1_desktop;
+}
+
+@mixin heading_h2 {
+  font-size: $font_size_h2_desktop;
+  line-height: $line_height_h2_desktop;
+}
+
+@mixin heading_h3 {
+  font-size: $font_size_h3_desktop;
+  line-height: $line_height_h3_desktop;
+}
+
+@mixin indent_p {
+  font-size: $font_size_p_desktop;
+  line-height: $line_height_p_desktop;
+}
+
