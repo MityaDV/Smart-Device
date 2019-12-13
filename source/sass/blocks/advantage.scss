@@ -1,2 +1,22 @@
 @import "../base/mixins.scss";
 @import "../base/vars.scss";
+
+.advantage__inner {
+  @include fixed_inner;
+}
+
+.advantage__list {
+  @include list;
+}
+
+.advantage__title {
+  @include heading_h3;
+
+  margin: 0;
+}
+
+.advantage__text {
+  @include indent_p;
+
+  margin: 0;
+}

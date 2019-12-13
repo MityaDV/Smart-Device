@@ -1,2 +1,18 @@
 @import "../base/mixins.scss";
 @import "../base/vars.scss";
+
+.about__inner {
+  @include fixed_inner;
+}
+
+.about__title {
+  @include heading_h2;
+
+  margin: 0;
+}
+
+.about__text {
+  @include indent_p;
+
+  margin: 0;
+}

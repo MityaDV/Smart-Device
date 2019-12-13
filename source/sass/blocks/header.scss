@@ -1,2 +1,30 @@
 @import "../base/mixins.scss";
 @import "../base/vars.scss";
+
+.header__inner {
+  @include fixed_inner;
+}
+
+.header__logo-text {
+  @include indent_p;
+
+  margin: 0;
+}
+
+.header__logo-slogan {
+  @include indent_p;
+
+  margin: 0;
+}
+
+.header__text-product {
+  @include indent_p;
+
+  margin: 0;
+}
+
+.header__text-services {
+  @include indent_p;
+
+  margin: 0;
+}

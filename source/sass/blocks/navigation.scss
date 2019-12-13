@@ -1,2 +1,6 @@
 @import "../base/mixins.scss";
 @import "../base/vars.scss";
+
+.navigation__list {
+  @include list;
+}

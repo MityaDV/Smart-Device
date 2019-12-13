@@ -1,2 +1,18 @@
 @import "../base/mixins.scss";
 @import "../base/vars.scss";
+
+.form__title {
+  @include heading_h3;
+
+  margin: 0;
+}
+
+.form__text {
+  @include indent_p;
+
+  margin: 0;
+}
+
+.form__list {
+  @include list;
+}

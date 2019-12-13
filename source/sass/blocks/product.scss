@@ -1,2 +1,18 @@
 @import "../base/mixins.scss";
 @import "../base/vars.scss";
+
+.product__inner {
+  @include fixed_inner;
+}
+
+.product__title {
+  @include heading_h2;
+
+  margin: 0;
+}
+
+.product__title-card {
+  @include heading_h3;
+
+  margin: 0;
+}

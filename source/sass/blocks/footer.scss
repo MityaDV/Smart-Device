@@ -1,2 +1,46 @@
 @import "../base/mixins.scss";
 @import "../base/vars.scss";
+
+.footer__inner {
+  @include fixed_inner;
+}
+
+.footer__logo-text {
+  @include indent_p;
+
+  margin: 0;
+}
+
+.footer__logo-slogan {
+  @include indent_p;
+
+  margin: 0;
+}
+
+.footer__text {
+  @include indent_p;
+
+  margin: 0;
+}
+
+.footer__list {
+  @include list;
+}
+
+.footer__navigation-text {
+  @include indent_p;
+
+  margin: 0;
+}
+
+.footer__contact-text {
+  @include indent_p;
+
+  margin: 0;
+}
+
+.footer__copyright-text {
+  @include indent_p;
+
+  margin: 0;
+}

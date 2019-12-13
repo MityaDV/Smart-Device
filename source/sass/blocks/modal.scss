@@ -1,2 +1,22 @@
 @import "../base/mixins.scss";
 @import "../base/vars.scss";
+
+.modal__inner {
+  @include fixed_inner;
+}
+
+.modal__title {
+  @include heading_h2;
+
+  margin: 0;
+}
+
+.modal__text {
+  @include indent_p;
+
+  margin: 0;
+}
+
+.modal__list {
+  @include list;
+}

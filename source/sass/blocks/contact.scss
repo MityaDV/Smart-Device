@@ -1,2 +1,6 @@
 @import "../base/mixins.scss";
 @import "../base/vars.scss";
+
+.contact__inner {
+  @include fixed_inner;
+}
