@@ -13,7 +13,7 @@ $color_blue_nordic: #203c42;
 $color_blue_tangaroa: #1b2d37;
 
 //шрифты
-$font_size_base: 16px; // вычислить среднее !!!
+$font_size_base: 16px;
 $font_weight_bold: 700;
 $font_weight_medium: 500;
 $font_weight_normal: 400;
@@ -21,7 +21,105 @@ $font_family_base: "PT Mono";
 $font_family_second_base: "Roboto Condensed";
 $font_family_third_base: "Roboto";
 $font_family_extra: "Tahoma", sans-serif;
-$line_height: 1.64; // вычислить среднее !!!
+$line_height: 1.27;
+
+// desktop f-s
+$font_size_h1_desktop: 30px;
+//
+$font_size_h2_desktop_l: 36px;
+$font_size_h2_desktop: 24px;
+//
+$font_size_h3_desktop: 20px;
+//
+$font_size_p_desktop_xxl: 80px;
+$font_size_p_desktop_xl: 25px;
+$font_size_p_desktop_l: 22px;
+$font_size_p_desktop: 16px; // middle
+$font_size_p_desktop_xxxs: 15px;
+$font_size_p_desktop_xxs: 14px;
+$font_size_p_desktop_xs: 13px;
+$font_size_p_desktop_s: 12px;
+
+// tablet f-s
+$font_size_h1_tablet: 26px;
+//
+$font_size_h2_tablet_l: 32px;
+$font_size_h2_tablet: 24px;
+//
+$font_size_h3_tablet: 20px;
+//
+$font_size_p_tablet_xxl: 60px;
+$font_size_p_tablet_xl: 25px;
+$font_size_p_tablet_l: 18px;
+$font_size_p_tablet: 16px; // middle
+$font_size_p_tablet_xxxs: 15px;
+$font_size_p_tablet_xxs: 14px;
+$font_size_p_tablet_xs: 13px;
+$font_size_p_tablet_s: 12px;
+
+// mobile f-s
+$font_size_h1_mobile: 22px;
+//
+$font_size_h2_mobile_l: 28px;
+$font_size_h2_mobile: 20px;
+//
+$font_size_h3_mobile: 20px;
+//
+$font_size_p_mobile_xxl: 40px;
+$font_size_p_mobile_xl: 25px;
+$font_size_p_mobile: 16px; // middle
+$font_size_p_mobile_xxxs: 15px;
+$font_size_p_mobile_xxs: 14px;
+$font_size_p_mobile_xs: 13px;
+$font_size_p_mobile_s: 12px;
+
+// desktop l-h
+$line_height_h1_desktop: 1.2;
+//
+$line_height_h2_desktop: 1.4;
+//
+$line_height_h3_desktop: 1.5;
+//
+$line_height_p_desktop_xxl: 1.54;
+$line_height_p_desktop_xl: 1.18;
+$line_height_p_desktop_l: 1.16;
+$line_height_p_desktop: 1.14; // middle
+$line_height_p_desktop_xxxs: 1.13;
+$line_height_p_desktop_xxs: 0.93;
+$line_height_p_desktop_xs: 0.72;
+$line_height_p_desktop_s: 0.6;
+
+// tablet l-h
+$line_height_h1_tablet: 1.2;
+//
+$line_height_h2_tablet: 1.4;
+//
+$line_height_h3_tablet: 1.5;
+//
+$line_height_p_tablet_xxl: 1.66;
+$line_height_p_tablet_xl: 1.55;
+$line_height_p_tablet_l: 1.8;
+$line_height_p_tablet: 1.3; // middle
+$line_height_p_tablet_xxxs: 1.18;
+$line_height_p_tablet_xxs: 1.16;
+$line_height_p_tablet_xs: 1.14;
+$line_height_p_tablet_s: 1.06;
+
+// mobile l-h
+$line_height_h1_mobile: 1.2;
+//
+$line_height_h2_mobile: 1.4;
+//
+$line_height_h3_mobile: 1.5;
+//
+$line_height_p_mobile_xxl: 1.84;
+$line_height_p_mobile_xl: 1.66;
+$line_height_p_mobile_l: 1.56;
+$line_height_p_mobile: 1.37; // middle
+$line_height_p_mobile_xxxs: 1.18;
+$line_height_p_mobile_xxs: 1.16;
+$line_height_p_mobile_xs: 1.14;
+$line_height_p_mobile_s: 1.06;
 
 // отступы
 $padding_desktop: 0 247px;
