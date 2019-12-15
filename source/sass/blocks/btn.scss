@@ -15,8 +15,7 @@
   letter-spacing: 0.05em;
 
   background: transparent;
-  border-width: 1px;
-  border-color: $color_white;
+  border: 1px solid $color_white;
   border-radius: 5px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
@@ -30,6 +29,19 @@
 
     background: $color_blue_sky;
     border: none;
+    box-shadow: none;
+  }
+
+  &--detail {
+    padding: 12px 0;
+
+    font-size: $font_size_p_desktop;
+    line-height: $line_height_p_desktop_xl;
+    color: $color_blue_sky;
+    text-transform: uppercase;
+
+    background: transparent;
+    border: 1px solid $color_blue_sky;
     box-shadow: none;
   }
 }

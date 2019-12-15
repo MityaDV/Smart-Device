@@ -5,14 +5,40 @@
   @include fixed_inner;
 }
 
+.about__wrapper {
+  position: relative;
+
+  padding: 0 0 0 177px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50px;
+
+    width: 317px;
+    height: 360px;
+
+    background: url("../img/number-desktop@1x.png") no-repeat center;
+    background-size: contain;
+  }
+}
+
 .about__title {
   @include heading_h2;
 
   margin: 0;
+  padding: 0 0 30px;
+
+  font-weight: $font_weight_normal;
+  font-family: $font_family_second_base;
 }
 
 .about__text {
   @include indent_p;
 
   margin: 0;
+  padding: 0 0 25px;
+
+  line-height: $line_height_p_tablet_l;
 }
