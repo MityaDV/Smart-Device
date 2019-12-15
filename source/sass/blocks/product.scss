@@ -1,18 +1,91 @@
 @import "../base/mixins.scss";
 @import "../base/vars.scss";
 
+.product {
+  padding: 95px 0 127px;
+
+  background: $color_blue_tangaroa;
+}
+
 .product__inner {
   @include fixed_inner;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &--wide {
+    padding: $padding_desktop_wide;
+  }
 }
 
 .product__title {
   @include heading_h2;
 
+  flex-basis: 100%;
   margin: 0;
+  padding: 0 0 50px 30px;
+
+  font-weight: $font_weight_normal;
+  font-family: $font_family_second_base;
+  color: $color_white;
+}
+
+.product__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 0 0 -30px;
+}
+
+.product__link {
+  display: block;
+  flex-basis: 29%;
+  margin: 0 0 30px 30px;
+
+  &--production {
+    background-image: url("../img/photo-production-desktop@1x.png");
+  }
+
+  &--installation {
+    background-image: url("../img/photo-installation-desktop@1x.png");
+  }
+
+  &--component {
+    background-image: url("../img/photo-component-desktop@1x.png");
+  }
+}
+
+.product__card {
+  position: relative;
+
+  min-height: 620px;
+
+  background-color: $color_blue_tangaroa_80;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .product__title-card {
   @include heading_h3;
 
+  max-width: 215px;
   margin: 0;
+  padding: 58px 0 0 44px;
+
+  font-weight: $font_weight_normal;
+  font-family: $font_family_second_base;
+  color: $color_white;
+}
+
+.product__button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+
+  width: 63px;
+  height: 63px;
+
+  background: $color_blue_sky;
+  border: none;
 }

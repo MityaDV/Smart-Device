@@ -1,8 +1,17 @@
 @import "../base/mixins.scss";
 @import "../base/vars.scss";
 
+.about {
+  margin: 0 0 110px;
+  padding: 70px 0 0;
+}
+
 .about__inner {
   @include fixed_inner;
+
+  &--wide {
+    padding: $padding_desktop_wide;
+  }
 }
 
 .about__wrapper {
@@ -14,10 +23,10 @@
     content: "";
     position: absolute;
     top: 0;
-    left: -50px;
+    left: -40px;
 
-    width: 317px;
-    height: 360px;
+    width: 215px;
+    height: 310px;
 
     background: url("../img/number-desktop@1x.png") no-repeat center;
     background-size: contain;

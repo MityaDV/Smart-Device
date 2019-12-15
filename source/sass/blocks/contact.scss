@@ -3,4 +3,8 @@
 
 .contact__inner {
   @include fixed_inner;
+
+  &--wide {
+    padding: $padding_desktop_wide;
+  }
 }
