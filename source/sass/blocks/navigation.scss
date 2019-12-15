@@ -5,15 +5,53 @@
   display: flex;
   flex-basis: 70%;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .navigation__list {
   @include list;
 
   display: flex;
+  margin: 0 40px 0 0;
+}
+
+.navigation__item {
+  padding: 0 0 0 45px;
 }
 
 .navigation__link {
+  position: relative;
+
+  padding: 0 0 0 35px;
+
   line-height: $line_height_p_desktop_xxxs;
   color: $color_white;
+
+  &--email {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 0;
+
+      width: 19px;
+      height: 14px;
+
+      background: transparent url("../img/icon-envelope.svg") no-repeat center;
+    }
+  }
+
+  &--phone {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 18px;
+      height: 18px;
+
+      background: transparent url("../../img/icon-phone.svg") no-repeat center;
+    }
+  }
 }

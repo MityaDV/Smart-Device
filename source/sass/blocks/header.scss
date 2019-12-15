@@ -2,7 +2,8 @@
 @import "../base/vars.scss";
 
 .header {
-  background: $color_blue_tangaroa;
+  background: $color_blue_tangaroa url("../../img/bg-header-desktop@1x.png") no-repeat center;
+  background-size: cover;
 }
 
 .header__inner {
@@ -11,6 +12,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 35px 115px 0 115px;
 }
 
 .header__logo-link {
@@ -49,11 +51,53 @@
 .header__text-product {
   @include indent_p;
 
-  margin: 0;
+  margin: 0 0 31px;
+
+  font-weight: $font_weight_bold;
+  font-size: $font_size_p_desktop_xxl;
+  line-height: $line_height_p_desktop_xl;
+  font-family: $font_family_second_base;
+  color: $color_white;
+  letter-spacing: 0.07em;
 }
 
 .header__text-services {
   @include indent_p;
 
+  position: relative;
+
   margin: 0;
+  padding: 0 0 37px 94px;
+
+  font-size: $font_size_p_desktop_l;
+  line-height: $line_height_p_desktop_xxxl;
+  color: $color_white;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 4px;
+
+    width: 66px;
+    height: 2px;
+
+    background: $color_white;
+  }
+}
+
+.header__content {
+  position: relative;
+
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 230px 0 280px;
+}
+
+.header__image {
+  position: absolute;
+  top: 140px;
+  right: -100px;
 }
