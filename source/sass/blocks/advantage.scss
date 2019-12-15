@@ -7,16 +7,43 @@
 
 .advantage__list {
   @include list;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 0 0 -30px;
+}
+
+.advantage__item {
+  flex-basis: 45%;
+  margin: 0 0 30px 30px;
+  padding: 40px 45px 60px;
+
+  box-shadow: inset 3px 0 0 0 $color_blue_sky,
+  inset 1px 1px 0 0 $color_gray_lightest,
+  inset -1px -1px 0 0 $color_gray_lightest;
 }
 
 .advantage__title {
   @include heading_h3;
 
   margin: 0;
+
+  font-weight: $font_weight_normal;
+  font-size: $font_size_h3_desktop_l;
+  line-height: $line_height_p_desktop_xxl;
+  font-family: $font_family_second_base;
+  color: $color_blue_sky;
 }
 
 .advantage__text {
   @include indent_p;
 
   margin: 0;
+
+  line-height: $line_height_h2_desktop;
+}
+
+.advantage__icon {
+  fill: $color_blue_sky;
 }
