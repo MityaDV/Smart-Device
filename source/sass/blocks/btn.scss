@@ -11,7 +11,7 @@
   line-height: $line_height_p_desktop;
   font-family: $font_family_second_base;
   text-align: center;
-  color: white;
+  color: $color_white;
   letter-spacing: 0.05em;
 
   background: transparent;
@@ -35,13 +35,17 @@
   &--detail {
     padding: 14px 0;
 
-    font-size: $font_size_p_desktop_xxs;
-    line-height: $line_height_p_desktop;
     color: $color_blue_sky;
     text-transform: uppercase;
 
     background: transparent;
     border: 1px solid $color_blue_sky;
     box-shadow: none;
+  }
+
+  &--question {
+    width: 270px;
+
+    background: $color_blue_sky;
   }
 }

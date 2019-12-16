@@ -1,6 +1,10 @@
 @import "../base/mixins.scss";
 @import "../base/vars.scss";
 
+.contact {
+  background: $color_blue_sky;
+}
+
 .contact__inner {
   @include fixed_inner;
 
