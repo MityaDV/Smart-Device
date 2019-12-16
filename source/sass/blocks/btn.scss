@@ -49,4 +49,13 @@
     background: $color_blue_sky;
     box-shadow: none;
   }
+
+  &--modal {
+    width: 100%;
+    margin: 0 0 35px;
+
+    text-transform: uppercase;
+
+    box-shadow: none;
+  }
 }
