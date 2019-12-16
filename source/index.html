@@ -162,16 +162,18 @@
           <h3 class="form__title">Остались вопросы? Задайте их нам!</h3>
           <p class="form__text">Мы проконсультируем Вас бесплатно</p>
           <ul class="form__list">
-            <li class="form__item">
-              <input class="form__input" type="text" id="user-name" name="username" placeholder="Имя" required="">
+            <li class="form__item form__item--username">
+              <input class="form__input form__input--username" type="text" id="user-name" name="username"
+                placeholder="Имя"
+                required="">
               <label class="form__label" for="user-name"></label>
             </li>
-            <li class="form__item">
-              <input class="form__input" type="tel" id="user-phone" name="userphone"
+            <li class="form__item form__item--userphone">
+              <input class="form__input form__input--userphone" type="tel" id="user-phone" name="userphone"
                 pattern="[+]{1}7 [0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}" placeholder="Телефон" required="">
               <label class="form__label" for="user-phone"></label>
             </li>
-            <li class="form__item">
+            <li class="form__item form__item--userquestion">
               <textarea class="form__textarea" name="userquestion" placeholder="Ваш вопрос"></textarea>
             </li>
           </ul>

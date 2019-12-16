@@ -1,10 +1,15 @@
 @import "../base/mixins.scss";
 @import "../base/vars.scss";
 
+.form {
+  flex-basis: 45%;
+}
+
 .form__title {
   @include heading_h3;
 
   margin: 0;
+  padding: 0 0 30px;
 
   font-weight: $font_weight_normal;
   font-size: $font_size_h2_desktop;
@@ -17,6 +22,7 @@
   @include indent_p;
 
   margin: 0;
+  padding: 0 0 50px;
 
   line-height: $line_height_p_desktop_xxl;
   color: $color_white;
@@ -24,6 +30,26 @@
 
 .form__list {
   @include list;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 40px;
+}
+
+.form__item {
+  &--username {
+    flex-basis: 50%;
+    padding: 0 30px 40px 0;
+  }
+
+  &--userphone {
+    flex-basis: 50%;
+    padding: 0 0 40px 0;
+  }
+
+  &--userquestion {
+    flex-basis: 100%;
+  }
 }
 
 .form__input {
@@ -42,6 +68,22 @@
     line-height: $line_height_p_desktop_xxl;
     font-family: $font_family_base;
     color: $color_white;
+  }
+
+  &--username {
+    width: 100%;
+  }
+
+  &[type="text"] {
+    padding: 17px 0 17px 17px;
+  }
+
+  &[type="tel"] {
+    padding: 17px 0 17px 17px;
+  }
+
+  &--userphone {
+    width: 100%;
   }
 
   &--checkbox + .form__label--checkbox::before {
@@ -76,19 +118,23 @@
 .form__label {
   position: relative;
 
-  padding: 0 0 0 32px;
-
   font-size: $font_size_p_desktop_xxs;
   line-height: $line_height_p_desktop;
   color: $color_white;
 
   cursor: pointer;
   opacity: 0.8;
+
+  &--checkbox {
+    margin: 0 0 0 11px;
+    padding: 0 0 0 32px;
+  }
 }
 
 .form__textarea {
   width: 100%;
   min-height: 154px;
+  padding: 17px 0 0 17px;
 
   background: $color_white_10;
   border: none;
@@ -102,3 +148,8 @@
     color: $color_white;
   }
 }
+
+.form__wrapper {
+  display: flex;
+}
+
