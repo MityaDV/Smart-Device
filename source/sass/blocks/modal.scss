@@ -32,6 +32,28 @@
   }
 }
 
+@keyframes turn {
+  0%,
+  100% {
+    transform: rotate(0deg) translateX(-50%) translateY(-50%);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-50%) translateY(-50%) rotate(-2deg);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(-50%) translateY(-50%) rotate(2deg);
+  }
+}
+
 .modal__open {
   display: block;
 
@@ -57,6 +79,13 @@
   background: transparent center;
   border: none;
   cursor: pointer;
+}
+
+.modal__error {
+  animation-name: turn;
+  animation-duration: 0.9s;
+
+  will-change: transform;
 }
 
 .modal__inner {
