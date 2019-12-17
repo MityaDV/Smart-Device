@@ -13,10 +13,25 @@
 
   display: flex;
   margin: 0 40px 0 0;
+
+  @media (max-width: $width_viewport_tablet) {
+    margin: 0;
+  }
 }
 
 .navigation__item {
   padding: 0 0 0 45px;
+
+  @media (max-width: $width_viewport_tablet) {
+    width: 25px;
+    padding: 0;
+  }
+
+  &--email {
+    @media (max-width: $width_viewport_tablet) {
+      margin: 0 34px 0 0;
+    }
+  }
 }
 
 .navigation__link {
@@ -26,6 +41,16 @@
 
   line-height: $line_height_p_desktop_xxxs;
   color: $color_white;
+
+  @media (max-width: $width_viewport_tablet) {
+    display: inline-block;
+    min-height: 30px;
+    padding: 0;
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-indent: 100%;
+  }
 
   &--email {
     &::before {
@@ -38,6 +63,16 @@
       height: 14px;
 
       background: transparent url("../img/icon-envelope.svg") no-repeat center;
+
+      @media (max-width: $width_viewport_tablet) {
+        top: 3px;
+        left: 0;
+
+        width: 26px;
+        height: 19px;
+
+        background: transparent url("../img/icon-envelope-tablet.svg") no-repeat center;
+      }
     }
   }
 
@@ -51,7 +86,17 @@
       width: 18px;
       height: 18px;
 
-      background: transparent url("../../img/icon-phone.svg") no-repeat center;
+      background: transparent url("../img/icon-phone.svg") no-repeat center;
+
+      @media (max-width: $width_viewport_tablet) {
+        top: 0;
+        left: 0;
+
+        width: 25px;
+        height: 24px;
+
+        background: transparent url("../img/icon-phone-tablet.svg") no-repeat center;
+      }
     }
   }
 }

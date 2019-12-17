@@ -14,6 +14,7 @@ var storagePhone = '';
 var storageText = '';
 var ESC_KEYCODE = 27;
 
+// сохраняем значения полей в localStorage
 try {
   storage = localStorage.getItem('nameUser');
   storagePhone = localStorage.getItem('phoneUser');
@@ -22,6 +23,7 @@ try {
   isStorageSupport = false;
 }
 
+// утилита для обработки клавиатурных событий
 var isEscEvent = function (evt, action) {
   if (evt.keyCode === ESC_KEYCODE) {
     evt.preventDefault();
@@ -29,10 +31,12 @@ var isEscEvent = function (evt, action) {
   }
 };
 
+// обработчик нажатия ESC
 var onPopupEscPress = function (evt) {
   isEscEvent(evt, closePopup);
 };
 
+// обработчик нажатия на overlay
 var onCLickOverlay = function () {
   if (modal.classList.contains('modal__open') && pageOverlay.classList.contains('overlay__open')) {
     modal.classList.remove('modal__open');
@@ -41,6 +45,7 @@ var onCLickOverlay = function () {
   }
 };
 
+// логика открытия popup
 var openPopup = function (evt) {
   evt.preventDefault();
 
@@ -60,6 +65,7 @@ var openPopup = function (evt) {
   document.addEventListener('keydown', onPopupEscPress);
 };
 
+// логика закрытия popup
 var closePopup = function () {
 
   if (modal.classList.contains('modal__open') && pageOverlay.classList.contains('overlay__open')) {
@@ -72,10 +78,12 @@ var closePopup = function () {
   document.removeEventListener('keydown', onPopupEscPress);
 };
 
+// логика ошибки при вводе данных
 var errorPopup = function () {
   modal.classList.add('modal__error');
 };
 
+// логика валидации формы popup
 var formValidation = function (evt) {
   if (!nameUser.value || !phoneUser.value || !questionUser.value) {
     evt.preventDefault();
@@ -88,6 +96,7 @@ var formValidation = function (evt) {
   }
 };
 
+// навешиваемся на нужные нам события
 buttonOpenPopup.addEventListener('click', openPopup);
 buttonClosePopup.addEventListener('click', closePopup);
 modalForm.addEventListener('submit', formValidation);

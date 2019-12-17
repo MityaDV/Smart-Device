@@ -34,6 +34,11 @@
   line-height: $line_height_p_desktop_l;
   font-family: $font_family_second_base;
   color: $color_white;
+
+  @media (max-width: $width_viewport_tablet) {
+    font-size: $font_size_p_tablet_xl;
+    line-height: $line_height_p_tablet_xxs;
+  }
 }
 
 .header__logo-slogan {
@@ -47,6 +52,11 @@
   line-height: $line_height_p_desktop_l;
   font-family: $font_family_third_base;
   color: $color_gray_light;
+
+  @media (max-width: $width_viewport_tablet) {
+    font-size: $font_size_p_tablet_s;
+    line-height: $line_height_p_tablet_xxs;
+  }
 }
 
 .header__text-product {
@@ -61,6 +71,12 @@
   font-family: $font_family_second_base;
   color: $color_white;
   letter-spacing: 0.07em;
+
+  @media (max-width: $width_viewport_tablet) {
+    font-size: $font_size_p_tablet_xxl;
+    line-height: $line_height_p_tablet_xxs;
+    text-transform: uppercase;
+  }
 }
 
 .header__text-services {
@@ -76,6 +92,13 @@
   line-height: $line_height_p_desktop_xxxl;
   color: $color_white;
 
+  @media (max-width: $width_viewport_tablet) {
+    padding: 0 0 37px 50px;
+
+    font-size: $font_size_p_tablet_l;
+    line-height: $line_height_p_tablet_xl;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -86,6 +109,14 @@
     height: 2px;
 
     background: $color_white;
+
+    @media (max-width: $width_viewport_tablet) {
+      top: 16px;
+      left: 4px;
+
+      width: 33px;
+      height: 2px;
+    }
   }
 }
 
