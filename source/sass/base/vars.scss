@@ -130,15 +130,20 @@ $line_height_p_mobile_xs: 1.14;
 $line_height_p_mobile_s: 1.06;
 
 // отступы
-$padding_desktop: 0 25px;
-$padding_desktop_wide: 0 130px 0 140px;
+$padding_desktop: 0 256px 0 246px;
+$padding_desktop_wide: 0 107px 0 115px;
 $padding_tablet: 0 25px;
 $padding_mobile: 0 15px;
 
+// Значения ширины контента
+$width_desktop: 1460px;
+$width_tablet: 770px;
+$width_mobile: 320px;
+
 // Значения вьюпортов
-$width_desktop: 1024px;
-$width_tablet: 1023px;
-$width_mobile: 767px;
+$width_viewport_desktop: 1920px;
+$width_viewport_tablet: 1024px;
+$width_viewport_mobile: 768px;
 
 // Ретинизация
 $retina_dpi: 144dpi;

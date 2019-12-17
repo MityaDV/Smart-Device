@@ -6,10 +6,12 @@
   top: 0;
   left: 0;
   z-index: 10;
+
+  display: none;
   width: 100%;
   height: 100%;
-  display: none;
-  background: $color_white_90;
+
+  background: $color_blue_tangaroa_80;
 }
 
 .overlay__open {

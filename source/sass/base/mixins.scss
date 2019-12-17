@@ -1,6 +1,6 @@
 @mixin inner() {
   box-sizing: border-box;
-  max-width: 1920px;
+  max-width: $width_desktop;
   margin: 0 auto;
   padding: $padding_desktop;
 }
@@ -8,11 +8,13 @@
 @mixin fixed_inner() {
   @include inner;
 
-  @media (max-width: $width_tablet) {
+  @media (max-width: $width_viewport_tablet) {
+    max-width: $width_tablet;
     padding: $padding_tablet;
   }
 
   @media (max-width: $width_mobile) {
+    max-width: width_mobile;
     padding: $padding_mobile;
   }
 }
