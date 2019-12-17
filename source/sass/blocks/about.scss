@@ -31,6 +31,16 @@
 
     background: url("../img/number-desktop@1x.png") no-repeat center;
     background-size: contain;
+
+    @media (max-width: $width_viewport_tablet) {
+      top: 0;
+      left: -40px;
+
+      width: 251px;
+      height: 361px;
+
+      background-size: cover;
+    }
   }
 }
 
@@ -51,4 +61,10 @@
   padding: 0 0 25px;
 
   line-height: $line_height_p_tablet_l;
+
+  &--second {
+    @media (max-width: $width_viewport_tablet) {
+      padding: 0 0 37px;
+    }
+  }
 }
