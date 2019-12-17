@@ -4,6 +4,11 @@
 .about {
   margin: 0 0 110px;
   padding: 70px 0 0;
+
+  @media (max-width: $width_viewport_tablet) {
+    margin: 0 0 83px;
+    padding: 35px 0 0;
+  }
 }
 
 .about__inner {
