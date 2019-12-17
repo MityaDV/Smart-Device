@@ -1,9 +1,10 @@
 'use strict';
 
-var buttonCall = document.querySelector('.btn--call');
+var buttonOpenPopup = document.querySelector('.btn--call');
 var modal = document.querySelector('.modal-js');
-var modalClose = modal.querySelector('.modal__button-close');
+var buttonClosePopup = modal.querySelector('.modal__button-close');
 var modalForm = modal.querySelector('.modal__form');
+var pageOverlay = document.querySelector('.overlay');
 var nameUser = modal.querySelector('[name=username]');
 var phoneUser = modal.querySelector('[name=userphone]');
 var questionUser = modal.querySelector('[name=userquestion]');
@@ -11,7 +12,9 @@ var isStorageSupport = true;
 var storage = '';
 var storagePhone = '';
 var storageText = '';
+var ESC_KEYCODE = 27;
 
+// сохраняем значения полей в localStorage
 try {
   storage = localStorage.getItem('nameUser');
   storagePhone = localStorage.getItem('phoneUser');
@@ -20,10 +23,31 @@ try {
   isStorageSupport = false;
 }
 
-buttonCall.addEventListener('click', function (evt) {
-  evt.preventDefault();
+// утилита для обработки клавиатурных событий
+var isEscEvent = function (evt, action) {
+  if (evt.keyCode === ESC_KEYCODE) {
+    evt.preventDefault();
+    action();
+  }
+};
 
-  modal.classList.add('modal__open');
+// обработчик нажатия ESC
+var onPopupEscPress = function (evt) {
+  isEscEvent(evt, closePopup);
+};
+
+// обработчик нажатия на overlay
+var onCLickOverlay = function () {
+  if (modal.classList.contains('modal__open') && pageOverlay.classList.contains('overlay__open')) {
+    modal.classList.remove('modal__open');
+    modal.classList.remove('modal__error');
+    pageOverlay.classList.remove('overlay__open');
+  }
+};
+
+// логика открытия popup
+var openPopup = function (evt) {
+  evt.preventDefault();
 
   if (storage) {
     nameUser.value = storage;
@@ -33,35 +57,46 @@ buttonCall.addEventListener('click', function (evt) {
   } else {
     nameUser.focus();
   }
-});
 
-modalClose.addEventListener('click', function (evt) {
-  evt.preventDefault();
+  modal.classList.add('modal__open');
+  pageOverlay.classList.add('overlay__open');
 
-  modal.classList.remove('modal__open');
-  modal.classList.remove('modal__error');
-});
+  pageOverlay.addEventListener('click', onCLickOverlay);
+  document.addEventListener('keydown', onPopupEscPress);
+};
 
-modalForm.addEventListener('submit', function (evt) {
+// логика закрытия popup
+var closePopup = function () {
+
+  if (modal.classList.contains('modal__open') && pageOverlay.classList.contains('overlay__open')) {
+    modal.classList.remove('modal__open');
+    modal.classList.remove('modal__error');
+    pageOverlay.classList.remove('overlay__open');
+  }
+
+  pageOverlay.removeEventListener('click', onCLickOverlay);
+  document.removeEventListener('keydown', onPopupEscPress);
+};
+
+// логика ошибки при вводе данных
+var errorPopup = function () {
+  modal.classList.add('modal__error');
+};
+
+// логика валидации формы popup
+var formValidation = function (evt) {
   if (!nameUser.value || !phoneUser.value || !questionUser.value) {
     evt.preventDefault();
-
-    modal.classList.add('modal__error');
+    errorPopup();
   } else {
     if (isStorageSupport) {
       localStorage.setItem('nameUser', nameUser.value.trim());
       localStorage.setItem('phoneUser', phoneUser.value.trim());
     }
   }
-});
+};
 
-document.addEventListener('keyup', function (evt) {
-  if (evt.keyCode === 27) {
-    evt.preventDefault();
-
-    if (modal.classList.contains('modal__open')) {
-      modal.classList.remove('modal__open');
-      modal.classList.remove('modal__error');
-    }
-  }
-});
+// навешиваемся на нужные нам события
+buttonOpenPopup.addEventListener('click', openPopup);
+buttonClosePopup.addEventListener('click', closePopup);
+modalForm.addEventListener('submit', formValidation);
