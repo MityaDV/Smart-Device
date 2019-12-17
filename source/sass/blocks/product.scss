@@ -8,15 +8,11 @@
 }
 
 .product__inner {
-  @include fixed_inner;
+  @include inner_m;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
-  &--wide {
-    padding: $padding_desktop_wide;
-  }
 }
 
 .product__title {

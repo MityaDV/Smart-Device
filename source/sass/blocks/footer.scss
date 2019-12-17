@@ -8,11 +8,12 @@
 }
 
 .footer__inner {
-  @include fixed_inner;
+  @include inner_l;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  padding: 35px 20px 0 20px;
 }
 
 .footer__social {

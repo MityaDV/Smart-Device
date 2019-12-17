@@ -2,17 +2,18 @@
 @import "../base/vars.scss";
 
 .header {
+  padding: 35px 0;
+
   background: $color_blue_tangaroa url("../img/bg-header-desktop@1x.png") no-repeat center;
   background-size: cover;
 }
 
 .header__inner {
-  @include fixed_inner;
+  @include inner_l;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 35px 20px 0 20px;
 }
 
 .header__logo-link {

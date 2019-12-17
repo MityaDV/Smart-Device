@@ -8,19 +8,14 @@
 }
 
 .contact__inner {
-  @include fixed_inner;
+  @include inner_m;
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-
-  &--wide {
-    padding: $padding_desktop_wide;
-  }
 }
 
 .contact__image {
-  flex-basis: 45%;
+  flex-basis: 40%;
   min-height: 300px;
   margin: 0 auto 0 0;
 

@@ -2,11 +2,7 @@
 @import "../base/vars.scss";
 
 .advantage__inner {
-  @include fixed_inner;
-
-  &--wide {
-    padding: $padding_desktop_wide;
-  }
+  @include inner_m;
 }
 
 .advantage__list {
