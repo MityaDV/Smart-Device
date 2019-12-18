@@ -15,6 +15,11 @@
   <link rel="preload" href="fonts/robotomedium.woff" as="font" type="font/woff">
   <link rel="preload" href="fonts/ptmonoregular.woff" as="font" type="font/woff">
   <link rel="stylesheet" href="css/style.min.css">
+  <script>
+    document.createElement("picture");
+
+  </script>
+  <script src="js/picturefill.js" async=""></script>
 </head>
 
 <body>
@@ -94,7 +99,12 @@
         <p class="header__text-product">Печатные платы</p>
         <p class="header__text-services">производство и монтаж, поставка комплектующих, блоков и модулей</p>
         <a class="header__button btn btn--consultation" href="#">Получить бесплатную консультацию</a>
-        <img class="header__image" src="img/circuit-desktop@1x.png" alt="Печатные платы" width="705" height="515">
+        <picture>
+          <source media="(min-width: 1024px)" srset="img/circuit-desktop@1x.png 1x, img/circuit-desktop@2x.png 2x">
+          <source media="(max-width: 1023px)" srset="img/circuit-tablet@1x.png 1x, img/circuit-tablet@2x.png 2x">
+          <source media="(max-width: 767px)" srset="img/circuit-mobile@1x.png 1x, img/circuit-mobile@2x.png 2x">
+          <img class="header__image" src="img/circuit-desktop@1x.png" srset="img/circuit-desktop@2x.png" alt="Печатные платы" width="705" height="515">
+        </picture>
       </div>
     </div>
   </header>
@@ -147,7 +157,8 @@
           <h2 class="about__title">О компании</h2>
           <p class="about__text">Мы поставляем электронные комплектующие, производим печатные платы и предоставляем
             мировые технологии с 1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.</p>
-          <p class="about__text about__text--second">Наши поставщики - мировые производители электронных компонентов: OSRAM,
+          <p class="about__text about__text--second">Наши поставщики - мировые производители электронных компонентов:
+            OSRAM,
             CREE,
             HOLGLITRONIC, REFOND. Печатные
             платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД),
@@ -170,7 +181,6 @@
                 <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 8.5L5 4.5L1 0.5" stroke="white" stroke-linejoin="round"></path>
                 </svg>
-
               </button>
             </div>
           </a>
@@ -181,7 +191,6 @@
                 <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 8.5L5 4.5L1 0.5" stroke="white" stroke-linejoin="round"></path>
                 </svg>
-
               </button>
             </div>
           </a>
@@ -193,7 +202,6 @@
                 <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M1 8.5L5 4.5L1 0.5" stroke="white" stroke-linejoin="round"></path>
                 </svg>
-
               </button>
             </div>
           </a>
@@ -338,12 +346,12 @@
         <input class="modal__input modal__input--checkbox visually-hidden" type="checkbox" name="userdata" id="user-text" value="agree" checked="">
         <label class="modal__label modal__label--checkbox" for="user-text">Я согласен на обработку персональных
           данных</label>
-        </form>
-        <button class="modal__button-close" type="button">
-          <svg width="17" height="17">
-            <use xlink:href="#icon-modal-close"></use>
-          </svg>Закрыть
-        </button>
+      </form>
+      <button class="modal__button-close" type="button">
+        <svg width="17" height="17">
+          <use xlink:href="#icon-modal-close"></use>
+        </svg>Закрыть
+      </button>
     </div>
   </section>
   <div class="overlay"></div>

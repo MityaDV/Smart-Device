@@ -8,8 +8,34 @@
   background: $color_blue_tangaroa url("../img/bg-header-desktop@1x.png") no-repeat center;
   background-size: cover;
 
+  @media (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+    background: $color_blue_tangaroa url("../img/bg-header-desktop@2x.png");
+    background-position: center;
+    background-size: cover;
+  }
+
   @media (max-width: $width_viewport_tablet) {
     margin: 0 0 25px;
+
+    background: $color_blue_tangaroa url("../img/bg-header-tablet@1x.png") no-repeat center;
+    background-size: cover;
+  }
+
+  @media (max-width: $width_viewport_tablet) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+    background: $color_blue_tangaroa url("../img/bg-header-tablet@2x.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  @media (max-width: $width_viewport_mobile) {
+    background: $color_blue_tangaroa url("../img/bg-header-mobile@1x.png") no-repeat center;
+    background-size: cover;
+  }
+
+  @media (max-width: $width_viewport_mobile) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+    background: $color_blue_tangaroa url("../img/bg-header-mobile@2x.png") no-repeat center;
+    background-size: 165%;
   }
 }
 
@@ -140,4 +166,17 @@
   position: absolute;
   top: 140px;
   right: -90px;
+
+  width: 705px;
+  height: auto;
+
+  @media (max-width: $width_viewport_tablet) {
+    width: 465px;
+    height: auto;
+  }
+
+  @media (max-width: $width_viewport_mobile) {
+    width: 301px;
+    height: auto;
+  }
 }
