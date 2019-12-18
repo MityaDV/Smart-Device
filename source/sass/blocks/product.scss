@@ -5,6 +5,10 @@
   padding: 95px 0 127px;
 
   background: $color_blue_tangaroa;
+
+  @media (max-width: $width_viewport_tablet) {
+    padding: 60px 0 48px;
+  }
 }
 
 .product__inner {
@@ -13,6 +17,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  @media (max-width: $width_viewport_tablet) {
+    flex-direction: column;
+  }
 }
 
 .product__title {
@@ -25,6 +33,10 @@
   font-weight: $font_weight_normal;
   font-family: $font_family_second_base;
   color: $color_white;
+
+  @media (max-width: $width_viewport_tablet) {
+    padding: 0 0 50px;
+  }
 }
 
 .product__wrapper {
@@ -32,6 +44,11 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 0 0 -30px;
+
+  @media (max-width: $width_viewport_tablet) {
+    display: block;
+    margin: 0;
+  }
 }
 
 .product__link {
@@ -43,14 +60,36 @@
 
   &--production {
     background-image: url("../img/photo-production-desktop@1x.png");
+
+    @media (max-width: $width_viewport_tablet) {
+      background-image: url("../img/photo-production-tablet@1x.png");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   }
 
   &--installation {
     background-image: url("../img/photo-installation-desktop@1x.png");
+
+    @media (max-width: $width_viewport_tablet) {
+      background-image: url("../img/photo-installation-tablet@1x.png");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   }
 
   &--component {
     background-image: url("../img/photo-component-desktop@1x.png");
+
+    @media (max-width: $width_viewport_tablet) {
+      background-image: url("../img/photo-component-tablet@1x.png");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  @media (max-width: $width_viewport_tablet) {
+    margin: 0 0 30px;
   }
 }
 
@@ -60,8 +99,10 @@
   min-height: 620px;
 
   background-color: $color_blue_tangaroa_80;
-  background-repeat: no-repeat;
-  background-position: center;
+
+  @media (max-width: $width_viewport_tablet) {
+    min-height: 256px;
+  }
 }
 
 .product__title-card {
@@ -74,6 +115,10 @@
   font-weight: $font_weight_normal;
   font-family: $font_family_second_base;
   color: $color_white;
+
+  @media (max-width: $width_viewport_tablet) {
+    padding: 48px 0 0 44px;
+  }
 }
 
 .product__button {
