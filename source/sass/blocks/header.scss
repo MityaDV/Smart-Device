@@ -160,6 +160,11 @@
   flex-wrap: wrap;
   padding: 230px 0 280px;
   overflow: initial;
+
+  @media (max-width: $width_viewport_tablet) {
+    margin: 0 0 0 65px;
+    padding: 120px 0 163px;
+  }
 }
 
 .header__image {
@@ -171,6 +176,9 @@
   height: auto;
 
   @media (max-width: $width_viewport_tablet) {
+    top: 47px;
+    right: -227px;
+
     width: 465px;
     height: auto;
   }
