@@ -26,6 +26,11 @@
   background: transparent url("../img/plane-desktop@1x.png") no-repeat center;
   background-size: contain;
 
+  @media (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+    background: transparent url("../img/plane-desktop@2x.png") no-repeat center;
+    background-size: contain;
+  }
+
   @media (max-width: $width_viewport_tablet) {
     display: none;
   }

@@ -59,32 +59,107 @@
   background-size: cover;
 
   &--production {
-    background-image: url("../img/photo-production-desktop@1x.png");
+    background: $color_blue_tangaroa url("../img/photo-production-desktop@1x.png");
+
+    @media (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+      background: $color_blue_tangaroa url("../img/photo-production-desktop@2x.png");
+      background-size: cover;
+    }
 
     @media (max-width: $width_viewport_tablet) {
-      background-image: url("../img/photo-production-tablet@1x.png");
+      background: $color_blue_tangaroa url("../img/photo-production-tablet@1x.png");
       background-repeat: no-repeat;
       background-position: center;
+    }
+
+    @media (max-width: $width_viewport_tablet) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+      background: $color_blue_tangaroa url("../img/photo-production-tablet@2x.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    @media (max-width: $width_viewport_mobile) {
+      background: $color_blue_tangaroa url("../img/photo-production-mobile@1x.png");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    @media (max-width: $width_viewport_mobile) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+      background: $color_blue_tangaroa url("../img/photo-production-mobile@2x.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
     }
   }
 
   &--installation {
-    background-image: url("../img/photo-installation-desktop@1x.png");
+    background: $color_blue_tangaroa url("../img/photo-installation-desktop@1x.png");
+
+    @media (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+      background: $color_blue_tangaroa url("../img/photo-installation-desktop@2x.png");
+      background-size: cover;
+    }
 
     @media (max-width: $width_viewport_tablet) {
-      background-image: url("../img/photo-installation-tablet@1x.png");
+      background: $color_blue_tangaroa url("../img/photo-installation-tablet@1x.png");
       background-repeat: no-repeat;
       background-position: center;
+    }
+
+    @media (max-width: $width_viewport_tablet) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+      background: $color_blue_tangaroa url("../img/photo-installation-tablet@2x.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    @media (max-width: $width_viewport_mobile) {
+      background: $color_blue_tangaroa url("../img/photo-installation-mobile@1x.png");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    @media (max-width: $width_viewport_mobile) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+      background: $color_blue_tangaroa url("../img/photo-installation-mobile@2x.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
     }
   }
 
   &--component {
-    background-image: url("../img/photo-component-desktop@1x.png");
+    background: $color_blue_tangaroa url("../img/photo-component-desktop@1x.png");
+
+    @media (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+      background: $color_blue_tangaroa url("../img/photo-component-desktop@2x.png");
+      background-size: cover;
+    }
 
     @media (max-width: $width_viewport_tablet) {
-      background-image: url("../img/photo-component-tablet@1x.png");
+      background: $color_blue_tangaroa url("../img/photo-component-tablet@1x.png");
       background-repeat: no-repeat;
       background-position: center;
+    }
+
+    @media (max-width: $width_viewport_tablet) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+      background: $color_blue_tangaroa url("../img/photo-component-tablet@2x.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    @media (max-width: $width_viewport_mobile) {
+      background: $color_blue_tangaroa url("../img/photo-component-mobile@1x.png");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    @media (max-width: $width_viewport_mobile) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+      background: $color_blue_tangaroa url("../img/photo-component-mobile@2x.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
     }
   }
 
