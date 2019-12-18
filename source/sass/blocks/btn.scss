@@ -58,6 +58,10 @@
 
     background: $color_blue_sky;
     box-shadow: none;
+
+    @media (max-width: $width_viewport_tablet) {
+      text-transform: uppercase;
+    }
   }
 
   &--modal {

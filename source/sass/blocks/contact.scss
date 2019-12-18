@@ -5,6 +5,10 @@
   padding: 100px 0 110px;
 
   background: $color_blue_sky;
+
+  @media (max-width: $width_viewport_tablet) {
+    padding: 90px 0 103px;
+  }
 }
 
 .contact__inner {
@@ -21,4 +25,8 @@
 
   background: transparent url("../img/plane-desktop@1x.png") no-repeat center;
   background-size: contain;
+
+  @media (max-width: $width_viewport_tablet) {
+    display: none;
+  }
 }
