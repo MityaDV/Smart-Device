@@ -8,11 +8,36 @@ var pageOverlay = document.querySelector('.overlay');
 var nameUser = modal.querySelector('[name=username]');
 var phoneUser = modal.querySelector('[name=userphone]');
 var questionUser = modal.querySelector('[name=userquestion]');
+var footer = document.querySelector('.footer');
+var footerNav = footer.querySelector('.footer__navigation');
+var footerContact = footer.querySelector('.footer__contact');
+var footerToggleNav = footer.querySelector('.footer__toggle--navigation');
+var footerToggleContact = footer.querySelector('.footer__toggle--contact');
 var isStorageSupport = true;
 var storage = '';
 var storagePhone = '';
 var storageText = '';
 var ESC_KEYCODE = 27;
+
+footerToggleNav.addEventListener('click', function () {
+  if (footerNav.classList.contains('footer__navigation--closed')) {
+    footerNav.classList.remove('footer__navigation--closed');
+    footerNav.classList.add('footer__navigation--opened');
+  } else {
+    footerNav.classList.add('footer__navigation--closed');
+    footerNav.classList.remove('footer__navigation--opened');
+  }
+});
+
+footerToggleContact.addEventListener('click', function () {
+  if (footerContact.classList.contains('footer__contact--closed')) {
+    footerContact.classList.remove('footer__contact--closed');
+    footerContact.classList.add('footer__contact--opened');
+  } else {
+    footerContact.classList.add('footer__contact--closed');
+    footerContact.classList.remove('footer__contact--opened');
+  }
+});
 
 // сохраняем значения полей в localStorage
 try {
@@ -100,3 +125,6 @@ var formValidation = function (evt) {
 buttonOpenPopup.addEventListener('click', openPopup);
 buttonClosePopup.addEventListener('click', closePopup);
 modalForm.addEventListener('submit', formValidation);
+
+// код аккордиона footer
+
