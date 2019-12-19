@@ -2,7 +2,7 @@
 @import "../base/vars.scss";
 
 .form {
-  flex-basis: 45%;
+  flex-basis: 50%;
 
   @media (max-width: $width_viewport_tablet) {
     flex-basis: 100%;

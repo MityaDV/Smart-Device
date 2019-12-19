@@ -14,7 +14,7 @@
 }
 
 .advantage__inner {
-  @include inner_m;
+  @include inner_thin;
 }
 
 .advantage__list {
@@ -36,9 +36,7 @@
   margin: 0 0 30px 30px;
   padding: 40px 45px 60px;
 
-  box-shadow: inset 3px 0 0 0 $color_blue_sky,
-  inset 1px 1px 0 0 $color_gray_lightest,
-  inset -1px -1px 0 0 $color_gray_lightest;
+  box-shadow: inset 3px 0 0 0 $color_blue_sky, inset 1px 1px 0 0 $color_gray_lightest, inset -1px -1px 0 0 $color_gray_lightest;
 
   &:hover {
     color: $color_white;
@@ -50,9 +48,7 @@
       color: inherit;
 
       background: inherit;
-      box-shadow: inset 3px 0 0 0 $color_blue_sky,
-      inset 1px 1px 0 0 $color_gray_lightest,
-      inset -1px -1px 0 0 $color_gray_lightest;
+      box-shadow: inset 3px 0 0 0 $color_blue_sky, inset 1px 1px 0 0 $color_gray_lightest, inset -1px -1px 0 0 $color_gray_lightest;
     }
   }
 

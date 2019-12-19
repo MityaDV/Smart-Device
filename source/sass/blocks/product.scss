@@ -16,7 +16,7 @@
 }
 
 .product__inner {
-  @include inner_m;
+  @include inner_thin;
 
   display: flex;
   flex-wrap: wrap;
@@ -184,6 +184,14 @@
   min-height: 620px;
 
   background-color: $color_blue_tangaroa_80;
+
+  &:hover {
+    outline: 1px solid gold;
+
+    @media (max-width: $width_viewport_tablet) {
+      outline: none;
+    }
+  }
 
   @media (max-width: $width_viewport_tablet) {
     min-height: 256px;

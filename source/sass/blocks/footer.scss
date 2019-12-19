@@ -18,7 +18,7 @@
 }
 
 .footer__inner {
-  @include inner_l;
+  @include inner_wide;
 
   display: flex;
   flex-wrap: wrap;

@@ -6,19 +6,17 @@
   padding: 35px 0 0;
 
   background-color: $color_blue_tangaroa;
-  background-image: url("../img/bg-header-desktop@1x.png"),
-  url("../img/bg-header-delta@1x.png");
+  background-image: url("../img/circuit-desktop@1x.png"), url("../img/bg-header-desktop@1x.png"), url("../img/bg-header-delta@1x.png");
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-position: top 259px right 230px, center, center;
+  background-size: 33%, cover, cover;
 
   @media (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
     background-color: $color_blue_tangaroa;
-    background-image: url("../img/bg-header-desktop@2x.png"),
-    url("../img/bg-header-delta@2x.png");
+    background-image: url("../img/circuit-desktop@2x.png"), url("../img/bg-header-desktop@2x.png"), url("../img/bg-header-delta@2x.png");
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-position: top 259px right 230px, center, center;
+    background-size: 33%, cover, cover;
   }
 
   @media (max-width: $width_viewport_tablet) {
@@ -26,9 +24,7 @@
     padding: 20px 0 0;
 
     background-color: $color_blue_tangaroa;
-    background-image: url("../img/circuit-tablet@1x.png"),
-    url("../img/bg-header-desktop@1x.png"),
-    url("../img/bg-header-delta@1x.png");
+    background-image: url("../img/circuit-tablet@1x.png"), url("../img/bg-header-desktop@1x.png"), url("../img/bg-header-delta@1x.png");
     background-repeat: no-repeat;
     background-position: top 130px right, center, center top -120px;
     background-size: 33%, cover, cover;
@@ -36,9 +32,7 @@
 
   @media (max-width: $width_viewport_tablet) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
     background-color: $color_blue_tangaroa;
-    background-image: url("../img/circuit-tablet@2x.png"),
-    url("../img/bg-header-desktop@2x.png"),
-    url("../img/bg-header-delta@2x.png");
+    background-image: url("../img/circuit-tablet@2x.png"), url("../img/bg-header-desktop@2x.png"), url("../img/bg-header-delta@2x.png");
     background-repeat: no-repeat;
     background-position: top 130px right, center, center top -120px;
     background-size: 33%, cover, cover;
@@ -49,9 +43,7 @@
     padding: 17px 0 0;
 
     background-color: $color_blue_tangaroa;
-    background-image: url("../img/circuit-mobile@1x.png"),
-    url("../img/bg-header-mobile@1x.png"),
-    url("../img/bg-header-delta@1x.png");
+    background-image: url("../img/circuit-mobile@1x.png"), url("../img/bg-header-mobile@1x.png"), url("../img/bg-header-delta@1x.png");
     background-repeat: no-repeat;
     background-position: top 70px right, center, right -520px top -140px;
     background-size: 90%, cover, cover;
@@ -59,9 +51,7 @@
 
   @media (max-width: $width_viewport_mobile) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
     background-color: $color_blue_tangaroa;
-    background-image: url("../img/circuit-mobile@2x.png"),
-    url("../img/bg-header-mobile@2x.png"),
-    url("../img/bg-header-delta@2x.png");
+    background-image: url("../img/circuit-mobile@2x.png"), url("../img/bg-header-mobile@2x.png"), url("../img/bg-header-delta@2x.png");
     background-repeat: no-repeat;
     background-position: top 70px right, center, right -520px top -140px;
     background-size: 90%, cover, cover;
@@ -69,7 +59,7 @@
 }
 
 .header__inner {
-  @include inner_l;
+  @include inner_wide;
 
   display: flex;
   flex-wrap: wrap;
@@ -225,31 +215,5 @@
   @media (max-width: $width_viewport_mobile) {
     margin: 0;
     padding: 200px 0 70px;
-  }
-}
-
-.header__image {
-  position: absolute;
-  top: 140px;
-  right: -90px;
-
-  width: 705px;
-  height: auto;
-
-  @media (max-width: $width_viewport_tablet) {
-    display: none;
-    // top: 47px;
-    // right: -227px;
-
-    // width: 465px;
-    // height: auto;
-  }
-
-  @media (max-width: $width_viewport_mobile) {
-    // top: 10px;
-    // left: 21px;
-
-    // width: 301px;
-    // height: auto;
   }
 }
