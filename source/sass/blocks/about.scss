@@ -33,7 +33,7 @@
     width: 215px;
     height: 310px;
 
-    background: url("../img/number-desktop@1x.png") no-repeat center;
+    background: transparent url("../img/number-desktop@1x.png") no-repeat center;
     background-size: contain;
 
     @media (max-width: $width_viewport_tablet) {

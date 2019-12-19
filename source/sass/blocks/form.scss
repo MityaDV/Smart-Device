@@ -88,8 +88,19 @@
 }
 
 .form__input {
+  color: $color_blue_nordic;
+
   background: $color_white_10;
   border: none;
+
+  &:hover {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &:focus {
+    outline: 1px solid $color_white;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  }
 
   &[type="text"]::placeholder {
     font-size: $font_size_p_desktop;
@@ -154,6 +165,15 @@
     border: 1px solid $color_white;
   }
 
+  &--checkbox:hover + .form__label--checkbox::before {
+    border-color: $color_blue_nordic;
+    opacity: 0.5;
+  }
+
+  &--checkbox:focus + .form__label--checkbox::before {
+    opacity: 0.6;
+  }
+
   &--checkbox:checked + .form__label--checkbox::after {
     content: "";
     position: absolute;
@@ -168,6 +188,17 @@
     border-left: 1px solid $color_white;
     transform: rotate(-45deg);
   }
+
+  &--checkbox:hover:checked + .form__label--checkbox::after {
+    border-color: $color_blue_nordic;
+    opacity: 0.5;
+  }
+
+  &--checkbox:focus + .form__label--checkbox {
+    color: $color_blue_nordic;
+
+    opacity: 0.7;
+  }
 }
 
 .form__label {
@@ -179,6 +210,18 @@
 
   cursor: pointer;
   opacity: 0.8;
+
+  &:hover {
+    color: $color_blue_nordic;
+
+    opacity: 1;
+  }
+
+  &:focus {
+    color: $color_blue_nordic;
+
+    opacity: 1;
+  }
 
   &--checkbox {
     margin: 0 0 0 11px;
@@ -205,6 +248,15 @@
   border: none;
 
   resize: none;
+
+  &:hover {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  &:focus {
+    outline: 1px solid $color_white;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  }
 
   &::placeholder {
     font-size: $font_size_p_desktop;

@@ -43,29 +43,31 @@
 
     background: $color_blue_sky;
     box-shadow: none;
+    cursor: pointer;
+  }
 
-    @media (max-width: $width_viewport_tablet) {
-      color: inherit;
+  &:focus {
+    color: $color_white;
 
-      background: inherit;
-      box-shadow: inset 3px 0 0 0 $color_blue_sky, inset 1px 1px 0 0 $color_gray_lightest, inset -1px -1px 0 0 $color_gray_lightest;
-    }
+    background: $color_blue_sky;
+    box-shadow: none;
+    cursor: pointer;
   }
 
   &:hover .advantage__title {
     color: $color_white;
+  }
 
-    @media (max-width: $width_viewport_tablet) {
-      color: $color_blue_sky;
-    }
+  &:focus .advantage__title {
+    color: $color_white;
   }
 
   &:hover .advantage__icon {
     fill: $color_white;
+  }
 
-    @media (max-width: $width_viewport_tablet) {
-      fill: $color_blue_sky;
-    }
+  &:focus .advantage__icon {
+    fill: $color_white;
   }
 
   @media (max-width: $width_viewport_mobile) {

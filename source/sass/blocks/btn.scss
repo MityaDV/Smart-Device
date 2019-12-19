@@ -19,7 +19,21 @@
   border-radius: 5px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &--call {
+    &:hover {
+      background-color: $color_blue_sky;
+      border-color: $color_blue_sky;
+    }
+
+    &:focus {
+      background-color: $color_blue_sky;
+      border-color: $color_blue_sky;
+    }
+
     @media (max-width: $width_viewport_tablet) {
       display: none;
     }
@@ -36,6 +50,18 @@
     background: $color_blue_sky;
     border: none;
     box-shadow: none;
+
+    &:hover {
+      color: $color_blue_sky;
+
+      background-color: $color_white;
+    }
+
+    &:focus {
+      color: $color_blue_sky;
+
+      background-color: $color_white;
+    }
 
     @media (max-width: $width_viewport_tablet) {
       width: 379px;
@@ -78,6 +104,18 @@
     background: transparent;
     border: 1px solid $color_blue_sky;
     box-shadow: none;
+
+    &:hover {
+      color: $color_white;
+
+      background-color: $color_blue_sky;
+    }
+
+    &:focus {
+      color: $color_white;
+
+      background-color: $color_blue_sky;
+    }
   }
 
   &--question {
@@ -85,6 +123,18 @@
 
     background: $color_blue_sky;
     box-shadow: none;
+
+    &:hover {
+      color: $color_blue_sky;
+
+      background-color: $color_white;
+    }
+
+    &:focus {
+      color: $color_blue_sky;
+
+      background-color: $color_white;
+    }
 
     @media (max-width: $width_viewport_tablet) {
       text-transform: uppercase;
@@ -103,5 +153,17 @@
     text-transform: uppercase;
 
     box-shadow: none;
+
+    &:hover {
+      color: $color_blue_sky;
+
+      background-color: $color_white;
+    }
+
+    &:focus {
+      color: $color_blue_sky;
+
+      background-color: $color_white;
+    }
   }
 }

@@ -186,11 +186,8 @@
   background-color: $color_blue_tangaroa_80;
 
   &:hover {
-    outline: 1px solid gold;
-
-    @media (max-width: $width_viewport_tablet) {
-      outline: none;
-    }
+    background-color: rgba(27, 45, 55, 0.5);
+    outline: 1px solid $color_blue_sky;
   }
 
   @media (max-width: $width_viewport_tablet) {

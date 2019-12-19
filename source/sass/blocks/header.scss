@@ -72,9 +72,21 @@
   flex-wrap: wrap;
   max-height: 52px;
 
+  &:focus {
+    outline: none;
+  }
+
   @media (max-width: $width_viewport_mobile) {
     width: 38px;
   }
+}
+
+.header__logo-link:focus > .header__logo-text {
+  color: $color_blue_sky;
+}
+
+.header__logo-link:focus > .header__logo-slogan {
+  color: $color_blue_sky;
 }
 
 .header__logo-text {
@@ -88,6 +100,10 @@
   line-height: $line_height_p_desktop_l;
   font-family: $font_family_second_base;
   color: $color_white;
+
+  &:hover {
+    color: $color_blue_sky;
+  }
 
   @media (max-width: $width_viewport_tablet) {
     font-size: $font_size_p_tablet_xl;
@@ -110,6 +126,10 @@
   line-height: $line_height_p_desktop_l;
   font-family: $font_family_third_base;
   color: $color_gray_light;
+
+  &:hover {
+    color: $color_blue_sky;
+  }
 
   @media (max-width: $width_viewport_tablet) {
     font-size: $font_size_p_tablet_s;
