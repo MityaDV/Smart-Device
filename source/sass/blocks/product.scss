@@ -9,6 +9,10 @@
   @media (max-width: $width_viewport_tablet) {
     padding: 60px 0 48px;
   }
+
+  @media (max-width: $width_viewport_tablet) {
+    padding: 60px 0 30px;
+  }
 }
 
 .product__inner {
@@ -70,6 +74,7 @@
       background: $color_blue_tangaroa url("../img/photo-production-tablet@1x.png");
       background-repeat: no-repeat;
       background-position: center;
+      background-size: cover;
     }
 
     @media (max-width: $width_viewport_tablet) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
@@ -83,6 +88,7 @@
       background: $color_blue_tangaroa url("../img/photo-production-mobile@1x.png");
       background-repeat: no-repeat;
       background-position: center;
+      background-size: cover;
     }
 
     @media (max-width: $width_viewport_mobile) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
@@ -105,6 +111,7 @@
       background: $color_blue_tangaroa url("../img/photo-installation-tablet@1x.png");
       background-repeat: no-repeat;
       background-position: center;
+      background-size: cover;
     }
 
     @media (max-width: $width_viewport_tablet) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
@@ -118,6 +125,7 @@
       background: $color_blue_tangaroa url("../img/photo-installation-mobile@1x.png");
       background-repeat: no-repeat;
       background-position: center;
+      background-size: cover;
     }
 
     @media (max-width: $width_viewport_mobile) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
@@ -140,6 +148,7 @@
       background: $color_blue_tangaroa url("../img/photo-component-tablet@1x.png");
       background-repeat: no-repeat;
       background-position: center;
+      background-size: cover;
     }
 
     @media (max-width: $width_viewport_tablet) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
@@ -153,6 +162,7 @@
       background: $color_blue_tangaroa url("../img/photo-component-mobile@1x.png");
       background-repeat: no-repeat;
       background-position: center;
+      background-size: cover;
     }
 
     @media (max-width: $width_viewport_mobile) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
@@ -193,6 +203,10 @@
 
   @media (max-width: $width_viewport_tablet) {
     padding: 48px 0 0 44px;
+  }
+
+  @media (max-width: $width_viewport_tablet) {
+    padding: 28px 0 0 35px;
   }
 }
 

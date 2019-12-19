@@ -9,6 +9,10 @@
   @media (max-width: $width_viewport_tablet) {
     padding: 90px 0 103px;
   }
+
+  @media (max-width: $width_viewport_mobile) {
+    padding: 40px 0 45px;
+  }
 }
 
 .contact__inner {
@@ -16,6 +20,10 @@
 
   display: flex;
   flex-wrap: wrap;
+
+  @media (max-width: $width_viewport_mobile) {
+    display: block;
+  }
 }
 
 .contact__image {

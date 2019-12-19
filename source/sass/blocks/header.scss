@@ -5,37 +5,66 @@
   margin: 0 0 50px;
   padding: 35px 0 0;
 
-  background: $color_blue_tangaroa url("../img/bg-header-desktop@1x.png") no-repeat center;
+  background-color: $color_blue_tangaroa;
+  background-image: url("../img/bg-header-desktop@1x.png"),
+  url("../img/bg-header-delta@1x.png");
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 
   @media (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
-    background: $color_blue_tangaroa url("../img/bg-header-desktop@2x.png");
+    background-color: $color_blue_tangaroa;
+    background-image: url("../img/bg-header-desktop@2x.png"),
+    url("../img/bg-header-delta@2x.png");
+    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
   }
 
   @media (max-width: $width_viewport_tablet) {
     margin: 0 0 25px;
+    padding: 20px 0 0;
 
-    background: $color_blue_tangaroa url("../img/bg-header-tablet@1x.png") no-repeat center;
-    background-size: cover;
+    background-color: $color_blue_tangaroa;
+    background-image: url("../img/circuit-tablet@1x.png"),
+    url("../img/bg-header-desktop@1x.png"),
+    url("../img/bg-header-delta@1x.png");
+    background-repeat: no-repeat;
+    background-position: top 130px right, center, center top -120px;
+    background-size: 33%, cover, cover;
   }
 
   @media (max-width: $width_viewport_tablet) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
-    background: $color_blue_tangaroa url("../img/bg-header-tablet@2x.png");
+    background-color: $color_blue_tangaroa;
+    background-image: url("../img/circuit-tablet@2x.png"),
+    url("../img/bg-header-desktop@2x.png"),
+    url("../img/bg-header-delta@2x.png");
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-position: top 130px right, center, center top -120px;
+    background-size: 33%, cover, cover;
   }
 
   @media (max-width: $width_viewport_mobile) {
-    background: $color_blue_tangaroa url("../img/bg-header-mobile@1x.png") no-repeat center;
-    background-size: cover;
+    margin: 0 0 17px;
+    padding: 17px 0 0;
+
+    background-color: $color_blue_tangaroa;
+    background-image: url("../img/circuit-mobile@1x.png"),
+    url("../img/bg-header-mobile@1x.png"),
+    url("../img/bg-header-delta@1x.png");
+    background-repeat: no-repeat;
+    background-position: top 70px right, center, right -520px top -140px;
+    background-size: 90%, cover, cover;
   }
 
   @media (max-width: $width_viewport_mobile) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
-    background: $color_blue_tangaroa url("../img/bg-header-mobile@2x.png") no-repeat center;
-    background-size: 165%;
+    background-color: $color_blue_tangaroa;
+    background-image: url("../img/circuit-mobile@2x.png"),
+    url("../img/bg-header-mobile@2x.png"),
+    url("../img/bg-header-delta@2x.png");
+    background-repeat: no-repeat;
+    background-position: top 70px right, center, right -520px top -140px;
+    background-size: 90%, cover, cover;
   }
 }
 
@@ -52,6 +81,10 @@
   flex-direction: column;
   flex-wrap: wrap;
   max-height: 52px;
+
+  @media (max-width: $width_viewport_mobile) {
+    width: 38px;
+  }
 }
 
 .header__logo-text {
@@ -70,6 +103,10 @@
     font-size: $font_size_p_tablet_xl;
     line-height: $line_height_p_tablet_xxs;
   }
+
+  @media (max-width: $width_viewport_mobile) {
+    display: none;
+  }
 }
 
 .header__logo-slogan {
@@ -87,6 +124,10 @@
   @media (max-width: $width_viewport_tablet) {
     font-size: $font_size_p_tablet_s;
     line-height: $line_height_p_tablet_xxs;
+  }
+
+  @media (max-width: $width_viewport_mobile) {
+    display: none;
   }
 }
 
@@ -108,6 +149,13 @@
     line-height: $line_height_p_tablet_xxs;
     text-transform: uppercase;
   }
+
+  @media (max-width: $width_viewport_mobile) {
+    max-width: 250px;
+
+    font-size: $font_size_p_mobile_xxl;
+    line-height: $line_height_p_mobile_xxxs;
+  }
 }
 
 .header__text-services {
@@ -128,6 +176,14 @@
 
     font-size: $font_size_p_tablet_l;
     line-height: $line_height_p_tablet_xl;
+  }
+
+  @media (max-width: $width_viewport_mobile) {
+    max-width: 350px;
+    padding: 0 0 37px 50px;
+
+    font-size: $font_size_p_mobile;
+    line-height: $line_height_p_mobile_xl;
   }
 
   &::before {
@@ -165,6 +221,11 @@
     margin: 0 0 0 65px;
     padding: 120px 0 163px;
   }
+
+  @media (max-width: $width_viewport_mobile) {
+    margin: 0;
+    padding: 200px 0 70px;
+  }
 }
 
 .header__image {
@@ -176,15 +237,19 @@
   height: auto;
 
   @media (max-width: $width_viewport_tablet) {
-    top: 47px;
-    right: -227px;
+    display: none;
+    // top: 47px;
+    // right: -227px;
 
-    width: 465px;
-    height: auto;
+    // width: 465px;
+    // height: auto;
   }
 
   @media (max-width: $width_viewport_mobile) {
-    width: 301px;
-    height: auto;
+    // top: 10px;
+    // left: 21px;
+
+    // width: 301px;
+    // height: auto;
   }
 }

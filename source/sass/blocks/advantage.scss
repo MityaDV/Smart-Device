@@ -7,6 +7,10 @@
   @media (max-width: $width_viewport_tablet) {
     padding: 29px 0 0;
   }
+
+  @media (max-width: $width_viewport_mobile) {
+    padding: 20px 0 0;
+  }
 }
 
 .advantage__inner {
@@ -20,6 +24,11 @@
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 0 0 -50px;
+
+  @media (max-width: $width_viewport_mobile) {
+    display: block;
+    margin: 0;
+  }
 }
 
 .advantage__item {
@@ -62,6 +71,11 @@
       fill: $color_blue_sky;
     }
   }
+
+  @media (max-width: $width_viewport_mobile) {
+    margin: 0 0 30px;
+    padding: 25px 18px 40px 27px;
+  }
 }
 
 .advantage__title {
@@ -81,6 +95,13 @@
 
     font-size: $font_size_h3_tablet_l;
     line-height: $line_height_p_desktop_xxl;
+  }
+
+  @media (max-width: $width_viewport_mobile) {
+    padding: 15px 0 22px;
+
+    font-size: $font_size_h3_mobile;
+    line-height: $line_height_h2_mobile;
   }
 }
 

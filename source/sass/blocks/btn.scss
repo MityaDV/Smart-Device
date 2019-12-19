@@ -40,6 +40,32 @@
     @media (max-width: $width_viewport_tablet) {
       width: 379px;
       margin: 0 0 0 45px;
+
+      text-transform: uppercase;
+    }
+
+    @media (max-width: $width_viewport_mobile) {
+      display: none;
+    }
+  }
+
+  &--consultation-small {
+    display: none;
+
+    @media (max-width: $width_viewport_mobile) {
+      display: block;
+      width: 287px;
+      min-height: 55px;
+      margin: 0;
+      padding: 17px 0 14px;
+
+      font-size: $font_size_p_desktop;
+      line-height: $line_height_p_desktop_xl;
+      text-transform: uppercase;
+
+      background: $color_blue_sky;
+      border: none;
+      box-shadow: none;
     }
   }
 
@@ -62,6 +88,11 @@
 
     @media (max-width: $width_viewport_tablet) {
       text-transform: uppercase;
+    }
+
+    @media (max-width: $width_viewport_mobile) {
+      width: 290px;
+      margin: 0 0 30px;
     }
   }
 

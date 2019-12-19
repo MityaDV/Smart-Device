@@ -9,6 +9,10 @@
     margin: 0 0 83px;
     padding: 35px 0 0;
   }
+
+  @media (max-width: $width_viewport_mobile) {
+    margin: 0 0 65px;
+  }
 }
 
 .about__inner {
@@ -40,6 +44,16 @@
       height: 361px;
 
       background-size: cover;
+    }
+  }
+
+  @media (max-width: $width_viewport_mobile) {
+    position: static;
+
+    padding: 0;
+
+    &::before {
+      display: none;
     }
   }
 }
