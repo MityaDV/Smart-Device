@@ -36,21 +36,27 @@
 }
 
 .advantage__item {
-  flex-basis: 47%;
-  min-height: 300px;
-  margin: 30px 0 0 31px;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: auto;
+  max-width: 47%;
+  margin: 3% 0 0 3%;
   padding: 42px 43px 66px 45px;
 
   box-shadow: inset 3px 0 0 0 $color_blue_sky, inset 1px 1px 0 0 $color_gray_lightest, inset -1px -1px 0 0 $color_gray_lightest;
 
   @media (max-width: $width_viewport_tablet) {
+    flex-grow: 0;
+    flex-shrink: 1;
     flex-basis: 45%;
-    min-height: auto;
-    margin: 0 0 31px 33px;
+    max-width: 45%;
+    margin: 0 0 3% 3%;
     padding: 24px 16px 35px 28px;
   }
 
   @media (max-width: $width_viewport_mobile) {
+    flex-basis: auto;
+    max-width: 100%;
     margin: 0 0 19px;
     padding: 25px 18px 32px 27px;
   }
