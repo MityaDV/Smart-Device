@@ -7,10 +7,10 @@
   background: $color_blue_tangaroa;
 
   @media (max-width: $width_viewport_tablet) {
-    padding: 60px 0 48px;
+    padding: 49px 0 28px;
   }
 
-  @media (max-width: $width_viewport_tablet) {
+  @media (max-width: $width_viewport_mobile) {
     padding: 60px 0 30px;
   }
 }
@@ -30,7 +30,6 @@
 .product__wrapper {
   display: flex;
   flex-wrap: wrap;
-  // justify-content: space-between;
   margin: 0 0 0 -29px;
 
   @media (max-width: $width_viewport_tablet) {
@@ -51,7 +50,7 @@
   color: $color_white;
 
   @media (max-width: $width_viewport_tablet) {
-    padding: 0 0 50px;
+    padding: 0 100px 50px 0;
   }
 }
 
@@ -61,6 +60,10 @@
   margin: 0 0 30px 28px;
 
   background-size: cover;
+
+  @media (max-width: $width_viewport_tablet) {
+    margin: 0 0 48px;
+  }
 
   &--production {
     background: $color_blue_tangaroa url("../img/photo-production-desktop@1x.png");
@@ -172,10 +175,6 @@
       background-size: cover;
     }
   }
-
-  @media (max-width: $width_viewport_tablet) {
-    margin: 0 0 30px;
-  }
 }
 
 .product__card {
@@ -207,10 +206,10 @@
   color: $color_white;
 
   @media (max-width: $width_viewport_tablet) {
-    padding: 48px 0 0 44px;
+    padding: 41px 0 0 44px;
   }
 
-  @media (max-width: $width_viewport_tablet) {
+  @media (max-width: $width_viewport_mobile) {
     padding: 28px 0 0 35px;
   }
 }

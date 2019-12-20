@@ -9,7 +9,7 @@
   background: $color_white_darken;
 
   @media (max-width: $width_viewport_tablet) {
-    padding: 19px 0 30px;
+    padding: 19px 0 25px;
   }
 
   @media (max-width: $width_viewport_mobile) {
@@ -24,6 +24,10 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   padding: 35px 20px 0 20px;
+
+  @media (max-width: $width_viewport_tablet) {
+    justify-content: space-between;
+  }
 
   @media (max-width: $width_viewport_mobile) {
     display: block;
@@ -81,7 +85,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 0 0 30px;
+    margin: 0 0 26px;
   }
 
   @media (max-width: $width_viewport_mobile) {
@@ -131,13 +135,13 @@
   }
 
   @media (max-width: $width_viewport_tablet) {
-    padding: 0 0 0 16px;
+    padding: 5px 0 2px 16px;
 
     font-size: $font_size_p_tablet_xl;
     line-height: $line_height_p_tablet_xxs;
   }
 
-  @media (max-width: $width_viewport_tablet) {
+  @media (max-width: $width_viewport_mobile) {
     margin: 0 37px 0 0;
   }
 }
@@ -215,7 +219,9 @@
 
     @media (max-width: $width_viewport_tablet) {
       display: block;
-      flex-basis: 30%;
+      flex-basis: 35%;
+      margin: 0 36px 0 auto;
+      padding: 4px 0 0;
     }
 
     @media (max-width: $width_viewport_mobile) {
@@ -279,6 +285,10 @@
   &--social {
     margin: 0 16px 0 0;
 
+    @media (max-width: $width_viewport_tablet) {
+      margin: 0 0 0 16px;
+    }
+
     &:hover {
       transform: scale(1.2);
     }
@@ -311,6 +321,8 @@
   padding: 0 0 62px;
 
   @media (max-width: $width_viewport_tablet) {
+    flex-basis: 50%;
+    margin: 0;
     padding: 38px 0;
   }
 
@@ -387,11 +399,11 @@
 
 .footer__contact {
   flex-basis: 27%;
-  padding: 0 0 62px 32px;
+  padding: 0 0 62px 55px;
 
   @media (max-width: $width_viewport_tablet) {
     flex-basis: 50%;
-    padding: 38px 0;
+    padding: 38px 0 38px 16px;
   }
 
   @media (max-width: $width_viewport_mobile) {
@@ -499,9 +511,14 @@
   font-size: $font_size_p_desktop_xxxs;
   line-height: $line_height_p_mobile_xl;
   color: $color_blue_tangaroa;
-  letter-spacing: 0.03em;
+  letter-spacing: -0.1em;
 
   opacity: 0.5;
+
+  @media (max-width: $width_viewport_tablet) {
+    letter-spacing: normal;
+  }
+
 
   &:hover {
     color: $color_blue_sky;
