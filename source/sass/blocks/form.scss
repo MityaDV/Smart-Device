@@ -3,6 +3,7 @@
 
 .form {
   flex-basis: 50%;
+  padding: 0 0 0 11px;
 
   @media (max-width: $width_viewport_tablet) {
     flex-basis: 100%;
@@ -13,7 +14,7 @@
   @include heading_h3;
 
   margin: 0;
-  padding: 0 0 30px;
+  padding: 0 0 12px;
 
   font-weight: $font_weight_normal;
   font-size: $font_size_h2_desktop;
@@ -40,7 +41,7 @@
   @include indent_p;
 
   margin: 0;
-  padding: 0 0 50px;
+  padding: 0 0 51px 5px;
 
   line-height: $line_height_p_desktop_xxl;
   color: $color_white;
@@ -55,7 +56,7 @@
 
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 40px;
+  margin: 0 0 37px;
 
   @media (max-width: $width_viewport_mobile) {
     display: block;
@@ -66,7 +67,7 @@
 .form__item {
   &--username {
     flex-basis: 50%;
-    padding: 0 30px 40px 0;
+    padding: 0 14px 42px 0;
 
     @media (max-width: $width_viewport_mobile) {
       padding: 0 0 30px;
@@ -75,7 +76,7 @@
 
   &--userphone {
     flex-basis: 50%;
-    padding: 0 0 40px 0;
+    padding: 0 0 40px 18px;
 
     @media (max-width: $width_viewport_mobile) {
       padding: 0 0 30px;
@@ -141,22 +142,18 @@
   }
 
   &[type="text"] {
-    padding: 17px 0 17px 17px;
+    padding: 15px 0 17px 20px;
   }
 
   &[type="tel"] {
-    padding: 17px 0 17px 17px;
-  }
-
-  &--userphone {
-    width: 100%;
+    padding: 15px 0 17px 16px;
   }
 
   &--checkbox + .form__label--checkbox::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 9px;
+    left: 7px;
 
     display: inline-block;
     width: 16px;
@@ -177,8 +174,8 @@
   &--checkbox:checked + .form__label--checkbox::after {
     content: "";
     position: absolute;
-    top: 5px;
-    left: 4px;
+    top: 13px;
+    left: 12px;
 
     display: inline-block;
     width: 7px;
@@ -224,8 +221,10 @@
   }
 
   &--checkbox {
-    margin: 0 0 0 11px;
-    padding: 0 0 0 32px;
+    display: inline-block;
+    flex-basis: 50%;
+    margin: 0 0 0 31px;
+    padding: 9px 0 0 39px;
 
     @media (max-width: $width_viewport_tablet) {
       margin: 0 0 0 40px;
@@ -242,7 +241,7 @@
 .form__textarea {
   width: 100%;
   min-height: 154px;
-  padding: 17px 0 0 17px;
+  padding: 10px 0 0 22px;
 
   background: $color_white_10;
   border: none;
@@ -278,6 +277,7 @@
 
 .form__wrapper {
   display: flex;
+  padding: 0 0 0 5px;
 
   @media (max-width: $width_viewport_mobile) {
     flex-direction: column;

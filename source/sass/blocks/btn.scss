@@ -42,6 +42,7 @@
   &--consultation {
     width: 407px;
     min-height: 55px;
+    margin: 0 0 0 99px;
     padding: 17px 0 14px;
 
     font-size: $font_size_p_desktop;
@@ -119,6 +120,7 @@
   }
 
   &--question {
+    flex-basis: 50%;
     width: 270px;
 
     background: $color_blue_sky;

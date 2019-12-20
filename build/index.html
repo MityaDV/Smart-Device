@@ -90,7 +90,7 @@
             <a href="mailto:info@sd.ru" class="navigation__link navigation__link--email">info@sd.ru</a>
           </li>
           <li class="navigation__item">
-            <a href="tel:+7 (495) 000 52 52" class="navigation__link navigation__link--phone">+7 (495) 000 52 52</a>
+            <a href="tel:+7(495)000-52-52" class="navigation__link navigation__link--phone">+7 (495) 000 52 52</a>
           </li>
         </ul>
         <button class="navigation__button btn btn--call" type="button">Заказать звонок
@@ -169,38 +169,37 @@
       <div class="product__inner">
         <div class="product__wrapper">
           <h2 class="product__title">Service Device предлагает следующие товары и услуги</h2>
-          <a href="#" class="product__link product__link--production">
-            <div class="product__card" tabindex="">
+          <a href="#" class="product__link product__link--production" aria-label="Кнопка карточки товара производство печатныхплат">
+            <div class="product__card">
               <h3 class="product__title-card">Производство печатных
                 плат</h3>
-              <button class="product__button" type="button" aria-label="Кнопка карточки товара производство печатных
-                плат">
+              <span class="product__button">
                 <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false">
                   <path d="M1 8.5L5 4.5L1 0.5" stroke="white" stroke-linejoin="round"></path>
                 </svg>
-              </button>
+              </span>
             </div>
           </a>
-          <a href="#" class="product__link product__link--installation">
+          <a href="#" class="product__link product__link--installation" aria-label="Кнопка карточки товара монтаж печатных плат">
             <div class="product__card">
               <h3 class="product__title-card">Монтаж печатных плат</h3>
-              <button class="product__button" type="button" aria-label="Кнопка карточки товара монтаж печатных плат">
+              <span class="product__button">
                 <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false">
                   <path d="M1 8.5L5 4.5L1 0.5" stroke="white" stroke-linejoin="round"></path>
                 </svg>
-              </button>
+              </span>
             </div>
           </a>
-          <a href="#" class="product__link product__link--component">
+          <a href="#" class="product__link product__link--component" aria-label="Кнопка карточки товара комплектующие для
+                светотехники">
             <div class="product__card">
               <h3 class="product__title-card">Комплектующие для
                 светотехники</h3>
-              <button class="product__button" type="button" aria-label="Кнопка карточки товара комплектующие для
-                светотехники">
+              <span class="product__button">
                 <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false">
                   <path d="M1 8.5L5 4.5L1 0.5" stroke="white" stroke-linejoin="round"></path>
                 </svg>
-              </button>
+              </span>
             </div>
           </a>
         </div>
@@ -304,13 +303,13 @@
         </address>
         <ul class="footer__list footer__list--contact">
           <li class="footer__item">
-            <a class="footer__link" href="tel:+7 (495) 589-40-50">+7 (495) 589-40-50</a>
+            <a class="footer__link" href="tel:+7(495)589-40-50">+7 (495) 589-40-50</a>
           </li>
           <li class="footer__item">
-            <a class="footer__link" href="tel:+7 (925) 003-87-67">+7 (925) 003-87-67</a>
+            <a class="footer__link" href="tel:+7(925)003-87-67">+7 (925) 003-87-67</a>
           </li>
           <li class="footer__item">
-            <a class="footer__link" href="tel:+7 (926) 926-080-79">+7 (926) 926-080-79</a>
+            <a class="footer__link" href="tel:+7(926)926-080-79">+7 (926) 926-080-79</a>
           </li>
         </ul>
         <button class="footer__toggle footer__toggle--contact" type="button"></button>
@@ -318,7 +317,7 @@
       <div class="footer__copyright">
         <p class="footer__text footer__text--copyright footer__text--tablet">Все права защищены</p>
         <p class="footer__text footer__text--lg footer__text--tablet">1999-2018 SD Service Devices</p>
-        <p class="footer__text">Условия конфиденциальности</p>
+        <p class="footer__text footer__text--circs">Условия конфиденциальности</p>
         <p class="footer__text">Developed by wow studio</p>
       </div>
     </div>
@@ -331,12 +330,12 @@
       <form class="modal__form" action="#" method="GET">
         <ul class="modal__list">
           <li class="modal__item modal__item--username">
-            <input class="modal__input modal__input--username" type="text" id="user-name" name="username" placeholder="Имя" required="">
-            <label class="modal__label" for="user-name"></label>
+            <input class="modal__input modal__input--username" type="text" id="modaluser-name" name="username" placeholder="Имя" required="">
+            <label class="modal__label" for="modaluser-name"></label>
           </li>
           <li class="modal__item modal__item--userphone">
-            <input class="modal__input modal__input--userphone" type="tel" id="user-phone" name="userphone" placeholder="Телефон" required="" pattern="[+]{1}7 [0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}" title="Формат телефона +7 495 589 40 50">
-            <label class="modal__label" for="user-phone"></label>
+            <input class="modal__input modal__input--userphone" type="tel" id="modaluser-phone" name="userphone" placeholder="Телефон" required="" pattern="[+]{1}7 [0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}" title="Формат телефона +7 495 589 40 50">
+            <label class="modal__label" for="modaluser-phone"></label>
           </li>
           <li class="modal__item modal__item--userquestion">
             <label>

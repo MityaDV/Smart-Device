@@ -3,7 +3,7 @@
 
 .about {
   margin: 0 0 110px;
-  padding: 70px 0 0;
+  padding: 74px 0 0;
 
   @media (max-width: $width_viewport_tablet) {
     margin: 0 0 83px;
@@ -22,19 +22,19 @@
 .about__wrapper {
   position: relative;
 
-  padding: 0 0 0 177px;
+  padding: 0 0 0 182px;
 
   &::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: -40px;
+    top: 6px;
+    left: 2px;
 
-    width: 215px;
-    height: 310px;
+    width: 178px;
+    height: 317px;
 
     background: transparent url("../img/number-desktop@1x.png") no-repeat center;
-    background-size: contain;
+    background-size: cover;
 
     @media (max-width: $width_viewport_tablet) {
       top: 0;
@@ -72,11 +72,13 @@
   @include indent_p;
 
   margin: 0;
-  padding: 0 0 25px;
+  padding: 0 6px 21px 0;
 
   line-height: $line_height_p_tablet_l;
 
   &--second {
+    padding: 0 0 31px;
+
     @media (max-width: $width_viewport_tablet) {
       padding: 0 0 37px;
     }

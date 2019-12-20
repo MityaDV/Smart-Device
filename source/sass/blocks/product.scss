@@ -2,7 +2,7 @@
 @import "../base/vars.scss";
 
 .product {
-  padding: 95px 0 127px;
+  padding: 87px 0 97px;
 
   background: $color_blue_tangaroa;
 
@@ -27,12 +27,24 @@
   }
 }
 
+.product__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+  margin: 0 0 0 -29px;
+
+  @media (max-width: $width_viewport_tablet) {
+    display: block;
+    margin: 0;
+  }
+}
+
 .product__title {
   @include heading_h2;
 
   flex-basis: 100%;
   margin: 0;
-  padding: 0 0 50px 30px;
+  padding: 0 0 54px 30px;
 
   font-weight: $font_weight_normal;
   font-family: $font_family_second_base;
@@ -43,22 +55,10 @@
   }
 }
 
-.product__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 0 0 -30px;
-
-  @media (max-width: $width_viewport_tablet) {
-    display: block;
-    margin: 0;
-  }
-}
-
 .product__link {
   display: block;
-  flex-basis: 29%;
-  margin: 0 0 30px 30px;
+  flex-basis: 31%;
+  margin: 0 0 30px 28px;
 
   background-size: cover;
 
@@ -200,7 +200,7 @@
 
   max-width: 215px;
   margin: 0;
-  padding: 58px 0 0 44px;
+  padding: 49px 0 0 48px;
 
   font-weight: $font_weight_normal;
   font-family: $font_family_second_base;
@@ -220,6 +220,9 @@
   right: 0;
   bottom: 0;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 63px;
   height: 63px;
 
