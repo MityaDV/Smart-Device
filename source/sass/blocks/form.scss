@@ -9,6 +9,10 @@
     flex-basis: 100%;
     padding: 0 61px 0 64px;
   }
+
+  @media (max-width: $width_viewport_mobile) {
+    padding: 0;
+  }
 }
 
 .form__title {
@@ -32,7 +36,7 @@
   }
 
   @media (max-width: $width_viewport_mobile) {
-    padding: 0 0 20px;
+    padding: 0 0 13px;
 
     font-size: $font_size_h2_mobile;
     line-height: $line_height_h2_mobile;
@@ -53,7 +57,7 @@
   }
 
   @media (max-width: $width_viewport_mobile) {
-    padding: 0 0 30px;
+    padding: 0 0 28px;
   }
 }
 
@@ -70,7 +74,7 @@
 
   @media (max-width: $width_viewport_mobile) {
     display: block;
-    margin: 0 0 30px;
+    margin: 0 0 26px;
   }
 }
 
@@ -79,9 +83,13 @@
     flex-basis: 50%;
     padding: 0 14px 42px 0;
 
+    @media (max-width: $width_viewport_tablet) {
+      flex-basis: 47%;
+      padding: 0 0 42px;
+    }
+
     @media (max-width: $width_viewport_mobile) {
-      flex-basis: 45%;
-      padding: 0 0 30px;
+      padding: 0 0 31px;
     }
   }
 
@@ -89,9 +97,14 @@
     flex-basis: 50%;
     padding: 0 0 40px 18px;
 
+    @media (max-width: $width_viewport_tablet) {
+      flex-basis: 47%;
+      margin: 0 0 0 auto;
+      padding: 0 0 42px;
+    }
+
     @media (max-width: $width_viewport_mobile) {
-      flex-basis: 45%;
-      padding: 0 0 30px;
+      padding: 0 0 33px;
     }
   }
 
@@ -176,6 +189,11 @@
     height: 16px;
 
     border: 1px solid $color_white;
+
+    @media (max-width: $width_viewport_mobile) {
+      top: 2px;
+      left: 1px;
+    }
   }
 
   &--checkbox:hover + .form__label--checkbox::before {
@@ -200,6 +218,11 @@
     border-bottom: 1px solid $color_white;
     border-left: 1px solid $color_white;
     transform: rotate(-45deg);
+
+    @media (max-width: $width_viewport_mobile) {
+      top: 6px;
+      left: 6px;
+    }
   }
 
   &--checkbox:hover:checked + .form__label--checkbox::after {
@@ -249,7 +272,7 @@
 
     @media (max-width: $width_viewport_mobile) {
       margin: 0;
-      padding: 0 0 0 38px;
+      padding: 1px 0 0 35px;
     }
   }
 }
@@ -263,6 +286,11 @@
   border: none;
 
   resize: none;
+
+  @media (max-width: $width_viewport_mobile) {
+    min-height: 104px;
+    padding: 11px 0 0 18px;
+  }
 
   &:hover {
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
@@ -297,5 +325,6 @@
 
   @media (max-width: $width_viewport_mobile) {
     flex-direction: column;
+    padding: 0;
   }
 }

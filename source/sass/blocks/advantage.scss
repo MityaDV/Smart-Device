@@ -51,8 +51,14 @@
   }
 
   @media (max-width: $width_viewport_mobile) {
-    margin: 0 0 30px;
-    padding: 25px 18px 40px 27px;
+    margin: 0 0 19px;
+    padding: 25px 18px 32px 27px;
+  }
+
+  &--padding {
+    @media (max-width: $width_viewport_mobile) {
+      padding: 25px 13px 32px 27px;
+    }
   }
 
   &:hover {
@@ -108,7 +114,7 @@
   }
 
   @media (max-width: $width_viewport_mobile) {
-    padding: 15px 0 22px;
+    padding: 7px 0 10px;
 
     font-size: $font_size_h3_mobile;
     line-height: $line_height_h2_mobile;

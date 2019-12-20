@@ -13,7 +13,7 @@
   }
 
   @media (max-width: $width_viewport_mobile) {
-    padding: 46px 0 30px;
+    padding: 46px 0 0;
   }
 }
 
@@ -91,7 +91,7 @@
   @media (max-width: $width_viewport_mobile) {
     flex-direction: column;
     flex-wrap: nowrap;
-    margin: 0 0 54px;
+    margin: 0 0 49px;
   }
 }
 
@@ -106,7 +106,7 @@
   }
 
   @media (max-width: $width_viewport_mobile) {
-    margin: 0 0 30px;
+    margin: 0 30px 26px 0;
   }
 }
 
@@ -191,7 +191,7 @@
   }
 
   @media (max-width: $width_viewport_mobile) {
-    padding: 0 0 30px;
+    padding: 0 0 22px;
   }
 
   &--title {
@@ -225,7 +225,8 @@
     }
 
     @media (max-width: $width_viewport_mobile) {
-      padding: 0 0 35px;
+      margin: 0;
+      padding: 0 0 33px;
     }
   }
 
@@ -241,6 +242,10 @@
 
   &--circs {
     margin: 0 auto 0 0;
+
+    @media (max-width: $width_viewport_mobile) {
+      margin: 0;
+    }
   }
 }
 
@@ -274,7 +279,7 @@
 
   &--contact {
     @media (max-width: $width_viewport_mobile) {
-      padding: 0 0 30px;
+      padding: 5px 0 30px;
     }
   }
 }
@@ -287,6 +292,10 @@
 
     @media (max-width: $width_viewport_tablet) {
       margin: 0 0 0 16px;
+    }
+
+    @media (max-width: $width_viewport_tablet) {
+      margin: 0 8px 0;
     }
 
     &:hover {
@@ -476,7 +485,7 @@
   @media (max-width: $width_viewport_mobile) {
     flex-direction: column;
     align-items: center;
-    padding: 33px 0 0;
+    padding: 29px 0 0;
   }
 }
 
@@ -517,6 +526,12 @@
 
   @media (max-width: $width_viewport_tablet) {
     letter-spacing: normal;
+  }
+
+  @media (max-width: $width_viewport_mobile) {
+    padding: 4px 0 0;
+
+    letter-spacing: 0.02em;
   }
 
 

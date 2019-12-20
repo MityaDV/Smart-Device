@@ -12,6 +12,7 @@
 
   @media (max-width: $width_viewport_mobile) {
     margin: 0 0 65px;
+    padding: 40px 0 0;
   }
 }
 
@@ -72,6 +73,10 @@
   @media (max-width: $width_viewport_tablet) {
     padding: 0 0 26px;
   }
+
+  @media (max-width: $width_viewport_mobile) {
+    padding: 0 0 22px;
+  }
 }
 
 .about__text {
@@ -84,6 +89,10 @@
 
   @media (max-width: $width_viewport_tablet) {
     padding: 0 6px 30px 0;
+  }
+
+  @media (max-width: $width_viewport_mobile) {
+    padding: 0 0 46px;
   }
 
   &--second {
@@ -99,6 +108,18 @@
       text-overflow: ellipsis;
 
       -webkit-line-clamp: 4;
+    }
+
+    @media (max-width: $width_viewport_mobile) {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      min-height: 168px;
+      padding: 0;
+      overflow: hidden;
+
+      text-overflow: ellipsis;
+
+      -webkit-line-clamp: 8;
     }
   }
 }

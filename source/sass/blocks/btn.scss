@@ -83,7 +83,7 @@
       display: block;
       width: 287px;
       min-height: 55px;
-      margin: 0;
+      margin: 0 0 0 3px;
       padding: 17px 0 14px;
 
       font-size: $font_size_p_desktop;
@@ -109,6 +109,10 @@
     @media (max-width: $width_viewport_tablet) {
       margin: 47px 0 0 3px;
       padding: 13px 0;
+    }
+
+    @media (max-width: $width_viewport_mobile) {
+      margin: 36px 0 0 2px;
     }
 
     &:hover {

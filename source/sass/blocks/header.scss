@@ -45,7 +45,7 @@
     background-color: $color_blue_tangaroa;
     background-image: url("../img/circuit-mobile@1x.png"), url("../img/bg-header-mobile@1x.png"), url("../img/bg-header-delta@1x.png");
     background-repeat: no-repeat;
-    background-position: top 23% right, center, right 45% top -134px;
+    background-position: top 21% right, center, right 45% top -134px;
     background-size: auto, cover, 450%;
   }
 
@@ -53,8 +53,8 @@
     background-color: $color_blue_tangaroa;
     background-image: url("../img/circuit-mobile@2x.png"), url("../img/bg-header-mobile@2x.png"), url("../img/bg-header-delta@2x.png");
     background-repeat: no-repeat;
-    background-position: top 23% center, center, right 45% top -134px;
-    background-size: contain, cover, 450%;
+    background-position: top 22% right, center, right 45% top -134px;
+    background-size: 92%, cover, 450%;
   }
 }
 
@@ -169,6 +169,7 @@
 
   @media (max-width: $width_viewport_mobile) {
     max-width: 250px;
+    margin: 0 0 28px;
 
     font-size: $font_size_p_mobile_xxl;
     line-height: $line_height_p_mobile_xxxs;
@@ -197,8 +198,8 @@
   }
 
   @media (max-width: $width_viewport_mobile) {
-    max-width: 350px;
-    padding: 0 0 37px 50px;
+    max-width: 100%;
+    padding: 0 0 43px 50px;
 
     font-size: $font_size_p_mobile;
     line-height: $line_height_p_mobile_xl;
@@ -242,6 +243,6 @@
 
   @media (max-width: $width_viewport_mobile) {
     margin: 0;
-    padding: 200px 0 70px;
+    padding: 230px 0 70px;
   }
 }
