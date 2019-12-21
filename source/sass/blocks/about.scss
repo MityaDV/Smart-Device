@@ -21,7 +21,7 @@
 }
 
 .about__container {
-  width: $width_desktop_s;
+  max-width: $width_desktop_s;
   margin: 0 auto;
 
   @media (max-width: $width_viewport_tablet) {

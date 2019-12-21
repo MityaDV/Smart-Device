@@ -29,12 +29,13 @@
     <include src="build/img/sprite_auto.svg"></include>
   </div>
 
+  <!-- Хедер -->
+
   <header class="header">
     <div class="header__inner">
       <div class="header__row">
         <a href="#" class="header__logo-link" aria-label="Логотип компании Smart Device">
-          <img class="header__logo-image" src="img/logo.svg" alt="Логотип компании Smart Device" width="52"
-            height="52">
+          <img class="header__logo-image" src="img/logo.svg" alt="Логотип компании Smart Device" width="52" height="52">
           <p class="header__logo-text">Smart Device</p>
           <p class="header__logo-slogan">умные технологии</p>
         </a>
@@ -44,7 +45,8 @@
               <a href="mailto:info@sd.ru" class="header__navigation-link header__navigation-link--email">info@sd.ru</a>
             </li>
             <li class="header__navigation-item">
-              <a href="tel:+7(495)000-52-52" class="header__navigation-link header__navigation-link--phone">+7 (495) 000 52 52</a>
+              <a href="tel:+7(495)000-52-52" class="header__navigation-link header__navigation-link--phone">+7 (495) 000
+                52 52</a>
             </li>
           </ul>
           <button class="header__navigation-button btn btn--call" type="button">Заказать звонок
@@ -54,20 +56,40 @@
     </div>
   </header>
 
-  <div class="promo">
-    <div class="promo__inner">
-      <div class="promo__content">
-        <p class="promo__text-product">Печатные платы</p>
-        <p class="promo__text-services">производство и монтаж, поставка комплектующих, блоков и модулей</p>
-        <a class="promo__button btn btn--consultation" href="#">Получить бесплатную консультацию</a>
-        <a class="promo__button btn btn--consultation-small" href="#">Бесплатная консультация</a>
-      </div>
-      <div class="promo__image"></div>
-    </div>
-  </div>
-
   <main>
     <h1 class="visually-hidden">Smart Device - производство, поставка, монтаж электронных комплектующих.</h1>
+
+    <!-- Блок Промо -->
+
+    <section class="promo">
+      <div class="promo__inner">
+        <div class="promo__container">
+          <div class="promo__content">
+            <h2 class="visually-hidden">Промо акция компании Service Device</h2>
+            <p class="promo__text-product">Печатные платы</p>
+            <p class="promo__text-services">производство и монтаж, поставка комплектующих, блоков и модулей</p>
+            <a class="promo__button btn btn--consultation" href="#">Получить бесплатную консультацию</a>
+            <a class="promo__button btn btn--consultation-small" href="#">Бесплатная консультация</a>
+          </div>
+          <div class="promo__image">
+            <picture>
+              <!-- 1x: 705px; 2x: 1410px -->
+              <source media="(min-width: 1024px)" srcset="img/circuit-desktop@1x.png 1x, img/circuit-desktop@2x.png 2x">
+              <!-- 1x: 465px; 2x: 340px -->
+              <source media="(max-width: 1023px)" srcset="img/circuit-tablet@1x.png 1x, img/circuit-tablet@2x.png 2x">
+              <!-- 1x: 301px; 2x: 220px -->
+              <source media="(max-width: 767px)" srcset="img/circuit-mobile@1x.png 1x, img/circuit-mobile@2x.png 2x">
+              <!-- 1x: 705px; 2x: 1410px -->
+              <img src="img/circuit-desktop@1x.png" srcset="img/circuit-desktop@2x.png"
+                alt="Фото образца электронной платы" width="705" height="515">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Блок преимущества -->
+
     <section class="advantage">
       <div class="advantage__inner">
         <div class="advantage__container">
@@ -116,6 +138,8 @@
       </div>
     </section>
 
+    <!-- Блок О нас -->
+
     <section class="about">
       <div class="about__inner">
         <div class="about__container">
@@ -135,6 +159,8 @@
         </div>
       </div>
     </section>
+
+    <!-- Блок Предложения -->
 
     <section class="product">
       <div class="product__inner">
@@ -184,6 +210,8 @@
       </div>
     </section>
 
+    <!-- Блок Контакты -->
+
     <section class="contact">
       <h2 class="visually-hidden">Написать нам</h2>
       <div class="contact__inner">
@@ -219,6 +247,8 @@
       </div>
     </section>
   </main>
+
+  <!-- Футер -->
 
   <footer class="footer">
     <div class="footer__inner">
@@ -306,6 +336,9 @@
     </div>
   </footer>
 
+
+  <!-- Блок Popup -->
+
   <section class="modal modal-js">
     <div class="modal__inner">
       <h2 class="modal__title">Закажите звонок</h2>
@@ -342,6 +375,7 @@
       </button>
     </div>
   </section>
+
   <div class="overlay"></div>
   <script src="js/script.js"></script>
 </body>

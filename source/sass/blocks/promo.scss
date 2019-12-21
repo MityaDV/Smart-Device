@@ -1,19 +1,14 @@
 @import "../base/mixins.scss";
 @import "../base/vars.scss";
 
-.promo__inner {
-  @include inner;
-}
-
-.promo__content {
-  position: relative;
-
-  display: flex;
-  flex-basis: 100%;
-  flex-direction: column;
-  flex-wrap: wrap;
+.promo {
   padding: 228px 0 275px;
-  overflow: initial;
+
+  background-color: $color_blue_tangaroa;
+  background-image: url("../img/bg-header-desktop@1x.png"), url("../img/bg-header-delta@1x.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center;
+  background-size: cover, cover;
 
   @media (max-width: $width_viewport_tablet) {
     margin: 0 0 0 63px;
@@ -24,13 +19,81 @@
     margin: 0;
     padding: 230px 0 70px;
   }
+
+  @media (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+    background-color: $color_blue_tangaroa;
+    background-image: url("../img/bg-header-desktop@2x.png"), url("../img/bg-header-delta@2x.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: cover, cover;
+  }
+
+  @media (max-width: $width_viewport_tablet) {
+    background-color: $color_blue_tangaroa;
+    background-image: url("../img/bg-header-tablet@1x.png"), url("../img/bg-header-delta@1x.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: cover, cover;
+  }
+
+  @media (max-width: $width_viewport_tablet) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+    background-color: $color_blue_tangaroa;
+    background-image: url("../img/bg-header-tablet@2x.png"), url("../img/bg-header-delta@2x.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: cover, cover;
+  }
+
+  @media (max-width: $width_viewport_mobile) {
+    background-color: $color_blue_tangaroa;
+    background-image: url("../img/bg-header-mobile@1x.png"), url("../img/bg-header-delta@1x.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: cover, cover;
+  }
+
+  @media (max-width: $width_viewport_mobile) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+    background-color: $color_blue_tangaroa;
+    background-image: url("../img/bg-header-mobile@2x.png"), url("../img/bg-header-delta@2x.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: cover, cover;
+  }
+}
+
+.promo__inner {
+  @include inner;
+}
+
+.promo__container {
+  display: flex;
+  justify-content: space-between;
+  max-width: $width_desktop_s;
+  margin: 0 auto;
+
+  @media (max-width: $width_viewport_tablet) {
+    width: inherit;
+    margin: inherit;
+  }
+}
+
+.promo__content {
+  flex-basis: auto;
+  width: 50%;
+
+  @media (max-width: $width_viewport_tablet) {
+    width: auto;
+  }
+
+  @media (max-width: $width_viewport_mobile) {
+    margin: 0;
+  }
 }
 
 .promo__text-product {
   @include indent_p;
 
-  max-width: 50%;
-  margin: 0 0 31px;
+  margin: 0;
 
   font-weight: $font_weight_bold;
   font-size: $font_size_p_desktop_xxl;
@@ -61,7 +124,6 @@
 
   position: relative;
 
-  max-width: 50%;
   margin: 0;
   padding: 0 0 44px 98px;
 
@@ -105,4 +167,3 @@
     }
   }
 }
-

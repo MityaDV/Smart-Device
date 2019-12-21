@@ -2,7 +2,11 @@
 @import "../base/vars.scss";
 
 .header {
-  margin: 0 0 50px;
+  position: absolute;
+  right: 0;
+  left: 0;
+
+  margin: 0 auto;
   padding: 33px 0 0;
 }
 
@@ -220,4 +224,3 @@
 .header__navigation-button {
   cursor: pointer;
 }
-
