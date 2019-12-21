@@ -68,18 +68,12 @@
 .promo__container {
   display: flex;
   justify-content: space-between;
-  max-width: $width_desktop_s;
-  margin: 0 auto;
-
-  @media (max-width: $width_viewport_tablet) {
-    width: inherit;
-    margin: inherit;
-  }
 }
 
 .promo__content {
   flex-basis: auto;
   width: 50%;
+  padding: 85px 0 0;
 
   @media (max-width: $width_viewport_tablet) {
     width: auto;
@@ -94,6 +88,7 @@
   @include indent_p;
 
   margin: 0;
+  padding: 0 0 30px;
 
   font-weight: $font_weight_bold;
   font-size: $font_size_p_desktop_xxl;
@@ -166,4 +161,17 @@
       height: 2px;
     }
   }
+}
+
+.promo__image {
+  position: relative;
+
+  flex-basis: auto;
+  width: 50%;
+}
+
+.promo__image img {
+  position: absolute;
+  top: 31px;
+  right: -80px;
 }
