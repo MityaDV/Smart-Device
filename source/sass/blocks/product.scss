@@ -16,7 +16,7 @@
 }
 
 .product__inner {
-  @include inner_thin;
+  @include inner;
 
   display: flex;
   flex-wrap: wrap;
@@ -24,6 +24,16 @@
 
   @media (max-width: $width_viewport_tablet) {
     flex-direction: column;
+  }
+}
+
+.product__container {
+  width: $width_desktop_s;
+  margin: 0 auto;
+
+  @media (max-width: $width_viewport_tablet) {
+    width: inherit;
+    margin: inherit;
   }
 }
 
@@ -65,7 +75,7 @@
   flex-shrink: 0;
   flex-basis: auto;
   max-width: 31%;
-  margin: 0 0 30px 28px;
+  margin: 0 0 3% 3%;
 
   @media (max-width: $width_viewport_tablet) {
     flex-grow: 0;

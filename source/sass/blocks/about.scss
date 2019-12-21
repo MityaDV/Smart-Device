@@ -17,7 +17,17 @@
 }
 
 .about__inner {
-  @include inner_thin;
+  @include inner;
+}
+
+.about__container {
+  width: $width_desktop_s;
+  margin: 0 auto;
+
+  @media (max-width: $width_viewport_tablet) {
+    width: inherit;
+    margin: inherit;
+  }
 }
 
 .about__wrapper {

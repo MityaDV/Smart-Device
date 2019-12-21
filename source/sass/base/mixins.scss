@@ -1,4 +1,4 @@
-@mixin inner_wide() {
+@mixin inner() {
   @include screen_steps;
 
   max-width: $width_desktop;
@@ -10,33 +10,12 @@
 }
 
 @mixin screen_steps () {
-  @media (max-width: $width_viewport_desktop) {
-    padding: $padding_desktop_thin;
+  @media (max-width: $width_viewport_desktop) and (min-width: $width_viewport_desktop_l) {
+    padding: 0;
   }
 
-  @media (max-width: $width_viewport_tablet) {
-    padding: $padding_tablet;
-  }
-
-  @media (max-width: $width_viewport_mobile) {
-    padding: $padding_mobile;
-  }
-}
-
-@mixin inner_thin() {
-  @include screen_steps_thin;
-
-  max-width: $width_desktop;
-  margin: 0 auto;
-
-  @media (max-width: $width_viewport_tablet) {
-    width: $width_tablet;
-  }
-}
-
-@mixin screen_steps_thin () {
-  @media (max-width: $width_viewport_desktop) {
-    padding: $padding_desktop_wide;
+  @media (max-width: $width_viewport_desktop_s) {
+    padding: $padding_desktop;
   }
 
   @media (max-width: $width_viewport_tablet) {
