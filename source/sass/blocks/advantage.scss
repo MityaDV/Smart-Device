@@ -2,7 +2,7 @@
 @import "../base/vars.scss";
 
 .advantage {
-  padding: 29px 0 30px;
+  padding: 29px 0 42px;
 
   @media (max-width: $width_viewport_tablet) {
     padding: 29px 0 0;
@@ -50,7 +50,7 @@
     flex-shrink: 1;
     flex-basis: 45%;
     max-width: 45%;
-    margin: 0 0 3% 3%;
+    margin: 0 0 30px 31px;
     padding: 24px 16px 35px 28px;
   }
 
@@ -104,7 +104,7 @@
   @include heading_h3;
 
   margin: 0;
-  padding: 15px 0 17px;
+  padding: 9px 0 17px;
 
   font-weight: $font_weight_normal;
   font-size: $font_size_h3_desktop_l;
