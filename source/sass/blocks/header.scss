@@ -8,6 +8,10 @@
 
   margin: 0 auto;
   padding: 33px 0 0;
+
+  @media (max-width: $width_viewport_tablet) {
+    padding: 21px 0 0;
+  }
 }
 
 .header__inner {

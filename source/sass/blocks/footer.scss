@@ -267,6 +267,7 @@
     height: 100px;
 
     @media (max-width: $width_viewport_tablet) {
+      height: auto;
       max-height: none;
     }
 
@@ -289,10 +290,10 @@
     margin: 0 16px 0 0;
 
     @media (max-width: $width_viewport_tablet) {
-      margin: 0 0 0 16px;
+      margin: 0 0 0 15px;
     }
 
-    @media (max-width: $width_viewport_tablet) {
+    @media (max-width: $width_viewport_mobile) {
       margin: 0 8px 0;
     }
 
