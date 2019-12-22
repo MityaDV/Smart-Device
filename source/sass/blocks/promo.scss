@@ -15,8 +15,7 @@
   }
 
   @media (max-width: $width_viewport_mobile) {
-    margin: 0;
-    padding: 230px 0 70px;
+    padding: 93px 0 70px;
   }
 
   @media (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
@@ -47,7 +46,7 @@
     background-color: $color_blue_tangaroa;
     background-image: url("../img/bg-header-mobile@1x.png"), url("../img/bg-header-delta@1x.png");
     background-repeat: no-repeat, no-repeat;
-    background-position: center, center;
+    background-position: center, right -488px bottom 130px;
     background-size: cover, cover;
   }
 
@@ -55,7 +54,7 @@
     background-color: $color_blue_tangaroa;
     background-image: url("../img/bg-header-mobile@2x.png"), url("../img/bg-header-delta@2x.png");
     background-repeat: no-repeat, no-repeat;
-    background-position: center, center;
+    background-position: center, right -488px bottom 130px;
     background-size: cover, cover;
   }
 }
@@ -67,6 +66,10 @@
 .promo__container {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: $width_viewport_mobile) {
+    flex-direction: column;
+  }
 }
 
 .promo__content {
@@ -80,7 +83,7 @@
   }
 
   @media (max-width: $width_viewport_mobile) {
-    margin: 0;
+    padding: 73px 0 0;
   }
 }
 
@@ -106,8 +109,7 @@
   }
 
   @media (max-width: $width_viewport_mobile) {
-    max-width: 250px;
-    margin: 0 0 28px;
+    padding: 0 0 29px;
 
     font-size: $font_size_p_mobile_xxl;
     line-height: $line_height_p_mobile_xxxs;
@@ -134,8 +136,7 @@
   }
 
   @media (max-width: $width_viewport_mobile) {
-    max-width: 100%;
-    padding: 0 0 43px 50px;
+    padding: 0 0 41px 50px;
 
     font-size: $font_size_p_mobile;
     line-height: $line_height_p_mobile_xl;
@@ -173,6 +174,12 @@
     width: 60%;
     margin: 0 -25px 0 0;
   }
+
+  @media (max-width: $width_viewport_mobile) {
+    order: -1;
+    width: auto;
+    margin: 0 0 120px;
+  }
 }
 
 .promo__image img {
@@ -185,5 +192,11 @@
 
     width: 465px;
     height: auto;
+  }
+
+  @media (max-width: $width_viewport_mobile) {
+    position: absolute;
+    top: 0;
+    left: 15px;
   }
 }

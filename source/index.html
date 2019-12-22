@@ -73,12 +73,13 @@
           </div>
           <div class="promo__image">
             <picture>
-              <!-- 1x: 705px; 2x: 1410px -->
-              <source media="(min-width: 1024px)" srcset="img/circuit-desktop@1x.png 1x, img/circuit-desktop@2x.png 2x">
+              <!-- 1x: 301px; 2x: 220px -->
+              <source media="(max-width: 767px)"
+                srcset="img/circuit-mobile@1x.png 1x, img/circuit-mobile@2x.png 2x">
               <!-- 1x: 465px; 2x: 930px -->
               <source media="(max-width: 1023px)" srcset="img/circuit-tablet@1x.png 1x, img/circuit-tablet@2x.png 2x">
-              <!-- 1x: 301px; 2x: 220px -->
-              <source media="(max-width: 767px)" srcset="img/circuit-mobile@1x.png 1x, img/circuit-mobile@2x.png 2x">
+              <!-- 1x: 705px; 2x: 1410px -->
+              <source media="(min-width: 1024px)" srcset="img/circuit-desktop@1x.png 1x, img/circuit-desktop@2x.png 2x">
               <!-- 1x: 705px; 2x: 1410px -->
               <img src="img/circuit-desktop@1x.png" srcset="img/circuit-desktop@2x.png"
                 alt="Фото образца электронной платы" width="705" height="515">
