@@ -35,10 +35,6 @@
   max-height: 52px;
   margin: 0 0 0 5px;
 
-  &:focus {
-    outline: none;
-  }
-
   @media (max-width: $width_viewport_tablet) {
     margin: 0;
   }
@@ -46,65 +42,61 @@
   @media (max-width: $width_viewport_mobile) {
     width: 38px;
   }
-}
 
-.header__logo-link:focus > .header__logo-text {
-  color: $color_blue_sky;
-}
+  & p {
+    @include indent_p;
 
-.header__logo-link:focus > .header__logo-slogan {
-  color: $color_blue_sky;
-}
+    margin: 0;
+    padding: 5px 0 0 16px;
 
-.header__logo-text {
-  @include indent_p;
+    font-weight: $font_weight_bold;
+    font-size: $font_size_p_desktop_xl;
+    line-height: $line_height_p_desktop_l;
+    font-family: $font_family_second_base;
+    color: $color_white;
 
-  margin: 0;
-  padding: 5px 0 0 16px;
+    @media (max-width: $width_viewport_tablet) {
+      font-size: $font_size_p_tablet_xl;
+      line-height: $line_height_p_tablet_xxs;
+    }
 
-  font-weight: $font_weight_bold;
-  font-size: $font_size_p_desktop_xl;
-  line-height: $line_height_p_desktop_l;
-  font-family: $font_family_second_base;
-  color: $color_white;
+    @media (max-width: $width_viewport_mobile) {
+      display: none;
+    }
+  }
 
-  &:hover {
+  & p + p {
+    @include indent_p;
+
+    margin: 0;
+    padding: 0 0 0 16px;
+
+    font-weight: $font_weight_medium;
+    font-size: $font_size_p_desktop_s;
+    line-height: $line_height_p_desktop_l;
+    font-family: $font_family_third_base;
+    color: $color_gray_light;
+
+    @media (max-width: $width_viewport_tablet) {
+      font-size: $font_size_p_tablet_s;
+      line-height: $line_height_p_tablet_xxs;
+    }
+
+    @media (max-width: $width_viewport_mobile) {
+      display: none;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover p {
     color: $color_blue_sky;
   }
 
-  @media (max-width: $width_viewport_tablet) {
-    font-size: $font_size_p_tablet_xl;
-    line-height: $line_height_p_tablet_xxs;
-  }
-
-  @media (max-width: $width_viewport_mobile) {
-    display: none;
-  }
-}
-
-.header__logo-slogan {
-  @include indent_p;
-
-  margin: 0;
-  padding: 0 0 0 16px;
-
-  font-weight: $font_weight_medium;
-  font-size: $font_size_p_desktop_s;
-  line-height: $line_height_p_desktop_l;
-  font-family: $font_family_third_base;
-  color: $color_gray_light;
-
-  &:hover {
+  &:focus p {
     color: $color_blue_sky;
-  }
-
-  @media (max-width: $width_viewport_tablet) {
-    font-size: $font_size_p_tablet_s;
-    line-height: $line_height_p_tablet_xxs;
-  }
-
-  @media (max-width: $width_viewport_mobile) {
-    display: none;
   }
 }
 

@@ -99,72 +99,64 @@
   flex-wrap: wrap;
   max-height: 52px;
 
+  @media (max-width: $width_viewport_mobile) {
+    margin: 0 30px 26px 0;
+  }
+  //
+  & p {
+    @include indent_p;
+
+    margin: 0;
+    padding: 5px 0 0 5px;
+
+    font-weight: $font_weight_bold;
+    font-size: $font_size_p_desktop_xl;
+    line-height: $line_height_p_desktop_l;
+    font-family: $font_family_second_base;
+    color: $color_blue_nordic;
+
+    @media (max-width: $width_viewport_tablet) {
+      padding: 5px 0 2px 16px;
+
+      font-size: $font_size_p_tablet_xl;
+      line-height: $line_height_p_tablet_xxs;
+    }
+
+    @media (max-width: $width_viewport_mobile) {
+      margin: 0 37px 0 0;
+    }
+  }
+
+  & p + p {
+    @include indent_p;
+
+    margin: 0;
+    padding: 2px 0 0 5px;
+
+    font-weight: $font_weight_medium;
+    font-size: $font_size_p_desktop_s;
+    line-height: $line_height_p_desktop_l;
+    font-family: $font_family_third_base;
+    color: $color_gray_light;
+
+    @media (max-width: $width_viewport_tablet) {
+      padding: 0 0 0 16px;
+
+      font-size: $font_size_p_tablet_s;
+      line-height: $line_height_p_tablet_xxs;
+    }
+  }
+
   &:focus {
     outline: none;
   }
 
-  @media (max-width: $width_viewport_mobile) {
-    margin: 0 30px 26px 0;
-  }
-}
-
-.footer__logo-link:focus > .footer__logo-text {
-  color: $color_blue_sky;
-}
-
-.footer__logo-link:focus > .footer__logo-slogan {
-  color: $color_blue_sky;
-}
-
-.footer__logo-text {
-  @include indent_p;
-
-  margin: 0;
-  padding: 5px 0 0 5px;
-
-  font-weight: $font_weight_bold;
-  font-size: $font_size_p_desktop_xl;
-  line-height: $line_height_p_desktop_l;
-  font-family: $font_family_second_base;
-  color: $color_blue_nordic;
-
-  &:hover {
+  &:hover p {
     color: $color_blue_sky;
   }
 
-  @media (max-width: $width_viewport_tablet) {
-    padding: 5px 0 2px 16px;
-
-    font-size: $font_size_p_tablet_xl;
-    line-height: $line_height_p_tablet_xxs;
-  }
-
-  @media (max-width: $width_viewport_mobile) {
-    margin: 0 37px 0 0;
-  }
-}
-
-.footer__logo-slogan {
-  @include indent_p;
-
-  margin: 0;
-  padding: 2px 0 0 5px;
-
-  font-weight: $font_weight_medium;
-  font-size: $font_size_p_desktop_s;
-  line-height: $line_height_p_desktop_l;
-  font-family: $font_family_third_base;
-  color: $color_gray_light;
-
-  &:hover {
+  &:focus p {
     color: $color_blue_sky;
-  }
-
-  @media (max-width: $width_viewport_tablet) {
-    padding: 0 0 0 16px;
-
-    font-size: $font_size_p_tablet_s;
-    line-height: $line_height_p_tablet_xxs;
   }
 }
 
@@ -532,7 +524,6 @@
 
     letter-spacing: 0.02em;
   }
-
 
   &:hover {
     color: $color_blue_sky;
