@@ -96,7 +96,7 @@
     font-size: $font_size_p_desktop_xxl;
     line-height: $line_height_p_desktop_xl;
     font-family: $font_family_second_base;
-    color: $color_white;
+    color: blue;
     letter-spacing: 0.07em;
 
     @media (max-width: $width_viewport_tablet) {
@@ -200,4 +200,3 @@
     }
   }
 }
-
