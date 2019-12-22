@@ -28,8 +28,11 @@
 }
 
 .product__container {
+  width: 1170px;
   max-width: $width_desktop_s;
   margin: 0 auto;
+  margin-right: 0;
+  margin-left: 0;
 
   @media (max-width: $width_viewport_tablet) {
     width: inherit;
