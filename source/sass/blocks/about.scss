@@ -30,7 +30,7 @@
   }
 }
 
-.about__wrapper {
+.about__content {
   position: relative;
 
   padding: 0 0 0 182px;
@@ -49,63 +49,42 @@
     }
   }
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 6px;
-    left: 2px;
+  & h2 {
+    @include heading_h2;
 
-    width: 178px;
-    height: 317px;
+    margin: 0;
+    padding: 0 0 30px;
 
-    background: transparent url("../img/number-desktop@1x.png") no-repeat center;
-    background-size: cover;
+    font-weight: $font_weight_normal;
+    font-family: $font_family_second_base;
 
     @media (max-width: $width_viewport_tablet) {
-      top: 0;
-      left: 2px;
+      padding: 0 0 26px;
+    }
 
-      width: 177px;
-      height: 360px;
+    @media (max-width: $width_viewport_mobile) {
+      padding: 0 0 22px;
     }
   }
-}
 
-.about__title {
-  @include heading_h2;
+  & p {
+    @include indent_p;
 
-  margin: 0;
-  padding: 0 0 30px;
+    margin: 0;
+    padding: 0 6px 21px 0;
 
-  font-weight: $font_weight_normal;
-  font-family: $font_family_second_base;
+    line-height: $line_height_p_tablet_l;
 
-  @media (max-width: $width_viewport_tablet) {
-    padding: 0 0 26px;
+    @media (max-width: $width_viewport_tablet) {
+      padding: 0 6px 30px 0;
+    }
+
+    @media (max-width: $width_viewport_mobile) {
+      padding: 0 0 46px;
+    }
   }
 
-  @media (max-width: $width_viewport_mobile) {
-    padding: 0 0 22px;
-  }
-}
-
-.about__text {
-  @include indent_p;
-
-  margin: 0;
-  padding: 0 6px 21px 0;
-
-  line-height: $line_height_p_tablet_l;
-
-  @media (max-width: $width_viewport_tablet) {
-    padding: 0 6px 30px 0;
-  }
-
-  @media (max-width: $width_viewport_mobile) {
-    padding: 0 0 46px;
-  }
-
-  &--second {
+  & p + p {
     padding: 0 0 31px;
 
     @media (max-width: $width_viewport_tablet) {
@@ -130,6 +109,27 @@
       text-overflow: ellipsis;
 
       -webkit-line-clamp: 8;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 2px;
+
+    width: 178px;
+    height: 317px;
+
+    background: transparent url("../img/number-desktop@1x.png") no-repeat center;
+    background-size: cover;
+
+    @media (max-width: $width_viewport_tablet) {
+      top: 0;
+      left: 2px;
+
+      width: 177px;
+      height: 360px;
     }
   }
 }

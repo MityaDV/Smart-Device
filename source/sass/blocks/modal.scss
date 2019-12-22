@@ -92,10 +92,33 @@
   will-change: transform;
 }
 
-.modal__inner {
+.modal__content {
   position: relative;
 
   padding: 40px;
+
+  & h2 {
+    @include heading_h2;
+
+    margin: 0;
+    padding: 0 0 30px;
+
+    font-weight: $font_weight_normal;
+    font-size: $font_size_h2_mobile;
+    line-height: $line_height_p_tablet;
+    font-family: $font_family_second_base;
+    color: $color_white;
+  }
+
+  & p {
+    @include indent_p;
+
+    margin: 0;
+    padding: 0 0 40px;
+
+    line-height: $line_height_p_desktop_xxl;
+    color: $color_white;
+  }
 }
 
 .modal__form {
@@ -146,29 +169,6 @@
 
     opacity: 0.7;
   }
-}
-
-.modal__title {
-  @include heading_h2;
-
-  margin: 0;
-  padding: 0 0 30px;
-
-  font-weight: $font_weight_normal;
-  font-size: $font_size_h2_mobile;
-  line-height: $line_height_p_tablet;
-  font-family: $font_family_second_base;
-  color: $color_white;
-}
-
-.modal__text {
-  @include indent_p;
-
-  margin: 0;
-  padding: 0 0 40px;
-
-  line-height: $line_height_p_desktop_xxl;
-  color: $color_white;
 }
 
 .modal__list {
