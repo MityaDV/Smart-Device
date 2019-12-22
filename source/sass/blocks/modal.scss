@@ -98,6 +98,56 @@
   padding: 40px;
 }
 
+.modal__form {
+  & input[type="checkbox"] + .modal__label--checkbox::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+
+    border: 1px solid $color_white;
+  }
+
+  & input[type="checkbox"]:hover + .modal__label--checkbox::before {
+    border-color: $color_blue_nordic;
+    opacity: 0.5;
+  }
+
+  & input[type="checkbox"]:focus + .modal__label--checkbox::before {
+    opacity: 0.6;
+  }
+
+  & input[type="checkbox"]:checked + .modal__label--checkbox::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 4px;
+
+    display: inline-block;
+    width: 7px;
+    height: 4px;
+
+    border-bottom: 1px solid $color_white;
+    border-left: 1px solid $color_white;
+    transform: rotate(-45deg);
+  }
+
+  & input[type="checkbox"]:hover:checked + .modal__label--checkbox::after {
+    border-color: $color_blue_nordic;
+    opacity: 0.5;
+  }
+
+  & input[type="checkbox"]:focus + .form__label--checkbox {
+    color: $color_blue_nordic;
+
+    opacity: 0.7;
+  }
+}
+
 .modal__title {
   @include heading_h2;
 
@@ -178,54 +228,6 @@
 
     &--userphone {
       width: 100%;
-    }
-
-    & + .modal__label--checkbox::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-
-      border: 1px solid $color_white;
-    }
-
-    &:hover + .modal__label--checkbox::before {
-      border-color: $color_blue_nordic;
-      opacity: 0.5;
-    }
-
-    &:focus + .modal__label--checkbox::before {
-      opacity: 0.6;
-    }
-
-    &:checked + .modal__label--checkbox::after {
-      content: "";
-      position: absolute;
-      top: 5px;
-      left: 4px;
-
-      display: inline-block;
-      width: 7px;
-      height: 4px;
-
-      border-bottom: 1px solid $color_white;
-      border-left: 1px solid $color_white;
-      transform: rotate(-45deg);
-    }
-
-    &:hover:checked + .modal__label--checkbox::after {
-      border-color: $color_blue_nordic;
-      opacity: 0.5;
-    }
-
-    &:focus + .form__label--checkbox {
-      color: $color_blue_nordic;
-
-      opacity: 0.7;
     }
   }
 }
