@@ -58,7 +58,11 @@
       background-color: $color_white;
     }
 
-    &:focus {
+    &:active {
+      opacity: 0.7;
+    }
+
+    &:hover:focus {
       color: $color_blue_sky;
 
       background-color: $color_white;
