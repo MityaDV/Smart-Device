@@ -121,10 +121,20 @@ var formValidation = function (evt) {
   }
 };
 
-// навешиваемся на нужные нам события
+// навешиваем события на элементы
 buttonOpenPopup.addEventListener('click', openPopup);
 buttonClosePopup.addEventListener('click', closePopup);
 modalForm.addEventListener('submit', formValidation);
 
-// код аккордиона footer
+// прокрутка к форме
 
+$(document).ready(function () {
+  $('#promo').on('click', 'a', function (event) {
+    event.preventDefault();
+    var id = $(this).attr('href'),
+      top = $(id).offset().top;
+    $('body,html').animate({
+      scrollTop: top
+    }, 1500);
+  });
+});

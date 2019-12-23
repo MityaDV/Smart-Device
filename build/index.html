@@ -16,6 +16,8 @@
   <link rel="preload" href="fonts/robotomedium.woff" as="font" type="font/woff">
   <link rel="preload" href="fonts/ptmonoregular.woff" as="font" type="font/woff">
   <link rel="stylesheet" href="css/style.min.css">
+  <script src="js/jquery-3.4.1.min.js"></script>
+
   <script>
     document.createElement("picture");
 
@@ -112,11 +114,11 @@
     <section class="promo">
       <div class="promo__inner">
         <div class="promo__container">
-          <div class="promo__content">
+          <div class="promo__content" id="promo">
             <h2 class="visually-hidden">Промо акция компании Service Device</h2>
             <p>Печатные платы</p>
             <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>
-            <a class="promo__button btn btn--consultation" href="#">Получить бесплатную консультацию</a>
+            <a class="promo__button btn btn--consultation" href="#contact">Получить бесплатную консультацию</a>
             <a class="promo__button btn btn--consultation-small" href="#">Бесплатная консультация</a>
           </div>
           <div class="promo__image">
@@ -130,6 +132,9 @@
               <!-- 1x: 705px; 2x: 1410px -->
               <img src="img/circuit-desktop@1x.png" srcset="img/circuit-desktop@2x.png" alt="Фото образца электронной платы" width="705" height="515">
             </picture>
+          </div>
+          <div class="promo__scroll">
+            <span class="promo__scroll-button">Скролл вниз</span>
           </div>
         </div>
       </div>
@@ -248,7 +253,7 @@
 
     <!-- Блок Контакты -->
 
-    <section class="contact">
+    <section class="contact" id="contact">
       <h2 class="visually-hidden">Написать нам</h2>
       <div class="contact__inner">
         <div class="contact__container">
@@ -404,7 +409,8 @@
   </section>
 
   <div class="overlay"></div>
-  <script src="js/script.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/vendor.js"></script>
 </body>
 
 </html>
