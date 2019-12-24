@@ -1,7 +1,6 @@
 'use strict';
 
 (function () {
-
   var btnScrollDown = document.querySelector('.promo__scroll-button');
 
   function scrollDown() {

@@ -81,33 +81,32 @@
 
   <!-- Хедер -->
 
-  <header class="header">
-    <div class="header__inner">
-      <div class="header__row">
-        <a href="#" class="header__logo-link" aria-label="Логотип компании Smart Device">
-          <img src="img/logo.svg" alt="Логотип компании Smart Device" width="52" height="52">
-          <p>Smart Device</p>
-          <p>умные технологии</p>
-        </a>
-        <nav class="header__navigation">
-          <ul class="header__navigation-list">
-            <li class="header__navigation-item header__navigation-item--email">
-              <a href="mailto:info@sd.ru" class="header__navigation-link header__navigation-link--email">info@sd.ru</a>
-            </li>
-            <li class="header__navigation-item">
-              <a href="tel:+7(495)000-52-52" class="header__navigation-link header__navigation-link--phone">+7 (495) 000
-                52 52</a>
-            </li>
-          </ul>
-          <button class="header__navigation-button btn btn--call" type="button">Заказать звонок
-          </button>
-        </nav>
+  <div class="background">
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__row">
+          <a href="#" class="header__logo-link" aria-label="Логотип компании Smart Device">
+            <img src="img/logo.svg" alt="Логотип компании Smart Device" width="52" height="52">
+            <p>Smart Device</p>
+            <p>умные технологии</p>
+          </a>
+          <nav class="header__navigation">
+            <ul class="header__navigation-list">
+              <li class="header__navigation-item header__navigation-item--email">
+                <a href="mailto:info@sd.ru" class="header__navigation-link header__navigation-link--email">info@sd.ru</a>
+              </li>
+              <li class="header__navigation-item">
+                <a href="tel:+7(495)000-52-52" class="header__navigation-link header__navigation-link--phone">+7 (495)
+                  000
+                  52 52</a>
+              </li>
+            </ul>
+            <button class="header__navigation-button btn btn--call" type="button">Заказать звонок
+            </button>
+          </nav>
+        </div>
       </div>
-    </div>
-  </header>
-
-  <main>
-    <h1 class="visually-hidden">Smart Device - производство, поставка, монтаж электронных комплектующих.</h1>
+    </header>
 
     <!-- Блок Промо -->
 
@@ -121,24 +120,16 @@
             <a class="promo__button btn btn--consultation" href="#contact">Получить бесплатную консультацию</a>
             <a class="promo__button btn btn--consultation-small" href="#contact">Бесплатная консультация</a>
           </div>
-          <div class="promo__image">
-            <picture>
-              <!-- 1x: 301px; 2x: 220px -->
-              <source media="(max-width: 767px)" srcset="img/circuit-mobile@1x.png 1x, img/circuit-mobile@2x.png 2x">
-              <!-- 1x: 465px; 2x: 930px -->
-              <source media="(max-width: 1023px)" srcset="img/circuit-tablet@1x.png 1x, img/circuit-tablet@2x.png 2x">
-              <!-- 1x: 705px; 2x: 1410px -->
-              <source media="(min-width: 1024px)" srcset="img/circuit-desktop@1x.png 1x, img/circuit-desktop@2x.png 2x">
-              <!-- 1x: 705px; 2x: 1410px -->
-              <img src="img/circuit-desktop@1x.png" srcset="img/circuit-desktop@2x.png" alt="Фото образца электронной платы" width="705" height="515">
-            </picture>
-          </div>
           <div class="promo__scroll">
             <span class="promo__scroll-button">Скролл вниз</span>
           </div>
         </div>
       </div>
     </section>
+  </div>
+
+  <main>
+    <h1 class="visually-hidden">Smart Device - производство, поставка, монтаж электронных комплектующих.</h1>
 
     <!-- Блок преимущества -->
 

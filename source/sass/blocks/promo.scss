@@ -4,58 +4,12 @@
 .promo {
   padding: 228px 0 275px;
 
-  background-color: $color_blue_tangaroa;
-  background-image: url("../img/bg-header-desktop@1x.png"), url("../img/bg-header-delta@1x.png");
-  background-repeat: no-repeat, no-repeat;
-  background-position: center, center;
-  background-size: cover, cover;
-
   @media (max-width: $width_viewport_tablet) {
     padding: 115px 0 163px;
   }
 
   @media (max-width: $width_viewport_mobile) {
     padding: 93px 0 70px;
-  }
-
-  @media (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
-    background-color: $color_blue_tangaroa;
-    background-image: url("../img/bg-header-desktop@2x.png"), url("../img/bg-header-delta@2x.png");
-    background-repeat: no-repeat, no-repeat;
-    background-position: center, center;
-    background-size: cover, cover;
-  }
-
-  @media (max-width: $width_viewport_tablet) {
-    background-color: $color_blue_tangaroa;
-    background-image: url("../img/bg-header-tablet@1x.png"), url("../img/bg-header-delta@1x.png");
-    background-repeat: no-repeat, no-repeat;
-    background-position: center, center bottom 123px;
-    background-size: cover, 197%;
-  }
-
-  @media (max-width: $width_viewport_tablet) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
-    background-color: $color_blue_tangaroa;
-    background-image: url("../img/bg-header-tablet@2x.png"), url("../img/bg-header-delta@2x.png");
-    background-repeat: no-repeat, no-repeat;
-    background-position: center, center bottom 123px;
-    background-size: cover, 197%;
-  }
-
-  @media (max-width: $width_viewport_mobile) {
-    background-color: $color_blue_tangaroa;
-    background-image: url("../img/bg-header-mobile@1x.png"), url("../img/bg-header-delta@1x.png");
-    background-repeat: no-repeat, no-repeat;
-    background-position: center, right -488px bottom 130px;
-    background-size: cover, cover;
-  }
-
-  @media (max-width: $width_viewport_mobile) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
-    background-color: $color_blue_tangaroa;
-    background-image: url("../img/bg-header-mobile@2x.png"), url("../img/bg-header-delta@2x.png");
-    background-repeat: no-repeat, no-repeat;
-    background-position: center, right -488px bottom 130px;
-    background-size: cover, cover;
   }
 }
 

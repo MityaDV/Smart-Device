@@ -128,12 +128,6 @@ modalForm.addEventListener('submit', formValidation);
 
 // прокрутка к форме
 
-// функция возвращает координаты левого верхнего угла DOM-элемента
-
-// var blockPromo = document.querySelector('#promo');
-// var buttonConsult = document.querySelector('.btn--consultation');
-// var elemContact = document.querySelector('#contact');
-
 $(document).ready(function () {
   $('#promo').on('click', 'a', function (event) {
     event.preventDefault();

@@ -1,0 +1,50 @@
+@import "../base/mixins.scss";
+@import "../base/vars.scss";
+
+.background {
+  background-color: $color_blue_tangaroa;
+  background-image: url("../img/circuit-desktop@1x.png"), url("../img/bg-header-desktop@1x.png"), url("../img/bg-header-delta@1x.png");
+  background-repeat: no-repeat;
+  background-position: top 71% right 14%, center, center;
+  background-size: auto, cover, cover;
+
+  @media (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+    background-color: $color_blue_tangaroa;
+    background-image: url("../img/circuit-desktop@2x.png"), url("../img/bg-header-desktop@2x.png"), url("../img/bg-header-delta@2x.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: top 71% right 14%, center, center;
+    background-size: auto, cover, cover;
+  }
+
+  @media (max-width: $width_viewport_tablet) {
+    background-color: $color_blue_tangaroa;
+    background-image: url("../img/circuit-tablet@1x.png"), url("../img/bg-header-tablet@1x.png"), url("../img/bg-header-delta@1x.png");
+    background-repeat: no-repeat;
+    background-position: top 32% right, center, center bottom 123px;
+    background-size: auto, cover, 197%;
+  }
+
+  @media (max-width: $width_viewport_tablet) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+    background-color: $color_blue_tangaroa;
+    background-image: url("../img/circuit-tablet@2x.png"), url("../img/bg-header-tablet@2x.png"), url("../img/bg-header-delta@2x.png");
+    background-repeat: no-repeat;
+    background-position: top 32% right, center, center bottom 123px;
+    background-size: 34%, cover, 197%;
+  }
+
+  @media (max-width: $width_viewport_mobile) {
+    background-color: $color_blue_tangaroa;
+    background-image: url("../img/circuit-mobile@1x.png"), url("../img/bg-header-mobile@1x.png"), url("../img/bg-header-delta@1x.png");
+    background-repeat: no-repeat;
+    background-position: top 21% right, center, right -488px bottom 130px;
+    background-size: auto, cover, cover;
+  }
+
+  @media (max-width: $width_viewport_mobile) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+    background-color: $color_blue_tangaroa;
+    background-image: url("../img/circuit-mobile@2x.png"), url("../img/bg-header-mobile@2x.png"), url("../img/bg-header-delta@2x.png");
+    background-repeat: no-repeat;
+    background-position: top 22% right, center, right -488px bottom 130px;
+    background-size: 92%, cover, cover;
+  }
+}
