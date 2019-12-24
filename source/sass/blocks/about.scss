@@ -2,17 +2,14 @@
 @import "../base/vars.scss";
 
 .about {
-  margin: 0 0 110px;
-  padding: 64px 0 0;
+  padding: 64px 0 110px;
 
   @media (max-width: $width_viewport_tablet) {
-    margin: 0 0 83px;
-    padding: 28px 0 0;
+    padding: 28px 0 83px;
   }
 
   @media (max-width: $width_viewport_mobile) {
-    margin: 0 0 65px;
-    padding: 40px 0 0;
+    padding: 40px 0 65px;
   }
 }
 
@@ -52,40 +49,40 @@
   & h2 {
     @include heading_h2;
 
-    margin: 0;
-    padding: 0 0 30px;
+    margin: 0 0 30px;
 
     font-weight: $font_weight_normal;
     font-family: $font_family_second_base;
 
     @media (max-width: $width_viewport_tablet) {
-      padding: 0 0 26px;
+      margin: 0 0 26px;
     }
 
     @media (max-width: $width_viewport_mobile) {
-      padding: 0 0 22px;
+      margin: 0 0 22px;
     }
   }
 
   & p {
     @include indent_p;
 
-    margin: 0;
-    padding: 0 6px 21px 0;
+    margin: 0 0 21px;
+    padding: 0 6px 0 0;
 
     line-height: $line_height_p_tablet_l;
 
     @media (max-width: $width_viewport_tablet) {
-      padding: 0 6px 30px 0;
+      margin: 0 0 30px;
+      padding: 0 6px 0 0;
     }
 
     @media (max-width: $width_viewport_mobile) {
-      padding: 0 0 46px;
+      margin: 0 0 46px;
     }
   }
 
   & p + p {
-    padding: 0 0 31px;
+    margin: 0 0 31px;
 
     @media (max-width: $width_viewport_tablet) {
       display: -webkit-box;
@@ -103,7 +100,6 @@
       display: -webkit-box;
       -webkit-box-orient: vertical;
       min-height: 168px;
-      padding: 0;
       overflow: hidden;
 
       text-overflow: ellipsis;
