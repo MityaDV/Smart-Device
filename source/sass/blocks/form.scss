@@ -120,9 +120,7 @@
   }
 }
 
-.form__list {
-  @include list;
-
+.form__group {
   display: flex;
   flex-wrap: wrap;
   margin: 0 0 37px;
@@ -135,51 +133,8 @@
     display: block;
     margin: 0 0 26px;
   }
-}
-
-.form__item {
-  &--username {
-    flex-basis: auto;
-    width: 50%;
-    margin: 0 0 42px;
-    padding: 0 14px 0 0;
-
-    @media (max-width: $width_viewport_tablet) {
-      flex-basis: 47%;
-      width: auto;
-      padding: 0;
-    }
-
-    @media (max-width: $width_viewport_mobile) {
-      margin: 0 0 31px;
-    }
-  }
-
-  &--userphone {
-    flex-basis: auto;
-    width: 50%;
-    margin: 0 0 40px;
-    padding: 0 0 0 18px;
-
-    @media (max-width: $width_viewport_tablet) {
-      flex-basis: 47%;
-      width: auto;
-      margin: 0 0 42px auto;
-      padding: 0;
-    }
-
-    @media (max-width: $width_viewport_mobile) {
-      margin: 0 0 33px;
-    }
-  }
-
-  &--userquestion {
-    flex-basis: 100%;
-  }
 
   & input {
-    width: 100%;
-
     color: $color_blue_nordic;
 
     background: $color_white_10;
@@ -228,20 +183,37 @@
       }
     }
 
-    &--username {
-      width: 100%;
-    }
-
-    &--userphone {
-      width: 100%;
-    }
-
     &[type="text"] {
-      padding: 15px 0 17px 20px;
+      flex-basis: auto;
+      width: 50%;
+      margin: 0 0 42px;
+      padding: 15px 17px 20px;
+
+      @media (max-width: $width_viewport_tablet) {
+        flex-basis: 47%;
+        width: auto;
+      }
+
+      @media (max-width: $width_viewport_mobile) {
+        margin: 0 0 31px;
+      }
     }
 
     &[type="tel"] {
-      padding: 15px 0 17px 16px;
+      flex-basis: auto;
+      width: 50%;
+      margin: 0 0 40px;
+      padding: 15px 17px 16px;
+
+      @media (max-width: $width_viewport_tablet) {
+        flex-basis: 47%;
+        width: auto;
+        margin: 0 0 42px auto;
+      }
+
+      @media (max-width: $width_viewport_mobile) {
+        margin: 0 0 33px;
+      }
     }
   }
 }
@@ -289,7 +261,7 @@
 .form__textarea {
   width: 100%;
   min-height: 154px;
-  padding: 10px 0 0 22px;
+  padding: 10px 22px;
 
   background: $color_white_10;
   border: none;
