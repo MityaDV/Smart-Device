@@ -2,7 +2,7 @@
 @import "../base/vars.scss";
 
 .product {
-  padding: 87px 0 91px;
+  padding: 87px 0 128px;
 
   background: $color_blue_tangaroa;
 
@@ -30,6 +30,7 @@
 .product__content {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   width: 1170px;
   max-width: $width_desktop_s;
   margin: 0 auto;
@@ -46,7 +47,6 @@
     flex-basis: auto;
     width: 100%;
     margin: 0 0 54px;
-    padding: 0 0 0 30px;
 
     font-weight: $font_weight_normal;
     font-family: $font_family_second_base;
