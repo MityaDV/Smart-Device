@@ -83,7 +83,6 @@
     color: $color_blue_sky;
 
     @media (max-width: $width_viewport_tablet) {
-      // padding: 3px 0 12px;
       margin: 0 0 12px;
 
       font-size: $font_size_h3_tablet_l;
@@ -91,7 +90,6 @@
     }
 
     @media (max-width: $width_viewport_mobile) {
-      // padding: 7px 0 10px;
       margin: 0 0 10px;
 
       font-size: $font_size_h3_mobile;
