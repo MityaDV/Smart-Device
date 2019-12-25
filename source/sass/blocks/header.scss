@@ -38,6 +38,12 @@
     width: 38px;
   }
 
+  &:focus {
+    outline: none;
+  }
+}
+
+.header__logo-text {
   & p {
     @include indent_p;
 
@@ -80,10 +86,6 @@
     @media (max-width: $width_viewport_mobile) {
       display: none;
     }
-  }
-
-  &:focus {
-    outline: none;
   }
 
   &:hover p {

@@ -132,13 +132,14 @@ $line_height_p_mobile_s: 1.06;
 
 // отступы
 $padding_desktop: 0 25px;
-$padding_tablet: 0 25px;
+$padding_tablet: 0 24px;
 $padding_mobile: 0 15px;
 
 // Значения ширины контента
 $width_desktop: 1410px;
 $width_desktop_s: 1170px;
-$width_tablet: auto;
+$width_tablet: 770px;
+$width_mobile: 100%;
 
 // Значения вьюпортов
 $width_viewport_desktop_l: 1920px;

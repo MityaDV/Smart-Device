@@ -20,11 +20,6 @@
 .advantage__container {
   max-width: $width_desktop_s;
   margin: 0 auto;
-
-  @media (max-width: $width_viewport_tablet) {
-    width: inherit;
-    margin: inherit;
-  }
 }
 
 .advantage__list {

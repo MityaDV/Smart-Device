@@ -87,8 +87,10 @@
         <div class="header__row">
           <a href="#" class="header__logo-link" aria-label="Логотип компании Smart Device">
             <img src="img/logo.svg" alt="Логотип компании Smart Device" width="52" height="52">
-            <p>Smart Device</p>
-            <p>умные технологии</p>
+            <div class="header__logo-text">
+              <p>Smart Device</p>
+              <p>умные технологии</p>
+            </div>
           </a>
           <nav class="header__navigation">
             <ul class="header__navigation-list">
@@ -101,10 +103,10 @@
                   52 52</a>
               </li>
             </ul>
-            <button class="header__navigation-button btn btn--call" type="button">Заказать звонок
-            </button>
+            
           </nav>
-        </div>
+          <button class="header__navigation-button btn btn--call" type="button">Заказать звонок
+        </button></div>
       </div>
     </header>
 
@@ -244,11 +246,11 @@
             <h3 class="form__title">Остались вопросы? Задайте их нам!</h3>
             <p class="form__text">Мы проконсультируем Вас бесплатно</p>
             <div class="form__group">
-                <input type="text" id="user-name" name="username" placeholder="Имя" required="">
-                <label class="form__label" for="user-name"></label>
-                <input type="tel" id="user-phone" name="userphone" pattern="[+]{1}7 [0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}" placeholder="Телефон" required="" title="Формат телефона +7 495 589 40 50">
-                <label class="form__label" for="user-phone"></label>
-                <textarea class="form__textarea" name="userquestion" placeholder="Ваш вопрос"></textarea>
+              <input type="text" id="user-name" name="username" placeholder="Имя" required="">
+              <label class="form__label" for="user-name"></label>
+              <input type="tel" id="user-phone" name="userphone" pattern="[+]{1}7 [0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}" placeholder="Телефон" required="" title="Формат телефона +7 495 589 40 50">
+              <label class="form__label" for="user-phone"></label>
+              <textarea class="form__textarea" name="userquestion" placeholder="Ваш вопрос"></textarea>
             </div>
             <div class="form__wrapper">
               <button class="form__button btn btn--question" type="submit">Задать вопрос</button>

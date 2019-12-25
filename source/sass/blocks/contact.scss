@@ -39,13 +39,5 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  width: 1170px;
   max-width: $width_desktop_s;
-  margin: 0 auto;
-
-  @media (max-width: $width_viewport_tablet) {
-    display: block;
-    width: inherit;
-    margin: inherit;
-  }
 }
