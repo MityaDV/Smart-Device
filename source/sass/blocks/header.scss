@@ -21,21 +21,21 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 }
 
 .header__logo-link {
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
-  max-height: 52px;
-  margin: 0 0 0 5px;
+  align-items: center;
+  margin: 0 auto 0 0;
 
-  @media (max-width: $width_viewport_tablet) {
-    margin: 0;
+  &:hover p {
+    color: $color_blue_sky;
   }
 
-  @media (max-width: $width_viewport_mobile) {
-    width: 38px;
+  &:focus p {
+    color: $color_blue_sky;
   }
 
   &:focus {
@@ -44,11 +44,12 @@
 }
 
 .header__logo-text {
+  padding: 0 0 0 15px;
+
   & p {
     @include indent_p;
 
     margin: 0;
-    padding: 5px 0 0 16px;
 
     font-weight: $font_weight_bold;
     font-size: $font_size_p_desktop_xl;
@@ -60,17 +61,12 @@
       font-size: $font_size_p_tablet_xl;
       line-height: $line_height_p_tablet_xxs;
     }
-
-    @media (max-width: $width_viewport_mobile) {
-      display: none;
-    }
   }
 
   & p + p {
     @include indent_p;
 
     margin: 0;
-    padding: 0 0 0 16px;
 
     font-weight: $font_weight_medium;
     font-size: $font_size_p_desktop_s;
@@ -82,60 +78,15 @@
       font-size: $font_size_p_tablet_s;
       line-height: $line_height_p_tablet_xxs;
     }
-
-    @media (max-width: $width_viewport_mobile) {
-      display: none;
-    }
-  }
-
-  &:hover p {
-    color: $color_blue_sky;
-  }
-
-  &:focus p {
-    color: $color_blue_sky;
   }
 }
 
 .header__navigation {
   display: flex;
-  flex-basis: 70%;
+  flex-basis: 55%;
   justify-content: flex-end;
   align-items: center;
-}
-
-.header__navigation-list {
-  @include list;
-
-  display: flex;
   margin: 0 50px 0 0;
-
-  @media (max-width: $width_viewport_tablet) {
-    margin: 0;
-  }
-}
-
-.header__navigation-item {
-  margin: 0 0 0 36px;
-  padding: 0 0 0 38px;
-
-  @media (max-width: $width_viewport_tablet) {
-    width: 25px;
-    padding: 0;
-  }
-
-  @media (max-width: $width_viewport_mobile) {
-    margin: 0 0 0 31px;
-  }
-
-  &--email {
-    margin: 0;
-    padding: 0;
-
-    @media (max-width: $width_viewport_tablet) {
-      margin: 0;
-    }
-  }
 }
 
 .header__navigation-link {
@@ -170,6 +121,9 @@
   }
 
   &--email {
+    flex-basis: 28%;
+    margin: 0 4px 0 0;
+
     &::before {
       content: "";
       position: absolute;
@@ -216,8 +170,4 @@
       }
     }
   }
-}
-
-.header__navigation-button {
-  cursor: pointer;
 }
