@@ -4,7 +4,7 @@
 .form {
   flex-basis: auto;
   width: 50%;
-  padding: 0 0 0 21px;
+  padding: 0 0 0 14px;
 
   @media (max-width: $width_viewport_tablet) {
     width: 100%;
@@ -124,6 +124,7 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 0 37px;
+  justify-content: space-between;
 
   @media (max-width: $width_viewport_tablet) {
     margin: 0 0 46px;
@@ -185,7 +186,7 @@
 
     &[type="text"] {
       flex-basis: auto;
-      width: 50%;
+      width: 48%;
       margin: 0 0 42px;
       padding: 15px 17px 20px;
 
@@ -201,7 +202,7 @@
 
     &[type="tel"] {
       flex-basis: auto;
-      width: 50%;
+      width: 48%;
       margin: 0 0 40px;
       padding: 15px 17px 16px;
 
