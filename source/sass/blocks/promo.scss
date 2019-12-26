@@ -173,11 +173,18 @@
 
   font-size: 14px;
   line-height: 16px;
-  color: white;
+  color: $color_white;
 
   transform: rotate(-90deg);
   cursor: pointer;
   opacity: 0.5;
+
+  &:hover {
+    color: $color_blue_sky;
+
+    opacity: 1;
+  }
+
 
   @media (max-width: $width_viewport_tablet) {
     display: none;
