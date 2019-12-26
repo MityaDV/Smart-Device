@@ -9,7 +9,7 @@
   }
 
   @media (max-width: $width_viewport_mobile) {
-    padding: 40px 0 65px;
+    padding: 20px 0 65px;
   }
 }
 
@@ -73,6 +73,7 @@
 
     @media (max-width: $width_viewport_mobile) {
       margin: 0 0 46px;
+      padding: 0;
     }
   }
 
@@ -83,6 +84,7 @@
       display: -webkit-box;
       -webkit-box-orient: vertical;
       max-height: 81px;
+      margin: 0 0 48px;
       padding: 0;
       overflow: hidden;
 
@@ -95,6 +97,7 @@
       display: -webkit-box;
       -webkit-box-orient: vertical;
       min-height: 168px;
+      margin: 0 0 35px;
       overflow: hidden;
 
       text-overflow: ellipsis;

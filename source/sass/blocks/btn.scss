@@ -112,12 +112,12 @@
     box-shadow: none;
 
     @media (max-width: $width_viewport_tablet) {
-      margin: 48px 0 0 3px;
+      margin: 0 0 0 3px;
       padding: 13px 0;
     }
 
     @media (max-width: $width_viewport_mobile) {
-      margin: 35px 0 0 2px;
+      margin: 0 0 0 2px;
     }
 
     &:hover {

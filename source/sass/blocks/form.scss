@@ -199,6 +199,8 @@
 
       @media (max-width: $width_viewport_mobile) {
         margin: 0 0 31px;
+        width: 100%;
+        max-height: 52px;
       }
     }
 
@@ -216,7 +218,10 @@
       }
 
       @media (max-width: $width_viewport_mobile) {
-        margin: 0 0 33px;
+        margin: 0 0 30px;
+        width: 100%;
+        max-height: 52px;
+        padding: 13px 17px 20px;
       }
     }
   }
@@ -257,7 +262,7 @@
 
     @media (max-width: $width_viewport_mobile) {
       margin: 0;
-      padding: 1px 0 0 35px;
+      padding: 1px 5px 5px 35px;
     }
   }
 }
@@ -278,7 +283,7 @@
 
   @media (max-width: $width_viewport_mobile) {
     min-height: 104px;
-    padding: 11px 0 0 18px;
+    padding: 11px 10px 10px 18px;
   }
 
   &:hover {
