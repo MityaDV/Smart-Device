@@ -483,7 +483,6 @@
 
     flex-basis: 16%;
     margin: 0;
-    padding: 0 0 0 5px;
 
     font-size: $font_size_p_desktop_xs;
     line-height: $line_height_p_mobile_xxxl;
@@ -502,7 +501,7 @@
   }
 
   & p + p {
-    flex-basis: 27%;
+    flex-basis: 26%;
 
     @media (max-width: $width_viewport_tablet) {
       display: none;
