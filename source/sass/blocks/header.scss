@@ -108,7 +108,7 @@
     flex-basis: 50%;
   }
 
-  @media (max-width: $width_viewport_tablet) {
+  @media (max-width: $width_viewport_mobile) {
     flex-basis: 28%;
     width: 28%;
   }

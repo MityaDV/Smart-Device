@@ -231,7 +231,7 @@
     }
 
     @media (max-width: $width_viewport_mobile) {
-      padding: 0;
+      margin: 0 0 22px;
     }
   }
 
@@ -588,7 +588,7 @@
   &::before {
     content: "";
     position: absolute;
-    top: 6px;
+    top: 2px;
     right: 2px;
 
     width: 16px;
@@ -602,7 +602,7 @@
   &::before {
     content: "";
     position: absolute;
-    top: 13px;
+    top: 9px;
     right: 2px;
 
     width: 16px;
@@ -622,7 +622,7 @@
   &::before {
     content: "";
     position: absolute;
-    top: 1px;
+    top: 2px;
     right: 2px;
 
     width: 16px;
@@ -636,7 +636,7 @@
   &::before {
     content: "";
     position: absolute;
-    top: 8px;
+    top: 9px;
     right: 2px;
 
     width: 16px;
