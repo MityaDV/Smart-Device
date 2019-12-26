@@ -1,5 +1,5 @@
-@import "../base/mixins.scss";
-@import "../base/vars.scss";
+@import "mixins.scss";
+@import "vars.scss";
 
 .header {
   padding: 33px 0 0;
@@ -104,8 +104,8 @@
   margin: 0 50px 0 0;
 
   @media (max-width: $width_viewport_tablet) {
-    margin: 0;
     flex-basis: 50%;
+    margin: 0;
   }
 
   @media (max-width: $width_viewport_mobile) {
@@ -150,8 +150,8 @@
     margin: 0 4px 0 0;
 
     @media (max-width: $width_viewport_tablet) {
-      margin: 1px 32px 0 0;
       flex-basis: 10%;
+      margin: 1px 32px 0 0;
     }
 
     @media (max-width: $width_viewport_mobile) {

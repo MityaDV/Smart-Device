@@ -1,5 +1,5 @@
-@import "../base/mixins.scss";
-@import "../base/vars.scss";
+@import "mixins.scss";
+@import "vars.scss";
 
 .form {
   flex-basis: auto;
@@ -124,8 +124,8 @@
 .form__group {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 43px;
   justify-content: space-between;
+  margin: 0 0 43px;
 
   @media (max-width: $width_viewport_tablet) {
     margin: 0 0 46px;
@@ -188,9 +188,9 @@
     &[type="text"] {
       flex-basis: auto;
       width: 47%;
+      max-height: 50px;
       margin: 0 auto 40px 0;
       padding: 15px 17px 20px;
-      max-height: 50px;
 
       @media (max-width: $width_viewport_tablet) {
         flex-basis: 47%;
@@ -198,18 +198,18 @@
       }
 
       @media (max-width: $width_viewport_mobile) {
-        margin: 0 0 31px;
         width: 100%;
         max-height: 52px;
+        margin: 0 0 31px;
       }
     }
 
     &[type="tel"] {
       flex-basis: auto;
       width: 47%;
+      max-height: 50px;
       margin: 0 0 40px;
       padding: 13px 17px 16px;
-      max-height: 50px;
 
       @media (max-width: $width_viewport_tablet) {
         flex-basis: 47%;
@@ -218,9 +218,9 @@
       }
 
       @media (max-width: $width_viewport_mobile) {
-        margin: 0 0 30px;
         width: 100%;
         max-height: 52px;
+        margin: 0 0 30px;
         padding: 13px 17px 20px;
       }
     }
