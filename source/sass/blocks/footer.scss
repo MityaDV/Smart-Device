@@ -275,7 +275,7 @@
 
 .footer__navigation {
   flex-basis: 34%;
-  margin: 0 130px 62px auto;
+  margin: 0 130px 56px auto;
 
   @media (max-width: $width_viewport_tablet) {
     flex-basis: 50%;
@@ -377,7 +377,7 @@
 
 .footer__contact {
   flex-basis: 27%;
-  margin: 0 0 62px;
+  margin: 0 0 56px;
   padding: 0 0 0 48px;
 
   @media (max-width: $width_viewport_tablet) {
@@ -464,7 +464,8 @@
   display: flex;
   flex-basis: 100%;
   flex-wrap: wrap;
-  padding: 9px 0;
+  margin: 0 0 19px;
+  padding: 15px 0 0;
 
   @media (max-width: $width_viewport_tablet) {
     justify-content: space-between;
