@@ -123,7 +123,7 @@
 .form__group {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 37px;
+  margin: 0 0 43px;
   justify-content: space-between;
 
   @media (max-width: $width_viewport_tablet) {
@@ -186,9 +186,10 @@
 
     &[type="text"] {
       flex-basis: auto;
-      width: 48%;
-      margin: 0 0 42px;
+      width: 47%;
+      margin: 0 auto 40px 0;
       padding: 15px 17px 20px;
+      max-height: 50px;
 
       @media (max-width: $width_viewport_tablet) {
         flex-basis: 47%;
@@ -202,9 +203,10 @@
 
     &[type="tel"] {
       flex-basis: auto;
-      width: 48%;
+      width: 47%;
       margin: 0 0 40px;
-      padding: 15px 17px 16px;
+      padding: 13px 17px 16px;
+      max-height: 50px;
 
       @media (max-width: $width_viewport_tablet) {
         flex-basis: 47%;
@@ -262,7 +264,7 @@
 .form__textarea {
   width: 100%;
   min-height: 154px;
-  padding: 10px 22px;
+  padding: 11px 22px 10px 16px;
 
   background: $color_white_10;
   border: none;
@@ -303,7 +305,6 @@
 
 .form__wrapper {
   display: flex;
-  padding: 0 0 0 5px;
 
   @media (max-width: $width_viewport_mobile) {
     flex-direction: column;
