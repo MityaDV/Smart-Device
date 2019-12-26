@@ -13,6 +13,7 @@ var footerNav = footer.querySelector('.footer__navigation');
 var footerContact = footer.querySelector('.footer__contact');
 var footerToggleNav = footer.querySelector('.footer__toggle--navigation');
 var footerToggleContact = footer.querySelector('.footer__toggle--contact');
+var btnScrollDown = document.querySelector('.promo__scroll-button');
 var isStorageSupport = true;
 var storage = '';
 var storagePhone = '';
@@ -125,6 +126,23 @@ var formValidation = function (evt) {
 buttonOpenPopup.addEventListener('click', openPopup);
 buttonClosePopup.addEventListener('click', closePopup);
 modalForm.addEventListener('submit', formValidation);
+
+// прокрутка к блоку преимуществ
+
+function scrollDown() {
+  var windowCoords = document.documentElement.clientHeight;
+  (function scroll() {
+    if (window.pageYOffset < windowCoords) {
+      window.scrollBy(0, 10);
+      setTimeout(scroll, 0);
+    }
+    if (window.pageYOffset > windowCoords) {
+      window.scrollTo(0, windowCoords);
+    }
+  })();
+}
+
+btnScrollDown.addEventListener('click', scrollDown);
 
 // прокрутка к форме
 
