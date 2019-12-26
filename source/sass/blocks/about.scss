@@ -5,7 +5,7 @@
   padding: 37px 0 109px;
 
   @media (max-width: $width_viewport_tablet) {
-    padding: 28px 0 83px;
+    padding: 12px 0 83px;
   }
 
   @media (max-width: $width_viewport_mobile) {
@@ -117,7 +117,7 @@
 
     @media (max-width: $width_viewport_tablet) {
       top: 0;
-      left: 2px;
+      left: 3px;
 
       width: 177px;
       height: 360px;

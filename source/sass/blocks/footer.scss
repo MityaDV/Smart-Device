@@ -9,7 +9,7 @@
   background: $color_white_darken;
 
   @media (max-width: $width_viewport_tablet) {
-    padding: 19px 0 25px;
+    padding: 19px 0 0;
   }
 
   @media (max-width: $width_viewport_mobile) {
@@ -58,7 +58,7 @@
     @media (max-width: $width_viewport_tablet) {
       content: "";
       position: absolute;
-      top: 97px;
+      top: 95px;
       left: 0;
 
       width: 100%;
@@ -83,7 +83,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 0 0 26px;
+    margin: 0 0 23px;
   }
 
   @media (max-width: $width_viewport_mobile) {
@@ -109,7 +109,6 @@
       display: block;
       flex-basis: 35%;
       margin: 0 36px 0 auto;
-      padding: 4px 0 0;
 
       font-size: $font_size_p_tablet_xs;
       line-height: $line_height_p_mobile_xxxl;
@@ -131,6 +130,7 @@
   margin: 0 0 53px;
 
   @media (max-width: $width_viewport_tablet) {
+    align-items: normal;
     margin: 0;
   }
 
@@ -153,6 +153,10 @@
 
 .footer__logo-text {
   padding: 0 0 0 15px;
+
+  @media (max-width: $width_viewport_tablet) {
+    padding: 0;
+  }
 
   & p {
     @include indent_p;
@@ -279,8 +283,8 @@
 
   @media (max-width: $width_viewport_tablet) {
     flex-basis: 50%;
-    margin: 0 0 38px;
-    padding: 38px 4px 0;
+    margin: 0 auto 42px 0;
+    padding: 37px 10px 0 3px;
   }
 
   @media (max-width: $width_viewport_mobile) {
@@ -382,8 +386,8 @@
 
   @media (max-width: $width_viewport_tablet) {
     flex-basis: 50%;
-    margin: 0 0 38px;
-    padding: 38px 4px 0;
+    margin: 0 0 42px;
+    padding: 38px 4px 0 15px;
   }
 
   @media (max-width: $width_viewport_mobile) {
@@ -469,12 +473,14 @@
 
   @media (max-width: $width_viewport_tablet) {
     justify-content: space-between;
-    padding: 25px 0;
+    margin: 0 0 25px;
+    padding: 22px 0 0;
   }
 
   @media (max-width: $width_viewport_mobile) {
     flex-direction: column;
     align-items: center;
+    margin: 0 0 19px;
     padding: 29px 0;
   }
 
