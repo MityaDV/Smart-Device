@@ -42,6 +42,7 @@
   margin: 0 3% 3% 0;
   padding: 42px 34px 66px 45px;
 
+  background-color: $color_white;
   box-shadow: inset 3px 0 0 0 $color_blue_sky, inset 1px 1px 0 0 $color_gray_lightest, inset -1px -1px 0 0 $color_gray_lightest;
 
   &:nth-child(even) {

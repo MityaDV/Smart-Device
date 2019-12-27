@@ -48,3 +48,57 @@
     background-size: cover, cover;
   }
 }
+
+.background-main {
+  background-color: $color_white;
+  background-image: url("../img/bg-main-delta-left-top@1x.png"),
+  url("../img/bg-main-delta-right@1x.png"),
+  url("../img/bg-main-delta-left@1x.png"),
+  url("../img/bg-main-delta-center@1x.png");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: left 13% top 5%,
+  right 2% top 40%,
+  left bottom 3%,
+  left 53% top 34%;
+  background-size: 17%,
+  17%,
+  30%,
+  45%;
+
+  @media (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+    background-color: $color_white;
+    background-image: url("../img/bg-main-delta-left-top@2x.png"),
+    url("../img/bg-main-delta-right@2x.png"),
+    url("../img/bg-main-delta-left@2x.png"),
+    url("../img/bg-main-delta-center@2x.png");
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: left 13% top 5%,
+    right 2% top 40%,
+    left bottom 3%,
+    left 53% top 34%;
+    background-size: 17%,
+    17%,
+    30%,
+    45%;
+  }
+
+  @media (max-width: $width_viewport_tablet) {
+    background-color: $color_white;
+    background-image: url("../img/bg-main-delta-center@1x.png");
+    background-repeat: no-repeat;
+    background-position: right 332% top 41%;
+    background-size: 112%;
+  }
+
+  @media (max-width: $width_viewport_tablet) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+    background-color: $color_white;
+    background-image: url("../img/bg-main-delta-center@2x.png");
+    background-repeat: no-repeat;
+    background-position: right 332% top 41%;
+    background-size: 112%;
+  }
+
+  @media (max-width: $width_viewport_mobile) {
+    background-image: none;
+  }
+}
