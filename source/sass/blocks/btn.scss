@@ -13,6 +13,7 @@
   font-family: $font_family_second_base;
   text-align: center;
   color: $color_white;
+  text-transform: uppercase;
   letter-spacing: 0.05em;
 
   background: transparent;
@@ -72,8 +73,6 @@
     @media (max-width: $width_viewport_tablet) {
       width: 379px;
       margin: 0 0 0 53px;
-
-      text-transform: uppercase;
     }
 
     @media (max-width: $width_viewport_mobile) {
@@ -93,7 +92,6 @@
 
       font-size: $font_size_p_desktop;
       line-height: $line_height_p_desktop_xl;
-      text-transform: uppercase;
 
       background: $color_blue_sky;
       border: none;
@@ -105,7 +103,6 @@
     padding: 14px 0;
 
     color: $color_blue_sky;
-    text-transform: uppercase;
 
     background: transparent;
     border: 1px solid $color_blue_sky;
@@ -140,6 +137,11 @@
     background: $color_blue_sky;
     box-shadow: none;
 
+    @media (max-width: $width_viewport_mobile) {
+      width: 290px;
+      margin: 0 0 30px;
+    }
+
     &:hover {
       color: $color_blue_sky;
 
@@ -151,22 +153,11 @@
 
       background-color: $color_white;
     }
-
-    @media (max-width: $width_viewport_tablet) {
-      text-transform: uppercase;
-    }
-
-    @media (max-width: $width_viewport_mobile) {
-      width: 290px;
-      margin: 0 0 30px;
-    }
   }
 
   &--modal {
     width: 100%;
     margin: 0 0 35px;
-
-    text-transform: uppercase;
 
     box-shadow: none;
 

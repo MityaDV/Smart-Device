@@ -501,6 +501,7 @@
     font-size: $font_size_p_desktop_xs;
     line-height: $line_height_p_mobile_xxxl;
     color: $color_blue_tangaroa;
+    text-transform: uppercase;
     letter-spacing: 0.04em;
 
     opacity: 0.5;
@@ -527,6 +528,7 @@
   font-size: $font_size_p_desktop_xs;
   line-height: $line_height_p_mobile_xxxl;
   color: $color_blue_tangaroa;
+  text-transform: uppercase;
   letter-spacing: 0.04em;
 
   opacity: 0.5;
@@ -536,7 +538,6 @@
 
     font-size: $font_size_p_tablet_xs;
     line-height: $line_height_p_mobile_xxxl;
-    text-transform: uppercase;
   }
 
   @media (max-width: $width_viewport_mobile) {
