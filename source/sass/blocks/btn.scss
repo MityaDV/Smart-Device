@@ -4,7 +4,7 @@
 .btn {
   display: block;
   width: 180px;
-  min-height: 45px;
+  max-height: 45px;
   padding: 10px;
 
   font-weight: $font_weight_bold;
@@ -42,7 +42,7 @@
 
   &--consultation {
     width: 407px;
-    min-height: 55px;
+    max-height: 55px;
     margin: 0 0 0 92px;
     padding: 17px 0 14px;
 
@@ -61,12 +61,6 @@
 
     &:active {
       opacity: 0.7;
-    }
-
-    &:focus {
-      color: $color_blue_sky;
-
-      background-color: $color_white;
     }
 
     &:hover:focus {
@@ -93,7 +87,7 @@
     @media (max-width: $width_viewport_mobile) {
       display: block;
       width: 287px;
-      min-height: 55px;
+      max-height: 55px;
       margin: 0 0 0 3px;
       padding: 17px 0 14px;
 
