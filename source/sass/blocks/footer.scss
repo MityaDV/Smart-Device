@@ -223,7 +223,7 @@
     flex-basis: 55%;
 
     @media (max-width: $width_viewport_mobile) {
-      margin: 0 0 22px;
+      margin: 0;
     }
   }
 
@@ -294,6 +294,7 @@
   margin: 0 130px 56px auto;
 
   @media (max-width: $width_viewport_tablet) {
+    display: block;
     flex-basis: 50%;
     margin: 0 auto 42px 0;
     padding: 37px 10px 0 3px;
@@ -618,7 +619,13 @@
   }
 }
 
-.footer__navigation--closed .footer__list--navigation {
+.footer__navigation--closed .footer__list--wide {
+  @media (max-width: $width_viewport_mobile) {
+    display: none;
+  }
+}
+
+.footer__navigation--closed .footer__list--narrow {
   @media (max-width: $width_viewport_mobile) {
     display: none;
   }
