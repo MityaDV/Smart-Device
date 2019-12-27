@@ -186,7 +186,7 @@
   & input {
     width: 100%;
 
-    color: $color_blue_nordic;
+    color: $color_white;
 
     background: $color_white_10;
     border: none;
@@ -259,6 +259,8 @@
   width: 100%;
   min-height: 104px;
   padding: 17px 0 0 17px;
+
+  color: $color_white;
 
   background: $color_white_10;
   border: none;

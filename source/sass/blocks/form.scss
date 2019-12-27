@@ -137,7 +137,7 @@
   }
 
   & input {
-    color: $color_blue_nordic;
+    color: $color_white;
 
     background: $color_white_10;
     border: none;
@@ -253,7 +253,7 @@
     display: inline-block;
     flex-basis: 50%;
     margin: 0 0 0 31px;
-    padding: 9px 39px;
+    padding: 9px 5px 5px 39px;
 
     @media (max-width: $width_viewport_tablet) {
       margin: 0 0 0 34px;
@@ -271,6 +271,8 @@
   width: 100%;
   min-height: 154px;
   padding: 11px 22px 10px 16px;
+
+  color: $color_white;
 
   background: $color_white_10;
   border: none;

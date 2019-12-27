@@ -5,7 +5,7 @@
   display: block;
   width: 180px;
   max-height: 45px;
-  padding: 10px;
+  padding: 14px 10px;
 
   font-weight: $font_weight_bold;
   font-size: $font_size_p_desktop_xxs;
@@ -45,7 +45,7 @@
     width: 407px;
     max-height: 55px;
     margin: 0 0 0 92px;
-    padding: 17px 0 14px;
+    padding: 17px 10px 14px;
 
     font-size: $font_size_p_desktop;
     line-height: $line_height_p_desktop_xl;
@@ -88,7 +88,7 @@
       width: 287px;
       max-height: 55px;
       margin: 0 0 0 3px;
-      padding: 17px 0 14px;
+      padding: 17px 10px 14px;
 
       font-size: $font_size_p_desktop;
       line-height: $line_height_p_desktop_xl;
@@ -100,7 +100,7 @@
   }
 
   &--detail {
-    padding: 14px 0;
+    padding: 14px 10px 14px;
 
     color: $color_blue_sky;
 
@@ -110,7 +110,7 @@
 
     @media (max-width: $width_viewport_tablet) {
       margin: 0 0 0 3px;
-      padding: 13px 0;
+      padding: 13px 10px 13px;
     }
 
     @media (max-width: $width_viewport_mobile) {
@@ -132,13 +132,13 @@
 
   &--question {
     flex-basis: 50%;
-    width: 270px;
+    max-width: 270px;
 
     background: $color_blue_sky;
     box-shadow: none;
 
     @media (max-width: $width_viewport_mobile) {
-      width: 290px;
+      width: auto;
       margin: 0 0 30px;
     }
 
