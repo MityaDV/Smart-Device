@@ -12,7 +12,7 @@ html {
   line-height: 1.15;
   /* 1 */
 
-  -webkit-text-size-adjust: 100%;
+  // -webkit-text-size-adjust: 100%;
   /* 2 */
 }
 
@@ -71,7 +71,7 @@ hr {
 pre {
   /* 1 */
   font-size: 1em;
-  font-family: monospace, monospace;
+  font-family: monospace;
   /* 2 */
 }
 
@@ -95,7 +95,7 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  // text-decoration: underline dotted;
 
   border-bottom: none;
   /* 2 */
@@ -120,7 +120,7 @@ kbd,
 samp {
   /* 1 */
   font-size: 1em;
-  font-family: monospace, monospace;
+  font-family: monospace;
   /* 2 */
 }
 
@@ -215,12 +215,12 @@ select {
  * Correct the inability to style clickable types in iOS and Safari.
  */
 
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-}
+// button,
+// [type="button"],
+// [type="reset"],
+// [type="submit"] {
+//   -webkit-appearance: button;
+// }
 
 /**
  * Remove the inner border and padding in Firefox.
@@ -324,7 +324,7 @@ textarea {
   /* 1 */
   outline-offset: -2px;
 
-  -webkit-appearance: textfield;
+  // -webkit-appearance: textfield;
   /* 2 */
 }
 
@@ -332,9 +332,9 @@ textarea {
  * Remove the inner padding in Chrome and Safari on macOS.
  */
 
-[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
+// [type="search"]::-webkit-search-decoration {
+//   -webkit-appearance: none;
+// }
 
 /**
  * 1. Correct the inability to style clickable types in iOS and Safari.
@@ -345,7 +345,7 @@ textarea {
   /* 1 */
   font: inherit;
 
-  -webkit-appearance: button;
+  // -webkit-appearance: button;
   /* 2 */
 }
 

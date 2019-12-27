@@ -18,6 +18,8 @@ if (footer) {
   var footerToggleContact = footer.querySelector('.footer__toggle--contact');
 }
 var btnScrollDown = document.querySelector('.promo__scroll-button');
+var btnPromoConsultation = document.querySelector('.promo__button');
+
 var isStorageSupport = true;
 var storage = '';
 var storagePhone = '';
@@ -172,13 +174,10 @@ if (btnScrollDown) {
 
 // прокрутка к форме
 
-$(document).ready(function () {
-  $('#promo').on('click', 'a', function (event) {
-    event.preventDefault();
-    var id = $(this).attr('href'),
-      top = $(id).offset().top;
-    $('body,html').animate({
-      scrollTop: top
-    }, 1500);
+btnPromoConsultation.addEventListener('click', function (evt) {
+  evt.preventDefault();
+  document.querySelector('.contact').scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
   });
 });
