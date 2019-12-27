@@ -137,6 +137,10 @@
     background: $color_blue_sky;
     box-shadow: none;
 
+    @media (max-width: $width_viewport_tablet) {
+      max-width: none;
+    }
+
     @media (max-width: $width_viewport_mobile) {
       width: auto;
       margin: 0 0 30px;

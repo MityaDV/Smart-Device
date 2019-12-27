@@ -251,17 +251,14 @@
 
   &--checkbox {
     display: inline-block;
-    flex-basis: 50%;
-    margin: 0 0 0 31px;
+    flex-basis: 47%;
     padding: 9px 5px 5px 39px;
 
     @media (max-width: $width_viewport_tablet) {
-      margin: 0 0 0 34px;
-      padding: 10px 42px 6px;
+      padding: 10px 10px 10px 42px;
     }
 
     @media (max-width: $width_viewport_mobile) {
-      margin: 0;
       padding: 1px 5px 5px 35px;
     }
   }
@@ -317,6 +314,7 @@
 
 .form__wrapper {
   display: flex;
+  justify-content: space-between;
 
   @media (max-width: $width_viewport_mobile) {
     flex-direction: column;
