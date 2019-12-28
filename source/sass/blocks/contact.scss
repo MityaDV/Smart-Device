@@ -10,6 +10,22 @@
   background-position: left 25% top 42%, right bottom 37%;
   background-size: auto, auto;
 
+  @media (max-width: 1570px) {
+    background-color: $color_blue_sky;
+    background-image: url("../img/plane-desktop@1x.png"), url("../img/bg-contact-delta@1x.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: left 15% top 42%, right 90% bottom 37%;
+    background-size: auto, auto;
+  }
+
+  @media (max-width: 1220px) {
+    background-color: $color_blue_sky;
+    background-image: url("../img/plane-desktop@1x.png"), url("../img/bg-contact-delta@1x.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: left 3% top 42%, right 70% bottom 37%;
+    background-size: auto, auto;
+  }
+
   @media (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
     background-color: $color_blue_sky;
     background-image: url("../img/plane-desktop@2x.png"), url("../img/bg-contact-delta@2x.png");
