@@ -2,7 +2,7 @@
 @import "vars.scss";
 
 .about {
-  padding: 37px 0 109px;
+  padding: 37px 0 110px;
 
   @media (max-width: $width_viewport_tablet) {
     padding: 12px 0 83px;
@@ -44,7 +44,7 @@
   & h2 {
     @include heading_h2;
 
-    margin: 0 0 30px;
+    margin: 0 0 23px;
 
     font-weight: $font_weight_normal;
     font-family: $font_family_second_base;
@@ -78,7 +78,7 @@
   }
 
   & p + p {
-    margin: 0 0 31px;
+    margin: 0 0 37px;
 
     @media (max-width: $width_viewport_tablet) {
       max-height: 81px;
@@ -98,9 +98,9 @@
     content: "";
     position: absolute;
     top: 6px;
-    left: 2px;
+    left: 0;
 
-    width: 178px;
+    width: 160px;
     height: 317px;
 
     background: transparent url("../img/number-desktop@1x.png") no-repeat center;

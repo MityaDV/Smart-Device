@@ -43,9 +43,9 @@
 
   &--consultation {
     width: 407px;
-    max-height: 55px;
+    min-height: 55px;
     margin: 0 0 0 92px;
-    padding: 17px 10px 14px;
+    padding: 17px 10px 16px;
 
     font-size: $font_size_p_desktop;
     line-height: $line_height_p_desktop_xl;
