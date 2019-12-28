@@ -34,6 +34,22 @@
     background-size: 511px, 1745px;
   }
 
+  @media (max-width: 1570px) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+    background-color: $color_blue_sky;
+    background-image: url("../img/plane-desktop@2x.png"), url("../img/bg-contact-delta@2x.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: left 15% top 42%, right 90% top 63%;
+    background-size: 511px, 1745px;
+  }
+
+  @media (max-width: 1220px) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
+    background-color: $color_blue_sky;
+    background-image: url("../img/plane-desktop@2x.png"), url("../img/bg-contact-delta@2x.png");
+    background-repeat: no-repeat, no-repeat;
+    background-position: left 3% top 42%, right 70% top 63%;
+    background-size: 511px, 1745px;
+  }
+
   @media (max-width: $width_viewport_tablet) {
     padding: 79px 0 104px;
 
