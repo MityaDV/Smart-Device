@@ -28,9 +28,11 @@ var ESC_KEYCODE = 27;
 
 if (footerToggleNav) {
   footerToggleNav.addEventListener('click', function () {
-    if (footerNav.classList.contains('footer__navigation--closed')) {
+    if (footerNav.classList.contains('footer__navigation--closed') || footerContact.classList.contains('footer__contact--opened')) {
       footerNav.classList.remove('footer__navigation--closed');
       footerNav.classList.add('footer__navigation--opened');
+      footerContact.classList.remove('footer__contact--opened');
+      footerContact.classList.add('footer__contact--closed');
     } else {
       footerNav.classList.add('footer__navigation--closed');
       footerNav.classList.remove('footer__navigation--opened');
@@ -40,9 +42,11 @@ if (footerToggleNav) {
 
 if (footerToggleContact) {
   footerToggleContact.addEventListener('click', function () {
-    if (footerContact.classList.contains('footer__contact--closed')) {
+    if (footerContact.classList.contains('footer__contact--closed') || footerNav.classList.contains('footer__contact--opened')) {
       footerContact.classList.remove('footer__contact--closed');
       footerContact.classList.add('footer__contact--opened');
+      footerNav.classList.remove('footer__navigation--opened');
+      footerNav.classList.add('footer__navigation--closed');
     } else {
       footerContact.classList.add('footer__contact--closed');
       footerContact.classList.remove('footer__contact--opened');
