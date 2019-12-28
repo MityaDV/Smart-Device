@@ -7,15 +7,15 @@
   background-color: $color_blue_sky;
   background-image: url("../img/plane-desktop@1x.png"), url("../img/bg-contact-delta@1x.png");
   background-repeat: no-repeat, no-repeat;
-  background-position: left 25% top 42%, left 172px top -61px;
-  background-size: 27%, 92%;
+  background-position: left 25% top 42%, right bottom 37%;
+  background-size: auto, auto;
 
   @media (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
     background-color: $color_blue_sky;
     background-image: url("../img/plane-desktop@2x.png"), url("../img/bg-contact-delta@2x.png");
     background-repeat: no-repeat, no-repeat;
-    background-position: left 25% top 42%, left 172px top -61px;
-    background-size: 27%, 92%;
+    background-position: left 25% top 42%, right top 63%;
+    background-size: 511px, 1745px;
   }
 
   @media (max-width: $width_viewport_tablet) {
