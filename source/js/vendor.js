@@ -5,9 +5,9 @@
   (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
       typeof define === 'function' && define.amd ? define(['exports'], factory) :
-        (global = global || self, factory(global.IMask = {}));
+      (global = global || self, factory(global.IMask = {}));
   }(this, (function (exports) {
-    // 'use strict';
+    'use strict';
 
     var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -21,8 +21,9 @@
       return it && it.Math == Math && it;
     }; // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
 
+
     var global_1 = // eslint-disable-next-line no-undef
-      check(typeof globalThis === 'object' && globalThis) || check(typeof window === 'object' && window) || check(typeof self === 'object' && self) || check(typeof commonjsGlobal === 'object' && commonjsGlobal) || // eslint-disable-next-line no-new-func
+      check(typeof globalThis == 'object' && globalThis) || check(typeof window == 'object' && window) || check(typeof self == 'object' && self) || check(typeof commonjsGlobal == 'object' && commonjsGlobal) || // eslint-disable-next-line no-new-func
       Function('return this')();
 
     var fails = function (exec) {
@@ -34,6 +35,7 @@
     };
 
     // Thank's IE8 for his funny defineProperty
+
 
     var descriptors = !fails(function () {
       return Object.defineProperty({}, 'a', {
@@ -82,19 +84,19 @@
       // eslint-disable-next-line no-prototype-builtins
       return !Object('z').propertyIsEnumerable(0);
     }) ? function (it) {
-        return classofRaw(it) == 'String' ? split.call(it, '') : Object(it);
-      } : Object;
+      return classofRaw(it) == 'String' ? split.call(it, '') : Object(it);
+    } : Object;
 
     // `RequireObjectCoercible` abstract operation
     // https://tc39.github.io/ecma262/#sec-requireobjectcoercible
     var requireObjectCoercible = function (it) {
-      if (it == undefined) {
-        throw TypeError('Can\'t call method on ' + it);
-      }
+      if (it == undefined) throw TypeError("Can't call method on " + it);
       return it;
     };
 
     // toObject with fallback for non-array-like ES3 strings
+
+
 
 
     var toIndexedObject = function (it) {
@@ -110,21 +112,14 @@
     // instead of the ES6 spec version, we didn't implement @@toPrimitive case
     // and the second argument - flag - preferred type is a string
 
+
     var toPrimitive = function (input, PREFERRED_STRING) {
-      if (!isObject(input)) {
-        return input;
-      }
-      var fn; var val;
-      if (PREFERRED_STRING && typeof (fn = input.toString) === 'function' && !isObject(val = fn.call(input))) {
-        return val;
-      }
-      if (typeof (fn = input.valueOf) === 'function' && !isObject(val = fn.call(input))) {
-        return val;
-      }
-      if (!PREFERRED_STRING && typeof (fn = input.toString) === 'function' && !isObject(val = fn.call(input))) {
-        return val;
-      }
-      throw TypeError('Can\'t convert object to primitive value');
+      if (!isObject(input)) return input;
+      var fn, val;
+      if (PREFERRED_STRING && typeof (fn = input.toString) == 'function' && !isObject(val = fn.call(input))) return val;
+      if (typeof (fn = input.valueOf) == 'function' && !isObject(val = fn.call(input))) return val;
+      if (!PREFERRED_STRING && typeof (fn = input.toString) == 'function' && !isObject(val = fn.call(input))) return val;
+      throw TypeError("Can't convert object to primitive value");
     };
 
     var hasOwnProperty = {}.hasOwnProperty;
@@ -143,6 +138,7 @@
 
     // Thank's IE8 for his funny defineProperty
 
+
     var ie8DomDefine = !descriptors && !fails(function () {
       return Object.defineProperty(documentCreateElement('div'), 'a', {
         get: function () {
@@ -157,16 +153,12 @@
     var f$1 = descriptors ? nativeGetOwnPropertyDescriptor : function getOwnPropertyDescriptor(O, P) {
       O = toIndexedObject(O);
       P = toPrimitive(P, true);
-      if (ie8DomDefine) {
-        try {
-          return nativeGetOwnPropertyDescriptor(O, P);
-        } catch (error) {
+      if (ie8DomDefine) try {
+        return nativeGetOwnPropertyDescriptor(O, P);
+      } catch (error) {
         /* empty */
-        }
       }
-      if (has(O, P)) {
-        return createPropertyDescriptor(!objectPropertyIsEnumerable.f.call(O, P), O[P]);
-      }
+      if (has(O, P)) return createPropertyDescriptor(!objectPropertyIsEnumerable.f.call(O, P), O[P]);
     };
 
     var objectGetOwnPropertyDescriptor = {
@@ -188,19 +180,13 @@
       anObject(O);
       P = toPrimitive(P, true);
       anObject(Attributes);
-      if (ie8DomDefine) {
-        try {
-          return nativeDefineProperty(O, P, Attributes);
-        } catch (error) {
+      if (ie8DomDefine) try {
+        return nativeDefineProperty(O, P, Attributes);
+      } catch (error) {
         /* empty */
-        }
       }
-      if ('get' in Attributes || 'set' in Attributes) {
-        throw TypeError('Accessors not supported');
-      }
-      if ('value' in Attributes) {
-        O[P] = Attributes.value;
-      }
+      if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported');
+      if ('value' in Attributes) O[P] = Attributes.value;
       return O;
     };
 
@@ -231,7 +217,7 @@
 
     var functionToString = Function.toString; // this helper broken in `3.4.1-3.4.4`, so we can't use `shared` helper
 
-    if (typeof sharedStore.inspectSource !== 'function') {
+    if (typeof sharedStore.inspectSource != 'function') {
       sharedStore.inspectSource = function (it) {
         return functionToString.call(it);
       };
@@ -268,7 +254,7 @@
     var hiddenKeys = {};
 
     var WeakMap$1 = global_1.WeakMap;
-    var set; var get; var has$1;
+    var set, get, has$1;
 
     var enforce = function (it) {
       return has$1(it) ? get(it) : set(it, {});
@@ -339,19 +325,14 @@
         var simple = options ? !!options.enumerable : false;
         var noTargetGet = options ? !!options.noTargetGet : false;
 
-        if (typeof value === 'function') {
-          if (typeof key === 'string' && !has(value, 'name')) {
-            createNonEnumerableProperty(value, 'name', key);
-          }
-          enforceInternalState(value).source = TEMPLATE.join(typeof key === 'string' ? key : '');
+        if (typeof value == 'function') {
+          if (typeof key == 'string' && !has(value, 'name')) createNonEnumerableProperty(value, 'name', key);
+          enforceInternalState(value).source = TEMPLATE.join(typeof key == 'string' ? key : '');
         }
 
         if (O === global_1) {
-          if (simple) {
-            O[key] = value;
-          } else {
-            setGlobal(key, value);
-          }
+          if (simple) O[key] = value;
+          else setGlobal(key, value);
           return;
         } else if (!unsafe) {
           delete O[key];
@@ -359,20 +340,17 @@
           simple = true;
         }
 
-        if (simple) {
-          O[key] = value;
-        } else {
-          createNonEnumerableProperty(O, key, value);
-        } // add fake Function#toString for correct work wrapped methods / constructors with methods like LoDash isNative
+        if (simple) O[key] = value;
+        else createNonEnumerableProperty(O, key, value); // add fake Function#toString for correct work wrapped methods / constructors with methods like LoDash isNative
       })(Function.prototype, 'toString', function toString() {
-        return typeof this === 'function' && getInternalState(this).source || inspectSource(this);
+        return typeof this == 'function' && getInternalState(this).source || inspectSource(this);
       });
     });
 
     var path = global_1;
 
     var aFunction = function (variable) {
-      return typeof variable === 'function' ? variable : undefined;
+      return typeof variable == 'function' ? variable : undefined;
     };
 
     var getBuiltIn = function (namespace, method) {
@@ -415,21 +393,15 @@
         var value; // Array#includes uses SameValueZero equality algorithm
         // eslint-disable-next-line no-self-compare
 
-        if (IS_INCLUDES && el != el) {
+        if (IS_INCLUDES && el != el)
           while (length > index) {
             value = O[index++]; // eslint-disable-next-line no-self-compare
 
-            if (value != value) {
-              return true;
-            } // Array#indexOf ignores holes, Array#includes - not
-          }
-        } else {
-          for (; length > index; index++) {
-            if ((IS_INCLUDES || index in O) && O[index] === el) {
-              return IS_INCLUDES || index || 0;
+            if (value != value) return true; // Array#indexOf ignores holes, Array#includes - not
+          } else
+            for (; length > index; index++) {
+              if ((IS_INCLUDES || index in O) && O[index] === el) return IS_INCLUDES || index || 0;
             }
-          }
-        }
         return !IS_INCLUDES && -1;
       };
     };
@@ -446,22 +418,20 @@
     var indexOf = arrayIncludes.indexOf;
 
 
+
     var objectKeysInternal = function (object, names) {
       var O = toIndexedObject(object);
       var i = 0;
       var result = [];
       var key;
 
-      for (key in O) {
-        !has(hiddenKeys, key) && has(O, key) && result.push(key);
-      } // Don't enum bug & hidden keys
+      for (key in O) !has(hiddenKeys, key) && has(O, key) && result.push(key); // Don't enum bug & hidden keys
 
 
-      while (names.length > i) {
+      while (names.length > i)
         if (has(O, key = names[i++])) {
           ~indexOf(result, key) || result.push(key);
         }
-      }
 
       return result;
     };
@@ -502,9 +472,7 @@
 
       for (var i = 0; i < keys.length; i++) {
         var key = keys[i];
-        if (!has(target, key)) {
-          defineProperty(target, key, getOwnPropertyDescriptor(source, key));
-        }
+        if (!has(target, key)) defineProperty(target, key, getOwnPropertyDescriptor(source, key));
       }
     };
 
@@ -512,7 +480,7 @@
 
     var isForced = function (feature, detection) {
       var value = data[normalize(feature)];
-      return value == POLYFILL ? true : value == NATIVE ? false : typeof detection === 'function' ? fails(detection) : !!detection;
+      return value == POLYFILL ? true : value == NATIVE ? false : typeof detection == 'function' ? fails(detection) : !!detection;
     };
 
     var normalize = isForced.normalize = function (string) {
@@ -525,6 +493,14 @@
     var isForced_1 = isForced;
 
     var getOwnPropertyDescriptor$1 = objectGetOwnPropertyDescriptor.f;
+
+
+
+
+
+
+
+
 
 
     /*
@@ -547,7 +523,7 @@
       var TARGET = options.target;
       var GLOBAL = options.global;
       var STATIC = options.stat;
-      var FORCED; var target; var key; var targetProperty; var sourceProperty; var descriptor;
+      var FORCED, target, key, targetProperty, sourceProperty, descriptor;
 
       if (GLOBAL) {
         target = global_1;
@@ -557,23 +533,19 @@
         target = (global_1[TARGET] || {}).prototype;
       }
 
-      if (target) {
+      if (target)
         for (key in source) {
           sourceProperty = source[key];
 
           if (options.noTargetGet) {
             descriptor = getOwnPropertyDescriptor$1(target, key);
             targetProperty = descriptor && descriptor.value;
-          } else {
-            targetProperty = target[key];
-          }
+          } else targetProperty = target[key];
 
           FORCED = isForced_1(GLOBAL ? key : TARGET + (STATIC ? '.' : '#') + key, options.forced); // contained in target
 
           if (!FORCED && targetProperty !== undefined) {
-            if (typeof sourceProperty === typeof targetProperty) {
-              continue;
-            }
+            if (typeof sourceProperty === typeof targetProperty) continue;
             copyConstructorProperties(sourceProperty, targetProperty);
           } // add a flag to not completely full polyfills
 
@@ -585,7 +557,6 @@
 
           redefine(target, key, sourceProperty, options);
         }
-      }
     };
 
     // `Object.keys` method
@@ -611,20 +582,18 @@
     var objectAssign = !nativeAssign || fails(function () {
       // should have correct order of operations (Edge bug)
       if (descriptors && nativeAssign({
-        b: 1
-      }, nativeAssign(defineProperty({}, 'a', {
-        enumerable: true,
-        get: function () {
-          defineProperty(this, 'b', {
-            value: 3,
-            enumerable: false
-          });
-        }
-      }), {
-        b: 2
-      })).b !== 1) {
-        return true;
-      } // should work with symbols and should have deterministic property order (V8 bug)
+          b: 1
+        }, nativeAssign(defineProperty({}, 'a', {
+          enumerable: true,
+          get: function () {
+            defineProperty(this, 'b', {
+              value: 3,
+              enumerable: false
+            });
+          }
+        }), {
+          b: 2
+        })).b !== 1) return true; // should work with symbols and should have deterministic property order (V8 bug)
 
       var A = {};
       var B = {}; // eslint-disable-next-line no-undef
@@ -638,29 +607,27 @@
       return nativeAssign({}, A)[symbol] != 7 || objectKeys(nativeAssign({}, B)).join('') != alphabet;
     }) ? function assign(target, source) {
       // eslint-disable-line no-unused-vars
-        var T = toObject(target);
-        var argumentsLength = arguments.length;
-        var index = 1;
-        var getOwnPropertySymbols = objectGetOwnPropertySymbols.f;
-        var propertyIsEnumerable = objectPropertyIsEnumerable.f;
+      var T = toObject(target);
+      var argumentsLength = arguments.length;
+      var index = 1;
+      var getOwnPropertySymbols = objectGetOwnPropertySymbols.f;
+      var propertyIsEnumerable = objectPropertyIsEnumerable.f;
 
-        while (argumentsLength > index) {
-          var S = indexedObject(arguments[index++]);
-          var keys = getOwnPropertySymbols ? objectKeys(S).concat(getOwnPropertySymbols(S)) : objectKeys(S);
-          var length = keys.length;
-          var j = 0;
-          var key;
+      while (argumentsLength > index) {
+        var S = indexedObject(arguments[index++]);
+        var keys = getOwnPropertySymbols ? objectKeys(S).concat(getOwnPropertySymbols(S)) : objectKeys(S);
+        var length = keys.length;
+        var j = 0;
+        var key;
 
-          while (length > j) {
-            key = keys[j++];
-            if (!descriptors || propertyIsEnumerable.call(S, key)) {
-              T[key] = S[key];
-            }
-          }
+        while (length > j) {
+          key = keys[j++];
+          if (!descriptors || propertyIsEnumerable.call(S, key)) T[key] = S[key];
         }
+      }
 
-        return T;
-      } : nativeAssign;
+      return T;
+    } : nativeAssign;
 
     // `Object.assign` method
     // https://tc39.github.io/ecma262/#sec-object.assign
@@ -682,21 +649,20 @@
       var str = String(requireObjectCoercible(this));
       var result = '';
       var n = toInteger(count);
-      if (n < 0 || n == Infinity) {
-        throw RangeError('Wrong number of repetitions');
-      }
+      if (n < 0 || n == Infinity) throw RangeError('Wrong number of repetitions');
 
       for (; n > 0;
-        (n >>>= 1) && (str += str)) {
-        if (n & 1) {
-          result += str;
-        }
-      }
+        (n >>>= 1) && (str += str))
+        if (n & 1) result += str;
 
       return result;
     };
 
     // https://github.com/tc39/proposal-string-pad-start-end
+
+
+
+
 
 
     var ceil$1 = Math.ceil; // `String.prototype.{ padStart, padEnd }` methods implementation
@@ -707,15 +673,11 @@
         var stringLength = S.length;
         var fillStr = fillString === undefined ? ' ' : String(fillString);
         var intMaxLength = toLength(maxLength);
-        var fillLen; var stringFiller;
-        if (intMaxLength <= stringLength || fillStr == '') {
-          return S;
-        }
+        var fillLen, stringFiller;
+        if (intMaxLength <= stringLength || fillStr == '') return S;
         fillLen = intMaxLength - stringLength;
         stringFiller = stringRepeat.call(fillStr, ceil$1(fillLen / fillStr.length));
-        if (stringFiller.length > fillLen) {
-          stringFiller = stringFiller.slice(0, fillLen);
-        }
+        if (stringFiller.length > fillLen) stringFiller = stringFiller.slice(0, fillLen);
         return IS_END ? S + stringFiller : stringFiller + S;
       };
     };
@@ -749,7 +711,7 @@
       forced: webkitStringPadBug
     }, {
       padEnd: function padEnd(maxLength
-          /* , fillString = ' ' */
+        /* , fillString = ' ' */
       ) {
         return $padEnd(this, maxLength, arguments.length > 1 ? arguments[1] : undefined);
       }
@@ -767,7 +729,7 @@
       forced: webkitStringPadBug
     }, {
       padStart: function padStart(maxLength
-          /* , fillString = ' ' */
+        /* , fillString = ' ' */
       ) {
         return $padStart(this, maxLength, arguments.length > 1 ? arguments[1] : undefined);
       }
@@ -797,13 +759,13 @@
     })(Object);
 
     function _typeof(obj) {
-      if (typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol') {
+      if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
         _typeof = function (obj) {
           return typeof obj;
         };
       } else {
         _typeof = function (obj) {
-          return obj && typeof Symbol === 'function' && obj.constructor === Symbol && obj !== Symbol.prototype ? 'symbol' : typeof obj;
+          return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
         };
       }
 
@@ -812,7 +774,7 @@
 
     function _classCallCheck(instance, Constructor) {
       if (!(instance instanceof Constructor)) {
-        throw new TypeError('Cannot call a class as a function');
+        throw new TypeError("Cannot call a class as a function");
       }
     }
 
@@ -821,20 +783,14 @@
         var descriptor = props[i];
         descriptor.enumerable = descriptor.enumerable || false;
         descriptor.configurable = true;
-        if ('value' in descriptor) {
-          descriptor.writable = true;
-        }
+        if ("value" in descriptor) descriptor.writable = true;
         Object.defineProperty(target, descriptor.key, descriptor);
       }
     }
 
     function _createClass(Constructor, protoProps, staticProps) {
-      if (protoProps) {
-        _defineProperties(Constructor.prototype, protoProps);
-      }
-      if (staticProps) {
-        _defineProperties(Constructor, staticProps);
-      }
+      if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+      if (staticProps) _defineProperties(Constructor, staticProps);
       return Constructor;
     }
 
@@ -854,8 +810,8 @@
     }
 
     function _inherits(subClass, superClass) {
-      if (typeof superClass !== 'function' && superClass !== null) {
-        throw new TypeError('Super expression must either be null or a function');
+      if (typeof superClass !== "function" && superClass !== null) {
+        throw new TypeError("Super expression must either be null or a function");
       }
 
       subClass.prototype = Object.create(superClass && superClass.prototype, {
@@ -865,9 +821,7 @@
           configurable: true
         }
       });
-      if (superClass) {
-        _setPrototypeOf(subClass, superClass);
-      }
+      if (superClass) _setPrototypeOf(subClass, superClass);
     }
 
     function _getPrototypeOf(o) {
@@ -887,18 +841,14 @@
     }
 
     function _objectWithoutPropertiesLoose(source, excluded) {
-      if (source == null) {
-        return {};
-      }
+      if (source == null) return {};
       var target = {};
       var sourceKeys = Object.keys(source);
-      var key; var i;
+      var key, i;
 
       for (i = 0; i < sourceKeys.length; i++) {
         key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) {
-          continue;
-        }
+        if (excluded.indexOf(key) >= 0) continue;
         target[key] = source[key];
       }
 
@@ -906,25 +856,19 @@
     }
 
     function _objectWithoutProperties(source, excluded) {
-      if (source == null) {
-        return {};
-      }
+      if (source == null) return {};
 
       var target = _objectWithoutPropertiesLoose(source, excluded);
 
-      var key; var i;
+      var key, i;
 
       if (Object.getOwnPropertySymbols) {
         var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
 
         for (i = 0; i < sourceSymbolKeys.length; i++) {
           key = sourceSymbolKeys[i];
-          if (excluded.indexOf(key) >= 0) {
-            continue;
-          }
-          if (!Object.prototype.propertyIsEnumerable.call(source, key)) {
-            continue;
-          }
+          if (excluded.indexOf(key) >= 0) continue;
+          if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
           target[key] = source[key];
         }
       }
@@ -934,14 +878,14 @@
 
     function _assertThisInitialized(self) {
       if (self === void 0) {
-        throw new ReferenceError('this hasn\'t been initialised - super() hasn\'t been called');
+        throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
       }
 
       return self;
     }
 
     function _possibleConstructorReturn(self, call) {
-      if (call && (typeof call === 'object' || typeof call === 'function')) {
+      if (call && (typeof call === "object" || typeof call === "function")) {
         return call;
       }
 
@@ -951,24 +895,20 @@
     function _superPropBase(object, property) {
       while (!Object.prototype.hasOwnProperty.call(object, property)) {
         object = _getPrototypeOf(object);
-        if (object === null) {
-          break;
-        }
+        if (object === null) break;
       }
 
       return object;
     }
 
     function _get(target, property, receiver) {
-      if (typeof Reflect !== 'undefined' && Reflect.get) {
+      if (typeof Reflect !== "undefined" && Reflect.get) {
         _get = Reflect.get;
       } else {
         _get = function _get(target, property, receiver) {
           var base = _superPropBase(target, property);
 
-          if (!base) {
-            return;
-          }
+          if (!base) return;
           var desc = Object.getOwnPropertyDescriptor(base, property);
 
           if (desc.get) {
@@ -983,7 +923,7 @@
     }
 
     function set$1(target, property, value, receiver) {
-      if (typeof Reflect !== 'undefined' && Reflect.set) {
+      if (typeof Reflect !== "undefined" && Reflect.set) {
         set$1 = Reflect.set;
       } else {
         set$1 = function set(target, property, value, receiver) {
@@ -1037,13 +977,11 @@
     }
 
     function _arrayWithHoles(arr) {
-      if (Array.isArray(arr)) {
-        return arr;
-      }
+      if (Array.isArray(arr)) return arr;
     }
 
     function _iterableToArrayLimit(arr, i) {
-      if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === '[object Arguments]')) {
+      if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) {
         return;
       }
 
@@ -1056,22 +994,16 @@
         for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
           _arr.push(_s.value);
 
-          if (i && _arr.length === i) {
-            break;
-          }
+          if (i && _arr.length === i) break;
         }
       } catch (err) {
         _d = true;
         _e = err;
       } finally {
         try {
-          if (!_n && _i['return'] != null) {
-            _i['return']();
-          }
+          if (!_n && _i["return"] != null) _i["return"]();
         } finally {
-          if (_d) {
-            throw _e;
-          }
+          if (_d) throw _e;
         }
       }
 
@@ -1079,7 +1011,7 @@
     }
 
     function _nonIterableRest() {
-      throw new TypeError('Invalid attempt to destructure non-iterable instance');
+      throw new TypeError("Invalid attempt to destructure non-iterable instance");
     }
 
     /** Checks if value is string */
@@ -1123,60 +1055,40 @@
     } // cloned from https://github.com/epoberezkin/fast-deep-equal with small changes
 
     function objectIncludes(b, a) {
-      if (a === b) {
-        return true;
-      }
-      var arrA = Array.isArray(a);
-      var arrB = Array.isArray(b);
-      var i;
+      if (a === b) return true;
+      var arrA = Array.isArray(a),
+        arrB = Array.isArray(b),
+        i;
 
       if (arrA && arrB) {
-        if (a.length != b.length) {
-          return false;
-        }
+        if (a.length != b.length) return false;
 
         for (i = 0; i < a.length; i++) {
-          if (!objectIncludes(a[i], b[i])) {
-            return false;
-          }
+          if (!objectIncludes(a[i], b[i])) return false;
         }
 
         return true;
       }
 
-      if (arrA != arrB) {
-        return false;
-      }
+      if (arrA != arrB) return false;
 
       if (a && b && _typeof(a) === 'object' && _typeof(b) === 'object') {
-        var dateA = a instanceof Date;
-        var dateB = b instanceof Date;
-        if (dateA && dateB) {
-          return a.getTime() == b.getTime();
-        }
-        if (dateA != dateB) {
-          return false;
-        }
-        var regexpA = a instanceof RegExp;
-        var regexpB = b instanceof RegExp;
-        if (regexpA && regexpB) {
-          return a.toString() == b.toString();
-        }
-        if (regexpA != regexpB) {
-          return false;
-        }
+        var dateA = a instanceof Date,
+          dateB = b instanceof Date;
+        if (dateA && dateB) return a.getTime() == b.getTime();
+        if (dateA != dateB) return false;
+        var regexpA = a instanceof RegExp,
+          regexpB = b instanceof RegExp;
+        if (regexpA && regexpB) return a.toString() == b.toString();
+        if (regexpA != regexpB) return false;
         var keys = Object.keys(a); // if (keys.length !== Object.keys(b).length) return false;
 
         for (i = 0; i < keys.length; i++) {
-          if (!Object.prototype.hasOwnProperty.call(b, keys[i])) {
-            return false;
-          }
+          if (!Object.prototype.hasOwnProperty.call(b, keys[i])) return false;
         }
 
         for (i = 0; i < keys.length; i++) {
-          if (!objectIncludes(b[keys[i]], a[keys[i]])) {
-            return false;
-          }
+          if (!objectIncludes(b[keys[i]], a[keys[i]])) return false;
         }
 
         return true;
@@ -1191,7 +1103,7 @@
     /** Provides details of changing input */
 
     var ActionDetails =
-      /* #__PURE__*/
+      /*#__PURE__*/
       function () {
         /** Current input value */
 
@@ -1219,7 +1131,7 @@
 
 
         _createClass(ActionDetails, [{
-          key: 'startChangePos',
+          key: "startChangePos",
           get: function get() {
             return Math.min(this.cursorPos, this.oldSelection.start);
           }
@@ -1229,7 +1141,7 @@
           */
 
         }, {
-          key: 'insertedCount',
+          key: "insertedCount",
           get: function get() {
             return this.cursorPos - this.startChangePos;
           }
@@ -1239,7 +1151,7 @@
           */
 
         }, {
-          key: 'inserted',
+          key: "inserted",
           get: function get() {
             return this.value.substr(this.startChangePos, this.insertedCount);
           }
@@ -1249,7 +1161,7 @@
           */
 
         }, {
-          key: 'removedCount',
+          key: "removedCount",
           get: function get() {
             // Math.max for opposite operation
             return Math.max(this.oldSelection.end - this.startChangePos || // for Delete
@@ -1261,7 +1173,7 @@
           */
 
         }, {
-          key: 'removed',
+          key: "removed",
           get: function get() {
             return this.oldValue.substr(this.startChangePos, this.removedCount);
           }
@@ -1271,7 +1183,7 @@
           */
 
         }, {
-          key: 'head',
+          key: "head",
           get: function get() {
             return this.value.substring(0, this.startChangePos);
           }
@@ -1281,7 +1193,7 @@
           */
 
         }, {
-          key: 'tail',
+          key: "tail",
           get: function get() {
             return this.value.substring(this.startChangePos + this.insertedCount);
           }
@@ -1291,11 +1203,9 @@
           */
 
         }, {
-          key: 'removeDirection',
+          key: "removeDirection",
           get: function get() {
-            if (!this.removedCount || this.insertedCount) {
-              return DIRECTION.NONE;
-            } // align right if delete at right or if range removed (event with backspace)
+            if (!this.removedCount || this.insertedCount) return DIRECTION.NONE; // align right if delete at right or if range removed (event with backspace)
 
             return this.oldSelection.end === this.cursorPos || this.oldSelection.start === this.cursorPos ? DIRECTION.RIGHT : DIRECTION.LEFT;
           }
@@ -1313,7 +1223,7 @@
       @param {number} [details.tailShift] - Additional offset if any changes occurred before tail
     */
     var ChangeDetails =
-      /* #__PURE__*/
+      /*#__PURE__*/
       function () {
         /** Inserted symbols */
 
@@ -1339,7 +1249,7 @@
 
 
         _createClass(ChangeDetails, [{
-          key: 'aggregate',
+          key: "aggregate",
           value: function aggregate(details) {
             this.rawInserted += details.rawInserted;
             this.skip = this.skip || details.skip;
@@ -1350,7 +1260,7 @@
           /** Total offset considering all changes */
 
         }, {
-          key: 'offset',
+          key: "offset",
           get: function get() {
             return this.tailShift + this.inserted.length;
           }
@@ -1361,7 +1271,7 @@
 
     /** Provides details of continuous extracted tail */
     var ContinuousTailDetails =
-      /* #__PURE__*/
+      /*#__PURE__*/
       function () {
         /** Tail value as string */
 
@@ -1381,34 +1291,32 @@
         }
 
         _createClass(ContinuousTailDetails, [{
-          key: 'toString',
+          key: "toString",
           value: function toString() {
             return this.value;
           }
         }, {
-          key: 'extend',
+          key: "extend",
           value: function extend(tail) {
             this.value += String(tail);
           }
         }, {
-          key: 'appendTo',
+          key: "appendTo",
           value: function appendTo(masked) {
             return masked.append(this.toString(), {
               tail: true
             }).aggregate(masked._appendPlaceholder());
           }
         }, {
-          key: 'shiftBefore',
+          key: "shiftBefore",
           value: function shiftBefore(pos) {
-            if (this.from >= pos || !this.value.length) {
-              return '';
-            }
+            if (this.from >= pos || !this.value.length) return '';
             var shiftChar = this.value[0];
             this.value = this.value.slice(1);
             return shiftChar;
           }
         }, {
-          key: 'state',
+          key: "state",
           get: function get() {
             return {
               value: this.value,
@@ -1441,7 +1349,7 @@
 
     /** Provides common masking stuff */
     var Masked =
-      /* #__PURE__*/
+      /*#__PURE__*/
       function () {
         // $Shape<MaskedOptions>; TODO after fix https://github.com/facebook/flow/issues/4773
 
@@ -1476,11 +1384,9 @@
 
 
         _createClass(Masked, [{
-          key: 'updateOptions',
+          key: "updateOptions",
           value: function updateOptions(opts) {
-            if (!Object.keys(opts).length) {
-              return;
-            }
+            if (!Object.keys(opts).length) return;
             this.withValueRefresh(this._update.bind(this, opts));
           }
           /**
@@ -1489,14 +1395,14 @@
           */
 
         }, {
-          key: '_update',
+          key: "_update",
           value: function _update(opts) {
             Object.assign(this, opts);
           }
           /** Mask state */
 
         }, {
-          key: 'reset',
+          key: "reset",
 
           /** Resets value */
           value: function reset() {
@@ -1505,7 +1411,7 @@
           /** */
 
         }, {
-          key: 'resolve',
+          key: "resolve",
 
           /** Resolve new value */
           value: function resolve(value) {
@@ -1519,7 +1425,7 @@
           /** */
 
         }, {
-          key: 'nearestInputPos',
+          key: "nearestInputPos",
 
           /** Finds nearest input position in direction */
           value: function nearestInputPos(cursorPos, direction) {
@@ -1528,7 +1434,7 @@
           /** Extracts value in range considering flags */
 
         }, {
-          key: 'extractInput',
+          key: "extractInput",
           value: function extractInput() {
             var fromPos = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
             var toPos = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.value.length;
@@ -1537,7 +1443,7 @@
           /** Extracts tail in range */
 
         }, {
-          key: 'extractTail',
+          key: "extractTail",
           value: function extractTail() {
             var fromPos = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
             var toPos = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.value.length;
@@ -1547,23 +1453,19 @@
           // $FlowFixMe no ideas
 
         }, {
-          key: 'appendTail',
+          key: "appendTail",
           value: function appendTail(tail) {
-            if (isString(tail)) {
-              tail = new ContinuousTailDetails(String(tail));
-            }
+            if (isString(tail)) tail = new ContinuousTailDetails(String(tail));
             return tail.appendTo(this);
           }
           /** Appends char */
 
         }, {
-          key: '_appendCharRaw',
+          key: "_appendCharRaw",
           value: function _appendCharRaw(ch) {
             var flags = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
             ch = this.doPrepare(ch, flags);
-            if (!ch) {
-              return new ChangeDetails();
-            }
+            if (!ch) return new ChangeDetails();
             this._value += ch;
             return new ChangeDetails({
               inserted: ch,
@@ -1573,7 +1475,7 @@
           /** Appends char */
 
         }, {
-          key: '_appendChar',
+          key: "_appendChar",
           value: function _appendChar(ch) {
             var flags = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
             var checkTail = arguments.length > 2 ? arguments[2] : undefined;
@@ -1597,18 +1499,14 @@
                 var tailDetails = this.appendTail(checkTail);
                 appended = tailDetails.rawInserted === checkTail.toString(); // if ok, rollback state after tail
 
-                if (appended && tailDetails.inserted) {
-                  this.state = beforeTailState;
-                }
+                if (appended && tailDetails.inserted) this.state = beforeTailState;
               } // revert all if something went wrong
 
 
               if (!appended) {
                 details.rawInserted = details.inserted = '';
                 this.state = consistentState;
-                if (checkTail && consistentTail) {
-                  checkTail.state = consistentTail;
-                }
+                if (checkTail && consistentTail) checkTail.state = consistentTail;
               }
             }
 
@@ -1617,7 +1515,7 @@
           /** Appends optional placeholder at end */
 
         }, {
-          key: '_appendPlaceholder',
+          key: "_appendPlaceholder",
           value: function _appendPlaceholder() {
             return new ChangeDetails();
           }
@@ -1625,16 +1523,12 @@
           // $FlowFixMe no ideas
 
         }, {
-          key: 'append',
+          key: "append",
           value: function append(str, flags, tail) {
-            if (!isString(str)) {
-              throw new Error('value should be string');
-            }
+            if (!isString(str)) throw new Error('value should be string');
             var details = new ChangeDetails();
             var checkTail = isString(tail) ? new ContinuousTailDetails(String(tail)) : tail;
-            if (flags.tail) {
-              flags._beforeTailState = this.state;
-            }
+            if (flags.tail) flags._beforeTailState = this.state;
 
             for (var ci = 0; ci < str.length; ++ci) {
               details.aggregate(this._appendChar(str[ci], flags, checkTail));
@@ -1652,7 +1546,7 @@
           /** */
 
         }, {
-          key: 'remove',
+          key: "remove",
           value: function remove() {
             var fromPos = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
             var toPos = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.value.length;
@@ -1662,11 +1556,9 @@
           /** Calls function and reapplies current value */
 
         }, {
-          key: 'withValueRefresh',
+          key: "withValueRefresh",
           value: function withValueRefresh(fn) {
-            if (this._refreshing || !this.isInitialized) {
-              return fn();
-            }
+            if (this._refreshing || !this.isInitialized) return fn();
             this._refreshing = true;
             var unmasked = this.unmaskedValue;
             var value = this.value;
@@ -1683,11 +1575,9 @@
           /** */
 
         }, {
-          key: 'runIsolated',
+          key: "runIsolated",
           value: function runIsolated(fn) {
-            if (this._isolated || !this.isInitialized) {
-              return fn(this);
-            }
+            if (this._isolated || !this.isInitialized) return fn(this);
             this._isolated = true;
             var state = this.state;
             var ret = fn(this);
@@ -1701,7 +1591,7 @@
           */
 
         }, {
-          key: 'doPrepare',
+          key: "doPrepare",
           value: function doPrepare(str) {
             var flags = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
             return this.prepare ? this.prepare(str, this, flags) : str;
@@ -1712,7 +1602,7 @@
           */
 
         }, {
-          key: 'doValidate',
+          key: "doValidate",
           value: function doValidate(flags) {
             return (!this.validate || this.validate(this.value, this, flags)) && (!this.parent || this.parent.doValidate(flags));
           }
@@ -1722,30 +1612,28 @@
           */
 
         }, {
-          key: 'doCommit',
+          key: "doCommit",
           value: function doCommit() {
-            if (this.commit) {
-              this.commit(this.value, this);
-            }
+            if (this.commit) this.commit(this.value, this);
           }
           /** */
 
         }, {
-          key: 'doFormat',
+          key: "doFormat",
           value: function doFormat(value) {
             return this.format ? this.format(value, this) : value;
           }
           /** */
 
         }, {
-          key: 'doParse',
+          key: "doParse",
           value: function doParse(str) {
             return this.parse ? this.parse(str, this) : str;
           }
           /** */
 
         }, {
-          key: 'splice',
+          key: "splice",
           value: function splice(start, deleteCount, inserted, removeDirection) {
             var tailPos = start + deleteCount;
             var tail = this.extractTail(tailPos);
@@ -1759,7 +1647,7 @@
             return changeDetails;
           }
         }, {
-          key: 'state',
+          key: "state",
           get: function get() {
             return {
               _value: this.value
@@ -1769,7 +1657,7 @@
             this._value = state._value;
           }
         }, {
-          key: 'value',
+          key: "value",
           get: function get() {
             return this._value;
           },
@@ -1777,7 +1665,7 @@
             this.resolve(value);
           }
         }, {
-          key: 'unmaskedValue',
+          key: "unmaskedValue",
           get: function get() {
             return this.value;
           },
@@ -1789,7 +1677,7 @@
           /** */
 
         }, {
-          key: 'typedValue',
+          key: "typedValue",
           get: function get() {
             return this.doParse(this.value);
           },
@@ -1799,7 +1687,7 @@
           /** Value that includes raw user input */
 
         }, {
-          key: 'rawInputValue',
+          key: "rawInputValue",
           get: function get() {
             return this.extractInput(0, this.value.length, {
               raw: true
@@ -1815,7 +1703,7 @@
           /** */
 
         }, {
-          key: 'isComplete',
+          key: "isComplete",
           get: function get() {
             return true;
           }
@@ -1841,33 +1729,19 @@
       } // $FlowFixMe
 
 
-      if (mask instanceof RegExp) {
-        return IMask.MaskedRegExp;
-      } // $FlowFixMe
+      if (mask instanceof RegExp) return IMask.MaskedRegExp; // $FlowFixMe
 
-      if (isString(mask)) {
-        return IMask.MaskedPattern;
-      } // $FlowFixMe
+      if (isString(mask)) return IMask.MaskedPattern; // $FlowFixMe
 
-      if (mask instanceof Date || mask === Date) {
-        return IMask.MaskedDate;
-      } // $FlowFixMe
+      if (mask instanceof Date || mask === Date) return IMask.MaskedDate; // $FlowFixMe
 
-      if (mask instanceof Number || typeof mask === 'number' || mask === Number) {
-        return IMask.MaskedNumber;
-      } // $FlowFixMe
+      if (mask instanceof Number || typeof mask === 'number' || mask === Number) return IMask.MaskedNumber; // $FlowFixMe
 
-      if (Array.isArray(mask) || mask === Array) {
-        return IMask.MaskedDynamic;
-      } // $FlowFixMe
+      if (Array.isArray(mask) || mask === Array) return IMask.MaskedDynamic; // $FlowFixMe
 
-      if (IMask.Masked && mask.prototype instanceof IMask.Masked) {
-        return mask;
-      } // $FlowFixMe
+      if (IMask.Masked && mask.prototype instanceof IMask.Masked) return mask; // $FlowFixMe
 
-      if (mask instanceof Function) {
-        return IMask.MaskedFunction;
-      }
+      if (mask instanceof Function) return IMask.MaskedFunction;
       console.warn('Mask not found for mask', mask); // eslint-disable-line no-console
       // $FlowFixMe
 
@@ -1877,19 +1751,13 @@
 
     function createMask(opts) {
       // $FlowFixMe
-      if (IMask.Masked && opts instanceof IMask.Masked) {
-        return opts;
-      }
+      if (IMask.Masked && opts instanceof IMask.Masked) return opts;
       opts = Object.assign({}, opts);
       var mask = opts.mask; // $FlowFixMe
 
-      if (IMask.Masked && mask instanceof IMask.Masked) {
-        return mask;
-      }
+      if (IMask.Masked && mask instanceof IMask.Masked) return mask;
       var MaskedClass = maskedClass(mask);
-      if (!MaskedClass) {
-        throw new Error('Masked class is not found for provided mask, appropriate module needs to be import manually before creating mask.');
-      }
+      if (!MaskedClass) throw new Error('Masked class is not found for provided mask, appropriate module needs to be import manually before creating mask.');
       return new MaskedClass(opts);
     }
     IMask.createMask = createMask;
@@ -1903,7 +1771,7 @@
     /** */
 
     var PatternInputDefinition =
-      /* #__PURE__*/
+      /*#__PURE__*/
       function () {
         /** */
 
@@ -1919,8 +1787,8 @@
         function PatternInputDefinition(opts) {
           _classCallCheck(this, PatternInputDefinition);
 
-          var mask = opts.mask;
-          var blockOpts = _objectWithoutProperties(opts, ['mask']);
+          var mask = opts.mask,
+            blockOpts = _objectWithoutProperties(opts, ["mask"]);
 
           this.masked = createMask({
             mask: mask
@@ -1929,13 +1797,13 @@
         }
 
         _createClass(PatternInputDefinition, [{
-          key: 'reset',
+          key: "reset",
           value: function reset() {
             this._isFilled = false;
             this.masked.reset();
           }
         }, {
-          key: 'remove',
+          key: "remove",
           value: function remove() {
             var fromPos = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
             var toPos = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.value.length;
@@ -1948,12 +1816,10 @@
             return new ChangeDetails();
           }
         }, {
-          key: '_appendChar',
+          key: "_appendChar",
           value: function _appendChar(str) {
             var flags = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-            if (this._isFilled) {
-              return new ChangeDetails();
-            }
+            if (this._isFilled) return new ChangeDetails();
             var state = this.masked.state; // simulate input
 
             var details = this.masked._appendChar(str, flags);
@@ -1972,39 +1838,37 @@
             return details;
           }
         }, {
-          key: 'append',
+          key: "append",
           value: function append() {
             var _this$masked;
 
             return (_this$masked = this.masked).append.apply(_this$masked, arguments);
           }
         }, {
-          key: '_appendPlaceholder',
+          key: "_appendPlaceholder",
           value: function _appendPlaceholder() {
             var details = new ChangeDetails();
-            if (this._isFilled || this.isOptional) {
-              return details;
-            }
+            if (this._isFilled || this.isOptional) return details;
             this._isFilled = true;
             details.inserted = this.placeholderChar;
             return details;
           }
         }, {
-          key: 'extractTail',
+          key: "extractTail",
           value: function extractTail() {
             var _this$masked2;
 
             return (_this$masked2 = this.masked).extractTail.apply(_this$masked2, arguments);
           }
         }, {
-          key: 'appendTail',
+          key: "appendTail",
           value: function appendTail() {
             var _this$masked3;
 
             return (_this$masked3 = this.masked).appendTail.apply(_this$masked3, arguments);
           }
         }, {
-          key: 'extractInput',
+          key: "extractInput",
           value: function extractInput() {
             var fromPos = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
             var toPos = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.value.length;
@@ -2012,7 +1876,7 @@
             return this.masked.extractInput(fromPos, toPos, flags);
           }
         }, {
-          key: 'nearestInputPos',
+          key: "nearestInputPos",
           value: function nearestInputPos(cursorPos) {
             var direction = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : DIRECTION.NONE;
             var minPos = 0;
@@ -2034,34 +1898,34 @@
             }
           }
         }, {
-          key: 'doValidate',
+          key: "doValidate",
           value: function doValidate() {
-            var _this$masked4; var _this$parent;
+            var _this$masked4, _this$parent;
 
             return (_this$masked4 = this.masked).doValidate.apply(_this$masked4, arguments) && (!this.parent || (_this$parent = this.parent).doValidate.apply(_this$parent, arguments));
           }
         }, {
-          key: 'doCommit',
+          key: "doCommit",
           value: function doCommit() {
             this.masked.doCommit();
           }
         }, {
-          key: 'value',
+          key: "value",
           get: function get() {
             return this.masked.value || (this._isFilled && !this.isOptional ? this.placeholderChar : '');
           }
         }, {
-          key: 'unmaskedValue',
+          key: "unmaskedValue",
           get: function get() {
             return this.masked.unmaskedValue;
           }
         }, {
-          key: 'isComplete',
+          key: "isComplete",
           get: function get() {
             return Boolean(this.masked.value) || this.isOptional;
           }
         }, {
-          key: 'state',
+          key: "state",
           get: function get() {
             return {
               masked: this.masked.state,
@@ -2078,7 +1942,7 @@
       }();
 
     var PatternFixedDefinition =
-      /* #__PURE__*/
+      /*#__PURE__*/
       function () {
         /** */
 
@@ -2095,24 +1959,22 @@
         }
 
         _createClass(PatternFixedDefinition, [{
-          key: 'reset',
+          key: "reset",
           value: function reset() {
             this._isRawInput = false;
             this._value = '';
           }
         }, {
-          key: 'remove',
+          key: "remove",
           value: function remove() {
             var fromPos = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
             var toPos = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this._value.length;
             this._value = this._value.slice(0, fromPos) + this._value.slice(toPos);
-            if (!this._value) {
-              this._isRawInput = false;
-            }
+            if (!this._value) this._isRawInput = false;
             return new ChangeDetails();
           }
         }, {
-          key: 'nearestInputPos',
+          key: "nearestInputPos",
           value: function nearestInputPos(cursorPos) {
             var direction = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : DIRECTION.NONE;
             var minPos = 0;
@@ -2131,7 +1993,7 @@
             }
           }
         }, {
-          key: 'extractInput',
+          key: "extractInput",
           value: function extractInput() {
             var fromPos = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
             var toPos = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this._value.length;
@@ -2139,49 +2001,41 @@
             return flags.raw && this._isRawInput && this._value.slice(fromPos, toPos) || '';
           }
         }, {
-          key: '_appendChar',
+          key: "_appendChar",
           value: function _appendChar(str) {
             var flags = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
             var details = new ChangeDetails();
-            if (this._value) {
-              return details;
-            }
+            if (this._value) return details;
             var appended = this.char === str[0];
             var isResolved = appended && (this.isUnmasking || flags.input || flags.raw) && !flags.tail;
-            if (isResolved) {
-              details.rawInserted = this.char;
-            }
+            if (isResolved) details.rawInserted = this.char;
             this._value = details.inserted = this.char;
             this._isRawInput = isResolved && (flags.raw || flags.input);
             return details;
           }
         }, {
-          key: '_appendPlaceholder',
+          key: "_appendPlaceholder",
           value: function _appendPlaceholder() {
             var details = new ChangeDetails();
-            if (this._value) {
-              return details;
-            }
+            if (this._value) return details;
             this._value = details.inserted = this.char;
             return details;
           }
         }, {
-          key: 'extractTail',
+          key: "extractTail",
           value: function extractTail() {
             var toPos = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.value.length;
             return new ContinuousTailDetails('');
           } // $FlowFixMe no ideas
 
         }, {
-          key: 'appendTail',
+          key: "appendTail",
           value: function appendTail(tail) {
-            if (isString(tail)) {
-              tail = new ContinuousTailDetails(String(tail));
-            }
+            if (isString(tail)) tail = new ContinuousTailDetails(String(tail));
             return tail.appendTo(this);
           }
         }, {
-          key: 'append',
+          key: "append",
           value: function append(str, flags, tail) {
             var details = this._appendChar(str, flags);
 
@@ -2192,25 +2046,25 @@
             return details;
           }
         }, {
-          key: 'doCommit',
+          key: "doCommit",
           value: function doCommit() {}
         }, {
-          key: 'value',
+          key: "value",
           get: function get() {
             return this._value;
           }
         }, {
-          key: 'unmaskedValue',
+          key: "unmaskedValue",
           get: function get() {
             return this.isUnmasking ? this.value : '';
           }
         }, {
-          key: 'isComplete',
+          key: "isComplete",
           get: function get() {
             return true;
           }
         }, {
-          key: 'state',
+          key: "state",
           get: function get() {
             return {
               _value: this._value,
@@ -2226,7 +2080,7 @@
       }();
 
     var ChunksTailDetails =
-      /* #__PURE__*/
+      /*#__PURE__*/
       function () {
         /** */
         function ChunksTailDetails() {
@@ -2240,23 +2094,19 @@
         }
 
         _createClass(ChunksTailDetails, [{
-          key: 'toString',
+          key: "toString",
           value: function toString() {
             return this.chunks.map(String).join('');
           } // $FlowFixMe no ideas
 
         }, {
-          key: 'extend',
+          key: "extend",
           value: function extend(tailChunk) {
-            if (!String(tailChunk)) {
-              return;
-            }
-            if (isString(tailChunk)) {
-              tailChunk = new ContinuousTailDetails(String(tailChunk));
-            }
+            if (!String(tailChunk)) return;
+            if (isString(tailChunk)) tailChunk = new ContinuousTailDetails(String(tailChunk));
             var lastChunk = this.chunks[this.chunks.length - 1];
             var extendLast = lastChunk && ( // if stops are same or tail has no stop
-              lastChunk.stop === tailChunk.stop || tailChunk.stop == null) && // if tail chunk goes just after last chunk
+                lastChunk.stop === tailChunk.stop || tailChunk.stop == null) && // if tail chunk goes just after last chunk
               tailChunk.from === lastChunk.from + lastChunk.toString().length;
 
             if (tailChunk instanceof ContinuousTailDetails) {
@@ -2289,7 +2139,7 @@
             }
           }
         }, {
-          key: 'appendTo',
+          key: "appendTo",
           value: function appendTo(masked) {
             // $FlowFixMe
             if (!(masked instanceof IMask.MaskedPattern)) {
@@ -2308,7 +2158,7 @@
               var chunkBlock = void 0;
 
               if (stop && ( // if block not found or stop is behind lastBlock
-                !lastBlockIter || lastBlockIter.index <= stop)) {
+                  !lastBlockIter || lastBlockIter.index <= stop)) {
                 if (chunk instanceof ChunksTailDetails || // for continuous block also check if stop is exist
                   masked._stops.indexOf(stop) >= 0) {
                   details.aggregate(masked._appendPlaceholder(stop));
@@ -2325,11 +2175,9 @@
                 masked._value += tailDetails.inserted; // get not inserted chars
 
                 var remainChars = chunk.toString().slice(tailDetails.rawInserted.length);
-                if (remainChars) {
-                  details.aggregate(masked.append(remainChars, {
-                    tail: true
-                  }));
-                }
+                if (remainChars) details.aggregate(masked.append(remainChars, {
+                  tail: true
+                }));
               } else {
                 details.aggregate(masked.append(chunk.toString(), {
                   tail: true
@@ -2339,11 +2187,9 @@
             return details;
           }
         }, {
-          key: 'shiftBefore',
+          key: "shiftBefore",
           value: function shiftBefore(pos) {
-            if (this.from >= pos || !this.chunks.length) {
-              return '';
-            }
+            if (this.from >= pos || !this.chunks.length) return '';
             var chunkShiftPos = pos - this.from;
             var ci = 0;
 
@@ -2354,24 +2200,20 @@
               if (chunk.toString()) {
                 // chunk still contains value
                 // but not shifted - means no more available chars to shift
-                if (!shiftChar) {
-                  break;
-                }
+                if (!shiftChar) break;
                 ++ci;
               } else {
                 // clean if chunk has no value
                 this.chunks.splice(ci, 1);
               }
 
-              if (shiftChar) {
-                return shiftChar;
-              }
+              if (shiftChar) return shiftChar;
             }
 
             return '';
           }
         }, {
-          key: 'state',
+          key: "state",
           get: function get() {
             return {
               chunks: this.chunks.map(function (c) {
@@ -2383,12 +2225,12 @@
             };
           },
           set: function set(state) {
-            var chunks = state.chunks;
-            var props = _objectWithoutProperties(state, ['chunks']);
+            var chunks = state.chunks,
+              props = _objectWithoutProperties(state, ["chunks"]);
 
             Object.assign(this, props);
             this.chunks = chunks.map(function (cstate) {
-              var chunk = 'chunks' in cstate ? new ChunksTailDetails() : new ContinuousTailDetails(); // $FlowFixMe already checked above
+              var chunk = "chunks" in cstate ? new ChunksTailDetails() : new ContinuousTailDetails(); // $FlowFixMe already checked above
 
               chunk.state = cstate;
               return chunk;
@@ -2408,7 +2250,7 @@
       @param {boolean} opts.lazy
     */
     var MaskedPattern =
-      /* #__PURE__*/
+      /*#__PURE__*/
       function (_Masked) {
         _inherits(MaskedPattern, _Masked);
 
@@ -2435,19 +2277,19 @@
 
 
         _createClass(MaskedPattern, [{
-          key: '_update',
+          key: "_update",
           value: function _update() {
             var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
             opts.definitions = Object.assign({}, this.definitions, opts.definitions);
 
-            _get(_getPrototypeOf(MaskedPattern.prototype), '_update', this).call(this, opts);
+            _get(_getPrototypeOf(MaskedPattern.prototype), "_update", this).call(this, opts);
 
             this._rebuildMask();
           }
           /** */
 
         }, {
-          key: '_rebuildMask',
+          key: "_rebuildMask",
           value: function _rebuildMask() {
             var _this = this;
 
@@ -2456,9 +2298,7 @@
             this._stops = [];
             this._maskedBlocks = {};
             var pattern = this.mask;
-            if (!pattern || !defs) {
-              return;
-            }
+            if (!pattern || !defs) return;
             var unmaskingBlock = false;
             var optionalBlock = false;
 
@@ -2488,21 +2328,17 @@
                       _this._blocks.push(maskedBlock); // store block index
 
 
-                      if (!_this._maskedBlocks[bName]) {
-                        _this._maskedBlocks[bName] = [];
-                      }
+                      if (!_this._maskedBlocks[bName]) _this._maskedBlocks[bName] = [];
 
                       _this._maskedBlocks[bName].push(_this._blocks.length - 1);
                     }
 
                     i += bName.length - 1;
-                    return 'continue';
+                    return "continue";
                   }
                 }();
 
-                if (_ret === 'continue') {
-                  continue;
-                }
+                if (_ret === "continue") continue;
               }
 
               var char = pattern[i];
@@ -2528,9 +2364,7 @@
               if (char === MaskedPattern.ESCAPE_CHAR) {
                 ++i;
                 char = pattern[i];
-                if (!char) {
-                  break;
-                }
+                if (!char) break;
                 _isInput = false;
               }
 
@@ -2553,13 +2387,13 @@
           */
 
         }, {
-          key: 'reset',
+          key: "reset",
 
           /**
             @override
           */
           value: function reset() {
-            _get(_getPrototypeOf(MaskedPattern.prototype), 'reset', this).call(this);
+            _get(_getPrototypeOf(MaskedPattern.prototype), "reset", this).call(this);
 
             this._blocks.forEach(function (b) {
               return b.reset();
@@ -2570,7 +2404,7 @@
           */
 
         }, {
-          key: 'doCommit',
+          key: "doCommit",
 
           /**
             @override
@@ -2580,27 +2414,27 @@
               return b.doCommit();
             });
 
-            _get(_getPrototypeOf(MaskedPattern.prototype), 'doCommit', this).call(this);
+            _get(_getPrototypeOf(MaskedPattern.prototype), "doCommit", this).call(this);
           }
           /**
             @override
           */
 
         }, {
-          key: 'appendTail',
+          key: "appendTail",
 
           /**
             @override
           */
           value: function appendTail(tail) {
-            return _get(_getPrototypeOf(MaskedPattern.prototype), 'appendTail', this).call(this, tail).aggregate(this._appendPlaceholder());
+            return _get(_getPrototypeOf(MaskedPattern.prototype), "appendTail", this).call(this, tail).aggregate(this._appendPlaceholder());
           }
           /**
             @override
           */
 
         }, {
-          key: '_appendCharRaw',
+          key: "_appendCharRaw",
           value: function _appendCharRaw(ch) {
             var flags = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
             ch = this.doPrepare(ch, flags);
@@ -2608,23 +2442,17 @@
             var blockIter = this._mapPosToBlock(this.value.length);
 
             var details = new ChangeDetails();
-            if (!blockIter) {
-              return details;
-            }
+            if (!blockIter) return details;
 
-            for (var bi = blockIter.index; ; ++bi) {
+            for (var bi = blockIter.index;; ++bi) {
               var _block = this._blocks[bi];
-              if (!_block) {
-                break;
-              }
+              if (!_block) break;
 
               var blockDetails = _block._appendChar(ch, flags);
 
               var skip = blockDetails.skip;
               details.aggregate(blockDetails);
-              if (skip || blockDetails.rawInserted) {
-                break;
-              } // go next char
+              if (skip || blockDetails.rawInserted) break; // go next char
             }
 
             return details;
@@ -2634,24 +2462,20 @@
           */
 
         }, {
-          key: 'extractTail',
+          key: "extractTail",
           value: function extractTail() {
             var _this2 = this;
 
             var fromPos = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
             var toPos = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.value.length;
             var chunkTail = new ChunksTailDetails();
-            if (fromPos === toPos) {
-              return chunkTail;
-            }
+            if (fromPos === toPos) return chunkTail;
 
             this._forEachBlocksInRange(fromPos, toPos, function (b, bi, bFromPos, bToPos) {
               var blockChunk = b.extractTail(bFromPos, bToPos);
               blockChunk.stop = _this2._findStopBefore(bi);
               blockChunk.from = _this2._blockStartPos(bi);
-              if (blockChunk instanceof ChunksTailDetails) {
-                blockChunk.blockIndex = bi;
-              }
+              if (blockChunk instanceof ChunksTailDetails) blockChunk.blockIndex = bi;
               chunkTail.extend(blockChunk);
             });
 
@@ -2662,14 +2486,12 @@
           */
 
         }, {
-          key: 'extractInput',
+          key: "extractInput",
           value: function extractInput() {
             var fromPos = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
             var toPos = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.value.length;
             var flags = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-            if (fromPos === toPos) {
-              return '';
-            }
+            if (fromPos === toPos) return '';
             var input = '';
 
             this._forEachBlocksInRange(fromPos, toPos, function (b, _, fromPos, toPos) {
@@ -2679,17 +2501,14 @@
             return input;
           }
         }, {
-          key: '_findStopBefore',
+          key: "_findStopBefore",
           value: function _findStopBefore(blockIndex) {
             var stopBefore;
 
             for (var si = 0; si < this._stops.length; ++si) {
               var stop = this._stops[si];
-              if (stop <= blockIndex) {
-                stopBefore = stop;
-              } else {
-                break;
-              }
+              if (stop <= blockIndex) stopBefore = stop;
+              else break;
             }
 
             return stopBefore;
@@ -2697,20 +2516,16 @@
           /** Appends placeholder depending on laziness */
 
         }, {
-          key: '_appendPlaceholder',
+          key: "_appendPlaceholder",
           value: function _appendPlaceholder(toBlockIndex) {
             var _this3 = this;
 
             var details = new ChangeDetails();
-            if (this.lazy && toBlockIndex == null) {
-              return details;
-            }
+            if (this.lazy && toBlockIndex == null) return details;
 
             var startBlockIter = this._mapPosToBlock(this.value.length);
 
-            if (!startBlockIter) {
-              return details;
-            }
+            if (!startBlockIter) return details;
             var startBlockIndex = startBlockIter.index;
             var endBlockIndex = toBlockIndex != null ? toBlockIndex : this._blocks.length;
 
@@ -2731,7 +2546,7 @@
           /** Finds block in pos */
 
         }, {
-          key: '_mapPosToBlock',
+          key: "_mapPosToBlock",
           value: function _mapPosToBlock(pos) {
             var accVal = '';
 
@@ -2751,7 +2566,7 @@
           /** */
 
         }, {
-          key: '_blockStartPos',
+          key: "_blockStartPos",
           value: function _blockStartPos(blockIndex) {
             return this._blocks.slice(0, blockIndex).reduce(function (pos, b) {
               return pos += b.value.length;
@@ -2760,7 +2575,7 @@
           /** */
 
         }, {
-          key: '_forEachBlocksInRange',
+          key: "_forEachBlocksInRange",
           value: function _forEachBlocksInRange(fromPos) {
             var toPos = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.value.length;
             var fn = arguments.length > 2 ? arguments[2] : undefined;
@@ -2792,12 +2607,12 @@
           */
 
         }, {
-          key: 'remove',
+          key: "remove",
           value: function remove() {
             var fromPos = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
             var toPos = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.value.length;
 
-            var removeDetails = _get(_getPrototypeOf(MaskedPattern.prototype), 'remove', this).call(this, fromPos, toPos);
+            var removeDetails = _get(_getPrototypeOf(MaskedPattern.prototype), "remove", this).call(this, fromPos, toPos);
 
             this._forEachBlocksInRange(fromPos, toPos, function (b, _, bFromPos, bToPos) {
               removeDetails.aggregate(b.remove(bFromPos, bToPos));
@@ -2810,7 +2625,7 @@
           */
 
         }, {
-          key: 'nearestInputPos',
+          key: "nearestInputPos",
           value: function nearestInputPos(cursorPos) {
             var direction = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : DIRECTION.NONE;
             // TODO refactor - extract alignblock
@@ -2818,12 +2633,10 @@
               index: 0,
               offset: 0
             };
-            var beginBlockOffset = beginBlockData.offset;
-            var beginBlockIndex = beginBlockData.index;
+            var beginBlockOffset = beginBlockData.offset,
+              beginBlockIndex = beginBlockData.index;
             var beginBlock = this._blocks[beginBlockIndex];
-            if (!beginBlock) {
-              return cursorPos;
-            }
+            if (!beginBlock) return cursorPos;
             var beginBlockCursorPos = beginBlockOffset; // if position inside block - try to adjust it
 
             if (beginBlockCursorPos !== 0 && beginBlockCursorPos < beginBlock.value.length) {
@@ -2833,9 +2646,7 @@
             var cursorAtRight = beginBlockCursorPos === beginBlock.value.length;
             var cursorAtLeft = beginBlockCursorPos === 0; //  cursor is INSIDE first block (not at bounds)
 
-            if (!cursorAtLeft && !cursorAtRight) {
-              return this._blockStartPos(beginBlockIndex) + beginBlockCursorPos;
-            }
+            if (!cursorAtLeft && !cursorAtRight) return this._blockStartPos(beginBlockIndex) + beginBlockCursorPos;
             var searchBlockIndex = cursorAtRight ? beginBlockIndex + 1 : beginBlockIndex;
 
             if (direction === DIRECTION.NONE) {
@@ -2926,9 +2737,7 @@
 
                 var _blockInputPos4 = _block4.nearestInputPos(_block4.value.length, DIRECTION.FORCE_LEFT);
 
-                if (!_block4.value || _blockInputPos4 !== 0) {
-                  firstEmptyInputBlockIndex = _bi3;
-                }
+                if (!_block4.value || _blockInputPos4 !== 0) firstEmptyInputBlockIndex = _bi3;
 
                 if (_blockInputPos4 !== 0) {
                   if (_blockInputPos4 !== _block4.value.length) {
@@ -2951,13 +2760,9 @@
 
                   var blockAlignedPos = this._blockStartPos(_bi4) + _blockInputPos5;
 
-                  if (blockAlignedPos > cursorPos) {
-                    break;
-                  } // if block is not lazy input
+                  if (blockAlignedPos > cursorPos) break; // if block is not lazy input
 
-                  if (_blockInputPos5 !== _block5.value.length) {
-                    return blockAlignedPos;
-                  }
+                  if (_blockInputPos5 !== _block5.value.length) return blockAlignedPos;
                 }
               } // process overflow
 
@@ -3033,9 +2838,7 @@
                 if (_blockInputPos9 !== 0) {
                   var alignedPos = this._blockStartPos(_bi8) + _blockInputPos9;
 
-                  if (alignedPos >= cursorPos) {
-                    return alignedPos;
-                  }
+                  if (alignedPos >= cursorPos) return alignedPos;
                   break;
                 }
               }
@@ -3046,67 +2849,65 @@
           /** Get block by name */
 
         }, {
-          key: 'maskedBlock',
+          key: "maskedBlock",
           value: function maskedBlock(name) {
             return this.maskedBlocks(name)[0];
           }
           /** Get all blocks by name */
 
         }, {
-          key: 'maskedBlocks',
+          key: "maskedBlocks",
           value: function maskedBlocks(name) {
             var _this4 = this;
 
             var indices = this._maskedBlocks[name];
-            if (!indices) {
-              return [];
-            }
+            if (!indices) return [];
             return indices.map(function (gi) {
               return _this4._blocks[gi];
             });
           }
         }, {
-          key: 'state',
+          key: "state",
           get: function get() {
-            return Object.assign({}, _get(_getPrototypeOf(MaskedPattern.prototype), 'state', this), {
+            return Object.assign({}, _get(_getPrototypeOf(MaskedPattern.prototype), "state", this), {
               _blocks: this._blocks.map(function (b) {
                 return b.state;
               })
             });
           },
           set: function set(state) {
-            var _blocks = state._blocks;
-            var maskedState = _objectWithoutProperties(state, ['_blocks']);
+            var _blocks = state._blocks,
+              maskedState = _objectWithoutProperties(state, ["_blocks"]);
 
             this._blocks.forEach(function (b, bi) {
               return b.state = _blocks[bi];
             });
 
-            _set(_getPrototypeOf(MaskedPattern.prototype), 'state', maskedState, this, true);
+            _set(_getPrototypeOf(MaskedPattern.prototype), "state", maskedState, this, true);
           }
         }, {
-          key: 'isComplete',
+          key: "isComplete",
           get: function get() {
             return this._blocks.every(function (b) {
               return b.isComplete;
             });
           }
         }, {
-          key: 'unmaskedValue',
+          key: "unmaskedValue",
           get: function get() {
             return this._blocks.reduce(function (str, b) {
               return str += b.unmaskedValue;
             }, '');
           },
           set: function set(unmaskedValue) {
-            _set(_getPrototypeOf(MaskedPattern.prototype), 'unmaskedValue', unmaskedValue, this, true);
+            _set(_getPrototypeOf(MaskedPattern.prototype), "unmaskedValue", unmaskedValue, this, true);
           }
           /**
             @override
           */
 
         }, {
-          key: 'value',
+          key: "value",
           get: function get() {
             // TODO return _value when not in change?
             return this._blocks.reduce(function (str, b) {
@@ -3114,7 +2915,7 @@
             }, '');
           },
           set: function set(value) {
-            _set(_getPrototypeOf(MaskedPattern.prototype), 'value', value, this, true);
+            _set(_getPrototypeOf(MaskedPattern.prototype), "value", value, this, true);
           }
         }]);
 
@@ -3130,9 +2931,7 @@
     MaskedPattern.FixedDefinition = PatternFixedDefinition;
 
     function isInput(block) {
-      if (!block) {
-        return false;
-      }
+      if (!block) return false;
       var value = block.value;
       return !value || block.nearestInputPos(0, DIRECTION.NONE) !== value.length;
     }
@@ -3142,7 +2941,7 @@
     /** Pattern which accepts ranges */
 
     var MaskedRange =
-      /* #__PURE__*/
+      /*#__PURE__*/
       function (_MaskedPattern) {
         _inherits(MaskedRange, _MaskedPattern);
 
@@ -3153,7 +2952,7 @@
         }
 
         _createClass(MaskedRange, [{
-          key: '_update',
+          key: "_update",
 
           /**
             @override
@@ -3165,9 +2964,7 @@
               from: this.from || 0
             }, opts);
             var maxLength = String(opts.to).length;
-            if (opts.maxLength != null) {
-              maxLength = Math.max(maxLength, opts.maxLength);
-            }
+            if (opts.maxLength != null) maxLength = Math.max(maxLength, opts.maxLength);
             opts.maxLength = maxLength;
             var fromStr = String(opts.from).padStart(maxLength, '0');
             var toStr = String(opts.to).padStart(maxLength, '0');
@@ -3179,22 +2976,22 @@
 
             opts.mask = toStr.slice(0, sameCharsCount).replace(/0/g, '\\0') + '0'.repeat(maxLength - sameCharsCount);
 
-            _get(_getPrototypeOf(MaskedRange.prototype), '_update', this).call(this, opts);
+            _get(_getPrototypeOf(MaskedRange.prototype), "_update", this).call(this, opts);
           }
           /**
             @override
           */
 
         }, {
-          key: 'boundaries',
+          key: "boundaries",
           value: function boundaries(str) {
             var minstr = '';
             var maxstr = '';
 
-            var _ref = str.match(/^(\D*)(\d*)(\D*)/) || [];
-            var _ref2 = _slicedToArray(_ref, 3);
-            var placeholder = _ref2[1];
-            var num = _ref2[2];
+            var _ref = str.match(/^(\D*)(\d*)(\D*)/) || [],
+              _ref2 = _slicedToArray(_ref, 3),
+              placeholder = _ref2[1],
+              num = _ref2[2];
 
             if (num) {
               minstr = '0'.repeat(placeholder.length) + num;
@@ -3210,13 +3007,11 @@
           */
 
         }, {
-          key: 'doPrepare',
+          key: "doPrepare",
           value: function doPrepare(str) {
             var flags = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-            str = _get(_getPrototypeOf(MaskedRange.prototype), 'doPrepare', this).call(this, str, flags).replace(/\D/g, '');
-            if (!this.autofix) {
-              return str;
-            }
+            str = _get(_getPrototypeOf(MaskedRange.prototype), "doPrepare", this).call(this, str, flags).replace(/\D/g, '');
+            if (!this.autofix) return str;
             var fromStr = String(this.from).padStart(this.maxLength, '0');
             var toStr = String(this.to).padStart(this.maxLength, '0');
             var val = this.value;
@@ -3225,18 +3020,14 @@
             for (var ci = 0; ci < str.length; ++ci) {
               var nextVal = val + prepStr + str[ci];
 
-              var _this$boundaries = this.boundaries(nextVal);
-              var _this$boundaries2 = _slicedToArray(_this$boundaries, 2);
-              var minstr = _this$boundaries2[0];
-              var maxstr = _this$boundaries2[1];
+              var _this$boundaries = this.boundaries(nextVal),
+                _this$boundaries2 = _slicedToArray(_this$boundaries, 2),
+                minstr = _this$boundaries2[0],
+                maxstr = _this$boundaries2[1];
 
-              if (Number(maxstr) < this.from) {
-                prepStr += fromStr[nextVal.length - 1];
-              } else if (Number(minstr) > this.to) {
-                prepStr += toStr[nextVal.length - 1];
-              } else {
-                prepStr += str[ci];
-              }
+              if (Number(maxstr) < this.from) prepStr += fromStr[nextVal.length - 1];
+              else if (Number(minstr) > this.to) prepStr += toStr[nextVal.length - 1];
+              else prepStr += str[ci];
             }
 
             return prepStr;
@@ -3246,29 +3037,27 @@
           */
 
         }, {
-          key: 'doValidate',
+          key: "doValidate",
           value: function doValidate() {
             var _get2;
 
             var str = this.value;
             var firstNonZero = str.search(/[^0]/);
-            if (firstNonZero === -1 && str.length <= this._matchFrom) {
-              return true;
-            }
+            if (firstNonZero === -1 && str.length <= this._matchFrom) return true;
 
-            var _this$boundaries3 = this.boundaries(str);
-            var _this$boundaries4 = _slicedToArray(_this$boundaries3, 2);
-            var minstr = _this$boundaries4[0];
-            var maxstr = _this$boundaries4[1];
+            var _this$boundaries3 = this.boundaries(str),
+              _this$boundaries4 = _slicedToArray(_this$boundaries3, 2),
+              minstr = _this$boundaries4[0],
+              maxstr = _this$boundaries4[1];
 
             for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
               args[_key] = arguments[_key];
             }
 
-            return this.from <= Number(maxstr) && Number(minstr) <= this.to && (_get2 = _get(_getPrototypeOf(MaskedRange.prototype), 'doValidate', this)).call.apply(_get2, [this].concat(args));
+            return this.from <= Number(maxstr) && Number(minstr) <= this.to && (_get2 = _get(_getPrototypeOf(MaskedRange.prototype), "doValidate", this)).call.apply(_get2, [this].concat(args));
           }
         }, {
-          key: '_matchFrom',
+          key: "_matchFrom",
 
           /**
             Optionally sets max length of pattern.
@@ -3284,9 +3073,9 @@
             return this.maxLength - String(this.from).length;
           }
         }, {
-          key: 'isComplete',
+          key: "isComplete",
           get: function get() {
-            return _get(_getPrototypeOf(MaskedRange.prototype), 'isComplete', this) && Boolean(this.value);
+            return _get(_getPrototypeOf(MaskedRange.prototype), "isComplete", this) && Boolean(this.value);
           }
         }]);
 
@@ -3297,7 +3086,7 @@
     /** Date mask */
 
     var MaskedDate =
-      /* #__PURE__*/
+      /*#__PURE__*/
       function (_MaskedPattern) {
         _inherits(MaskedDate, _MaskedPattern);
 
@@ -3323,23 +3112,15 @@
 
 
         _createClass(MaskedDate, [{
-          key: '_update',
+          key: "_update",
           value: function _update(opts) {
-            if (opts.mask === Date) {
-              delete opts.mask;
-            }
-            if (opts.pattern) {
-              opts.mask = opts.pattern;
-            }
+            if (opts.mask === Date) delete opts.mask;
+            if (opts.pattern) opts.mask = opts.pattern;
             var blocks = opts.blocks;
             opts.blocks = Object.assign({}, MaskedDate.GET_DEFAULT_BLOCKS()); // adjust year block
 
-            if (opts.min) {
-              opts.blocks.Y.from = opts.min.getFullYear();
-            }
-            if (opts.max) {
-              opts.blocks.Y.to = opts.max.getFullYear();
-            }
+            if (opts.min) opts.blocks.Y.from = opts.min.getFullYear();
+            if (opts.max) opts.blocks.Y.to = opts.max.getFullYear();
 
             if (opts.min && opts.max && opts.blocks.Y.from === opts.blocks.Y.to) {
               opts.blocks.m.from = opts.min.getMonth() + 1;
@@ -3355,19 +3136,17 @@
 
             Object.keys(opts.blocks).forEach(function (bk) {
               var b = opts.blocks[bk];
-              if (!('autofix' in b)) {
-                b.autofix = opts.autofix;
-              }
+              if (!('autofix' in b)) b.autofix = opts.autofix;
             });
 
-            _get(_getPrototypeOf(MaskedDate.prototype), '_update', this).call(this, opts);
+            _get(_getPrototypeOf(MaskedDate.prototype), "_update", this).call(this, opts);
           }
           /**
             @override
           */
 
         }, {
-          key: 'doValidate',
+          key: "doValidate",
           value: function doValidate() {
             var _get2;
 
@@ -3377,19 +3156,19 @@
               args[_key] = arguments[_key];
             }
 
-            return (_get2 = _get(_getPrototypeOf(MaskedDate.prototype), 'doValidate', this)).call.apply(_get2, [this].concat(args)) && (!this.isComplete || this.isDateExist(this.value) && date != null && (this.min == null || this.min <= date) && (this.max == null || date <= this.max));
+            return (_get2 = _get(_getPrototypeOf(MaskedDate.prototype), "doValidate", this)).call.apply(_get2, [this].concat(args)) && (!this.isComplete || this.isDateExist(this.value) && date != null && (this.min == null || this.min <= date) && (this.max == null || date <= this.max));
           }
           /** Checks if date is exists */
 
         }, {
-          key: 'isDateExist',
+          key: "isDateExist",
           value: function isDateExist(str) {
             return this.format(this.parse(str, this), this) === str;
           }
           /** Parsed Date */
 
         }, {
-          key: 'date',
+          key: "date",
           get: function get() {
             return this.typedValue;
           },
@@ -3401,12 +3180,12 @@
           */
 
         }, {
-          key: 'typedValue',
+          key: "typedValue",
           get: function get() {
-            return this.isComplete ? _get(_getPrototypeOf(MaskedDate.prototype), 'typedValue', this) : null;
+            return this.isComplete ? _get(_getPrototypeOf(MaskedDate.prototype), "typedValue", this) : null;
           },
           set: function set(value) {
-            _set(_getPrototypeOf(MaskedDate.prototype), 'typedValue', value, this, true);
+            _set(_getPrototypeOf(MaskedDate.prototype), "typedValue", value, this, true);
           }
         }]);
 
@@ -3421,11 +3200,11 @@
         return [day, month, year].join('.');
       },
       parse: function parse(str) {
-        var _str$split = str.split('.');
-        var _str$split2 = _slicedToArray(_str$split, 3);
-        var day = _str$split2[0];
-        var month = _str$split2[1];
-        var year = _str$split2[2];
+        var _str$split = str.split('.'),
+          _str$split2 = _slicedToArray(_str$split, 3),
+          day = _str$split2[0],
+          month = _str$split2[1],
+          year = _str$split2[2];
 
         return new Date(year, month - 1, day);
       }
@@ -3460,20 +3239,18 @@
       @interface
     */
     var MaskElement =
-      /* #__PURE__*/
+      /*#__PURE__*/
       function () {
         function MaskElement() {
           _classCallCheck(this, MaskElement);
         }
 
         _createClass(MaskElement, [{
-          key: 'select',
+          key: "select",
 
           /** Safely sets element selection */
           value: function select(start, end) {
-            if (start == null || end == null || start === this.selectionStart && end === this.selectionEnd) {
-              return;
-            }
+            if (start == null || end == null || start === this.selectionStart && end === this.selectionEnd) return;
 
             try {
               this._unsafeSelect(start, end);
@@ -3482,22 +3259,22 @@
           /** Should be overriden in subclasses */
 
         }, {
-          key: '_unsafeSelect',
+          key: "_unsafeSelect",
           value: function _unsafeSelect(start, end) {}
           /** Should be overriden in subclasses */
 
         }, {
-          key: 'bindEvents',
+          key: "bindEvents",
 
           /** Should be overriden in subclasses */
           value: function bindEvents(handlers) {}
           /** Should be overriden in subclasses */
 
         }, {
-          key: 'unbindEvents',
+          key: "unbindEvents",
           value: function unbindEvents() {}
         }, {
-          key: 'selectionStart',
+          key: "selectionStart",
 
           /** */
 
@@ -3518,7 +3295,7 @@
           /** Safely returns selection end */
 
         }, {
-          key: 'selectionEnd',
+          key: "selectionEnd",
           get: function get() {
             var end;
 
@@ -3529,7 +3306,7 @@
             return end != null ? end : this.value.length;
           }
         }, {
-          key: 'isActive',
+          key: "isActive",
           get: function get() {
             return false;
           }
@@ -3542,7 +3319,7 @@
     /** Bridge between HTMLElement and {@link Masked} */
 
     var HTMLMaskElement =
-      /* #__PURE__*/
+      /*#__PURE__*/
       function (_MaskElement) {
         _inherits(HTMLMaskElement, _MaskElement);
 
@@ -3568,7 +3345,7 @@
 
 
         _createClass(HTMLMaskElement, [{
-          key: '_unsafeSelect',
+          key: "_unsafeSelect",
 
           /**
             Sets HTMLElement selection
@@ -3583,7 +3360,7 @@
           */
 
         }, {
-          key: 'bindEvents',
+          key: "bindEvents",
 
           /**
             Binds HTMLElement events to mask internal events
@@ -3602,7 +3379,7 @@
           */
 
         }, {
-          key: 'unbindEvents',
+          key: "unbindEvents",
           value: function unbindEvents() {
             var _this3 = this;
 
@@ -3613,7 +3390,7 @@
           /** */
 
         }, {
-          key: '_toggleEventHandler',
+          key: "_toggleEventHandler",
           value: function _toggleEventHandler(event, handler) {
             if (this._handlers[event]) {
               this.input.removeEventListener(event, this._handlers[event]);
@@ -3626,7 +3403,7 @@
             }
           }
         }, {
-          key: 'rootElement',
+          key: "rootElement",
           get: function get() {
             return this.input.getRootNode ? this.input.getRootNode() : document;
           }
@@ -3636,9 +3413,9 @@
           */
 
         }, {
-          key: 'isActive',
+          key: "isActive",
           get: function get() {
-            // $FlowFixMe
+            //$FlowFixMe
             return this.input === this.rootElement.activeElement;
           }
           /**
@@ -3647,7 +3424,7 @@
           */
 
         }, {
-          key: '_unsafeSelectionStart',
+          key: "_unsafeSelectionStart",
           get: function get() {
             return this.input.selectionStart;
           }
@@ -3657,12 +3434,12 @@
           */
 
         }, {
-          key: '_unsafeSelectionEnd',
+          key: "_unsafeSelectionEnd",
           get: function get() {
             return this.input.selectionEnd;
           }
         }, {
-          key: 'value',
+          key: "value",
           get: function get() {
             return this.input.value;
           },
@@ -3684,7 +3461,7 @@
     IMask.HTMLMaskElement = HTMLMaskElement;
 
     var HTMLContenteditableMaskElement =
-      /* #__PURE__*/
+      /*#__PURE__*/
       function (_HTMLMaskElement) {
         _inherits(HTMLContenteditableMaskElement, _HTMLMaskElement);
 
@@ -3695,16 +3472,14 @@
         }
 
         _createClass(HTMLContenteditableMaskElement, [{
-          key: '_unsafeSelect',
+          key: "_unsafeSelect",
 
           /**
             Sets HTMLElement selection
             @override
           */
           value: function _unsafeSelect(start, end) {
-            if (!this.rootElement.createRange) {
-              return;
-            }
+            if (!this.rootElement.createRange) return;
             var range = this.rootElement.createRange();
             range.setStart(this.input.firstChild || this.input, start);
             range.setEnd(this.input.lastChild || this.input, end);
@@ -3722,7 +3497,7 @@
           */
 
         }, {
-          key: '_unsafeSelectionStart',
+          key: "_unsafeSelectionStart",
 
           /**
             Returns HTMLElement selection start
@@ -3739,14 +3514,14 @@
           */
 
         }, {
-          key: '_unsafeSelectionEnd',
+          key: "_unsafeSelectionEnd",
           get: function get() {
             var root = this.rootElement;
             var selection = root.getSelection && root.getSelection();
             return selection && this._unsafeSelectionStart + String(selection).length;
           }
         }, {
-          key: 'value',
+          key: "value",
           get: function get() {
             // $FlowFixMe
             return this.input.textContent;
@@ -3763,7 +3538,7 @@
     /** Listens to element events and controls changes between element and {@link Masked} */
 
     var InputMask =
-      /* #__PURE__*/
+      /*#__PURE__*/
       function () {
         /**
           View element
@@ -3807,12 +3582,12 @@
 
 
         _createClass(InputMask, [{
-          key: 'maskEquals',
+          key: "maskEquals",
           value: function maskEquals(mask) {
             return mask == null || mask === this.masked.mask || mask === Date && this.masked instanceof MaskedDate;
           }
         }, {
-          key: '_bindEvents',
+          key: "_bindEvents",
 
           /**
             Starts listening to element events
@@ -3834,7 +3609,7 @@
            */
 
         }, {
-          key: '_unbindEvents',
+          key: "_unbindEvents",
           value: function _unbindEvents() {
             this.el.unbindEvents();
           }
@@ -3844,12 +3619,10 @@
            */
 
         }, {
-          key: '_fireEvent',
+          key: "_fireEvent",
           value: function _fireEvent(ev) {
             var listeners = this._listeners[ev];
-            if (!listeners) {
-              return;
-            }
+            if (!listeners) return;
             listeners.forEach(function (l) {
               return l();
             });
@@ -3860,7 +3633,7 @@
           */
 
         }, {
-          key: '_saveSelection',
+          key: "_saveSelection",
 
           /**
             Stores current selection
@@ -3881,7 +3654,7 @@
           /** Syncronizes model value from view */
 
         }, {
-          key: 'updateValue',
+          key: "updateValue",
           value: function updateValue() {
             this.masked.value = this.el.value;
             this._value = this.masked.value;
@@ -3889,48 +3662,36 @@
           /** Syncronizes view from model value, fires change events */
 
         }, {
-          key: 'updateControl',
+          key: "updateControl",
           value: function updateControl() {
             var newUnmaskedValue = this.masked.unmaskedValue;
             var newValue = this.masked.value;
             var isChanged = this.unmaskedValue !== newUnmaskedValue || this.value !== newValue;
             this._unmaskedValue = newUnmaskedValue;
             this._value = newValue;
-            if (this.el.value !== newValue) {
-              this.el.value = newValue;
-            }
-            if (isChanged) {
-              this._fireChangeEvents();
-            }
+            if (this.el.value !== newValue) this.el.value = newValue;
+            if (isChanged) this._fireChangeEvents();
           }
           /** Updates options with deep equal check, recreates @{link Masked} model if mask type changes */
 
         }, {
-          key: 'updateOptions',
+          key: "updateOptions",
           value: function updateOptions(opts) {
-            var mask = opts.mask;
-            var restOpts = _objectWithoutProperties(opts, ['mask']);
+            var mask = opts.mask,
+              restOpts = _objectWithoutProperties(opts, ["mask"]);
 
             var updateMask = !this.maskEquals(mask);
             var updateOpts = !objectIncludes(this.masked, restOpts);
-            if (updateMask) {
-              this.mask = mask;
-            }
-            if (updateOpts) {
-              this.masked.updateOptions(restOpts);
-            }
-            if (updateMask || updateOpts) {
-              this.updateControl();
-            }
+            if (updateMask) this.mask = mask;
+            if (updateOpts) this.masked.updateOptions(restOpts);
+            if (updateMask || updateOpts) this.updateControl();
           }
           /** Updates cursor */
 
         }, {
-          key: 'updateCursor',
+          key: "updateCursor",
           value: function updateCursor(cursorPos) {
-            if (cursorPos == null) {
-              return;
-            }
+            if (cursorPos == null) return;
             this.cursorPos = cursorPos; // also queue change cursor for mobile browsers
 
             this._delayUpdateCursor(cursorPos);
@@ -3941,7 +3702,7 @@
           */
 
         }, {
-          key: '_delayUpdateCursor',
+          key: "_delayUpdateCursor",
           value: function _delayUpdateCursor(cursorPos) {
             var _this = this;
 
@@ -3949,9 +3710,7 @@
 
             this._changingCursorPos = cursorPos;
             this._cursorChanging = setTimeout(function () {
-              if (!_this.el) {
-                return;
-              } // if was destroyed
+              if (!_this.el) return; // if was destroyed
 
               _this.cursorPos = _this._changingCursorPos;
 
@@ -3964,13 +3723,11 @@
           */
 
         }, {
-          key: '_fireChangeEvents',
+          key: "_fireChangeEvents",
           value: function _fireChangeEvents() {
             this._fireEvent('accept');
 
-            if (this.masked.isComplete) {
-              this._fireEvent('complete');
-            }
+            if (this.masked.isComplete) this._fireEvent('complete');
           }
           /**
             Aborts delayed cursor update
@@ -3978,7 +3735,7 @@
           */
 
         }, {
-          key: '_abortUpdateCursor',
+          key: "_abortUpdateCursor",
           value: function _abortUpdateCursor() {
             if (this._cursorChanging) {
               clearTimeout(this._cursorChanging);
@@ -3988,29 +3745,25 @@
           /** Aligns cursor to nearest available position */
 
         }, {
-          key: 'alignCursor',
+          key: "alignCursor",
           value: function alignCursor() {
             this.cursorPos = this.masked.nearestInputPos(this.cursorPos, DIRECTION.LEFT);
           }
           /** Aligns cursor only if selection is empty */
 
         }, {
-          key: 'alignCursorFriendly',
+          key: "alignCursorFriendly",
           value: function alignCursorFriendly() {
-            if (this.selectionStart !== this.cursorPos) {
-              return;
-            } // skip if range is selected
+            if (this.selectionStart !== this.cursorPos) return; // skip if range is selected
 
             this.alignCursor();
           }
           /** Adds listener on custom event */
 
         }, {
-          key: 'on',
+          key: "on",
           value: function on(ev, handler) {
-            if (!this._listeners[ev]) {
-              this._listeners[ev] = [];
-            }
+            if (!this._listeners[ev]) this._listeners[ev] = [];
 
             this._listeners[ev].push(handler);
 
@@ -4019,11 +3772,9 @@
           /** Removes custom event listener */
 
         }, {
-          key: 'off',
+          key: "off",
           value: function off(ev, handler) {
-            if (!this._listeners[ev]) {
-              return this;
-            }
+            if (!this._listeners[ev]) return this;
 
             if (!handler) {
               delete this._listeners[ev];
@@ -4032,25 +3783,21 @@
 
             var hIndex = this._listeners[ev].indexOf(handler);
 
-            if (hIndex >= 0) {
-              this._listeners[ev].splice(hIndex, 1);
-            }
+            if (hIndex >= 0) this._listeners[ev].splice(hIndex, 1);
             return this;
           }
           /** Handles view input event */
 
         }, {
-          key: '_onInput',
+          key: "_onInput",
           value: function _onInput() {
             this._abortUpdateCursor(); // fix strange IE behavior
 
 
-            if (!this._selection) {
-              return this.updateValue();
-            }
+            if (!this._selection) return this.updateValue();
             var details = new ActionDetails( // new state
-                this.el.value, this.cursorPos, // old state
-                this.value, this._selection);
+              this.el.value, this.cursorPos, // old state
+              this.value, this._selection);
             var oldRawValue = this.masked.rawInputValue;
             var offset = this.masked.splice(details.startChangePos, details.removed.length, details.inserted, details.removeDirection).offset; // force align in remove direction only if no input chars were removed
             // otherwise we still need to align with NONE (to get out from fixed symbols for instance)
@@ -4063,7 +3810,7 @@
           /** Handles view change event and commits model value */
 
         }, {
-          key: '_onChange',
+          key: "_onChange",
           value: function _onChange() {
             if (this.value !== this.el.value) {
               this.updateValue();
@@ -4077,7 +3824,7 @@
           /** Handles view drop event, prevents by default */
 
         }, {
-          key: '_onDrop',
+          key: "_onDrop",
           value: function _onDrop(ev) {
             ev.preventDefault();
             ev.stopPropagation();
@@ -4085,21 +3832,21 @@
           /** Restore last selection on focus */
 
         }, {
-          key: '_onFocus',
+          key: "_onFocus",
           value: function _onFocus(ev) {
             this.alignCursorFriendly();
           }
           /** Restore last selection on focus */
 
         }, {
-          key: '_onClick',
+          key: "_onClick",
           value: function _onClick(ev) {
             this.alignCursorFriendly();
           }
           /** Unbind view events and removes element reference */
 
         }, {
-          key: 'destroy',
+          key: "destroy",
           value: function destroy() {
             this._unbindEvents(); // $FlowFixMe why not do so?
 
@@ -4109,14 +3856,12 @@
             delete this.el;
           }
         }, {
-          key: 'mask',
+          key: "mask",
           get: function get() {
             return this.masked.mask;
           },
           set: function set(mask) {
-            if (this.maskEquals(mask)) {
-              return;
-            }
+            if (this.maskEquals(mask)) return;
 
             if (this.masked.constructor === maskedClass(mask)) {
               this.masked.updateOptions({
@@ -4134,7 +3879,7 @@
           /** Raw value */
 
         }, {
-          key: 'value',
+          key: "value",
           get: function get() {
             return this._value;
           },
@@ -4146,7 +3891,7 @@
           /** Unmasked value */
 
         }, {
-          key: 'unmaskedValue',
+          key: "unmaskedValue",
           get: function get() {
             return this._unmaskedValue;
           },
@@ -4158,7 +3903,7 @@
           /** Typed unmasked value */
 
         }, {
-          key: 'typedValue',
+          key: "typedValue",
           get: function get() {
             return this.masked.typedValue;
           },
@@ -4168,21 +3913,19 @@
             this.alignCursor();
           }
         }, {
-          key: 'selectionStart',
+          key: "selectionStart",
           get: function get() {
             return this._cursorChanging ? this._changingCursorPos : this.el.selectionStart;
           }
           /** Current cursor position */
 
         }, {
-          key: 'cursorPos',
+          key: "cursorPos",
           get: function get() {
             return this._cursorChanging ? this._changingCursorPos : this.el.selectionEnd;
           },
           set: function set(pos) {
-            if (!this.el.isActive) {
-              return;
-            }
+            if (!this.el.isActive) return;
             this.el.select(pos, pos);
 
             this._saveSelection();
@@ -4196,7 +3939,7 @@
     /** Pattern which validates enum values */
 
     var MaskedEnum =
-      /* #__PURE__*/
+      /*#__PURE__*/
       function (_MaskedPattern) {
         _inherits(MaskedEnum, _MaskedPattern);
 
@@ -4207,7 +3950,7 @@
         }
 
         _createClass(MaskedEnum, [{
-          key: '_update',
+          key: "_update",
 
           /**
             @override
@@ -4215,21 +3958,19 @@
           */
           value: function _update(opts) {
             // TODO type
-            if (opts.enum) {
-              opts.mask = '*'.repeat(opts.enum[0].length);
-            }
+            if (opts.enum) opts.mask = '*'.repeat(opts.enum[0].length);
 
-            _get(_getPrototypeOf(MaskedEnum.prototype), '_update', this).call(this, opts);
+            _get(_getPrototypeOf(MaskedEnum.prototype), "_update", this).call(this, opts);
           }
           /**
             @override
           */
 
         }, {
-          key: 'doValidate',
+          key: "doValidate",
           value: function doValidate() {
-            var _this = this;
-            var _get2;
+            var _this = this,
+              _get2;
 
             for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
               args[_key] = arguments[_key];
@@ -4237,7 +3978,7 @@
 
             return this.enum.some(function (e) {
               return e.indexOf(_this.unmaskedValue) >= 0;
-            }) && (_get2 = _get(_getPrototypeOf(MaskedEnum.prototype), 'doValidate', this)).call.apply(_get2, [this].concat(args));
+            }) && (_get2 = _get(_getPrototypeOf(MaskedEnum.prototype), "doValidate", this)).call.apply(_get2, [this].concat(args));
           }
         }]);
 
@@ -4259,7 +4000,7 @@
       @param {boolean} opts.padFractionalZeros - Flag to pad trailing zeros after point in the end of editing
     */
     var MaskedNumber =
-      /* #__PURE__*/
+      /*#__PURE__*/
       function (_Masked) {
         _inherits(MaskedNumber, _Masked);
 
@@ -4291,16 +4032,16 @@
 
 
         _createClass(MaskedNumber, [{
-          key: '_update',
+          key: "_update",
           value: function _update(opts) {
-            _get(_getPrototypeOf(MaskedNumber.prototype), '_update', this).call(this, opts);
+            _get(_getPrototypeOf(MaskedNumber.prototype), "_update", this).call(this, opts);
 
             this._updateRegExps();
           }
           /** */
 
         }, {
-          key: '_updateRegExps',
+          key: "_updateRegExps",
           value: function _updateRegExps() {
             // use different regexp to process user input (more strict, input suffix) and tail shifting
             var start = '^' + (this.allowNegative ? '[+|\\-]?' : '');
@@ -4315,14 +4056,14 @@
           /** */
 
         }, {
-          key: '_removeThousandsSeparators',
+          key: "_removeThousandsSeparators",
           value: function _removeThousandsSeparators(value) {
             return value.replace(this._thousandsSeparatorRegExp, '');
           }
           /** */
 
         }, {
-          key: '_insertThousandsSeparators',
+          key: "_insertThousandsSeparators",
           value: function _insertThousandsSeparators(value) {
             // https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
             var parts = value.split(this.radix);
@@ -4334,7 +4075,7 @@
           */
 
         }, {
-          key: 'doPrepare',
+          key: "doPrepare",
           value: function doPrepare(str) {
             var _get2;
 
@@ -4342,12 +4083,12 @@
               args[_key - 1] = arguments[_key];
             }
 
-            return (_get2 = _get(_getPrototypeOf(MaskedNumber.prototype), 'doPrepare', this)).call.apply(_get2, [this, this._removeThousandsSeparators(str.replace(this._mapToRadixRegExp, this.radix))].concat(args));
+            return (_get2 = _get(_getPrototypeOf(MaskedNumber.prototype), "doPrepare", this)).call.apply(_get2, [this, this._removeThousandsSeparators(str.replace(this._mapToRadixRegExp, this.radix))].concat(args));
           }
           /** */
 
         }, {
-          key: '_separatorsCount',
+          key: "_separatorsCount",
           value: function _separatorsCount(to) {
             var extendOnSeparators = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
             var count = 0;
@@ -4355,9 +4096,7 @@
             for (var pos = 0; pos < to; ++pos) {
               if (this._value.indexOf(this.thousandsSeparator, pos) === pos) {
                 ++count;
-                if (extendOnSeparators) {
-                  to += this.thousandsSeparator.length;
-                }
+                if (extendOnSeparators) to += this.thousandsSeparator.length;
               }
             }
 
@@ -4366,7 +4105,7 @@
           /** */
 
         }, {
-          key: '_separatorsCountFromSlice',
+          key: "_separatorsCountFromSlice",
           value: function _separatorsCountFromSlice() {
             var slice = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this._value;
             return this._separatorsCount(this._removeThousandsSeparators(slice).length, true);
@@ -4376,7 +4115,7 @@
           */
 
         }, {
-          key: 'extractInput',
+          key: "extractInput",
           value: function extractInput() {
             var fromPos = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
             var toPos = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.value.length;
@@ -4388,26 +4127,24 @@
 
             fromPos = _this$_adjustRangeWit2[0];
             toPos = _this$_adjustRangeWit2[1];
-            return this._removeThousandsSeparators(_get(_getPrototypeOf(MaskedNumber.prototype), 'extractInput', this).call(this, fromPos, toPos, flags));
+            return this._removeThousandsSeparators(_get(_getPrototypeOf(MaskedNumber.prototype), "extractInput", this).call(this, fromPos, toPos, flags));
           }
           /**
             @override
           */
 
         }, {
-          key: '_appendCharRaw',
+          key: "_appendCharRaw",
           value: function _appendCharRaw(ch) {
             var flags = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-            if (!this.thousandsSeparator) {
-              return _get(_getPrototypeOf(MaskedNumber.prototype), '_appendCharRaw', this).call(this, ch, flags);
-            }
+            if (!this.thousandsSeparator) return _get(_getPrototypeOf(MaskedNumber.prototype), "_appendCharRaw", this).call(this, ch, flags);
             var prevBeforeTailValue = flags.tail && flags._beforeTailState ? flags._beforeTailState._value : this._value;
 
             var prevBeforeTailSeparatorsCount = this._separatorsCountFromSlice(prevBeforeTailValue);
 
             this._value = this._removeThousandsSeparators(this.value);
 
-            var appendDetails = _get(_getPrototypeOf(MaskedNumber.prototype), '_appendCharRaw', this).call(this, ch, flags);
+            var appendDetails = _get(_getPrototypeOf(MaskedNumber.prototype), "_appendCharRaw", this).call(this, ch, flags);
 
             this._value = this._insertThousandsSeparators(this._value);
             var beforeTailValue = flags.tail && flags._beforeTailState ? flags._beforeTailState._value : this._value;
@@ -4420,32 +4157,26 @@
           /** */
 
         }, {
-          key: '_findSeparatorAround',
+          key: "_findSeparatorAround",
           value: function _findSeparatorAround(pos) {
             if (this.thousandsSeparator) {
               var searchFrom = pos - this.thousandsSeparator.length + 1;
               var separatorPos = this.value.indexOf(this.thousandsSeparator, searchFrom);
-              if (separatorPos <= pos) {
-                return separatorPos;
-              }
+              if (separatorPos <= pos) return separatorPos;
             }
 
             return -1;
           }
         }, {
-          key: '_adjustRangeWithSeparators',
+          key: "_adjustRangeWithSeparators",
           value: function _adjustRangeWithSeparators(from, to) {
             var separatorAroundFromPos = this._findSeparatorAround(from);
 
-            if (separatorAroundFromPos >= 0) {
-              from = separatorAroundFromPos;
-            }
+            if (separatorAroundFromPos >= 0) from = separatorAroundFromPos;
 
             var separatorAroundToPos = this._findSeparatorAround(to);
 
-            if (separatorAroundToPos >= 0) {
-              to = separatorAroundToPos + this.thousandsSeparator.length;
-            }
+            if (separatorAroundToPos >= 0) to = separatorAroundToPos + this.thousandsSeparator.length;
             return [from, to];
           }
           /**
@@ -4453,7 +4184,7 @@
           */
 
         }, {
-          key: 'remove',
+          key: "remove",
           value: function remove() {
             var fromPos = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
             var toPos = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.value.length;
@@ -4482,11 +4213,9 @@
           */
 
         }, {
-          key: 'nearestInputPos',
+          key: "nearestInputPos",
           value: function nearestInputPos(cursorPos, direction) {
-            if (!this.thousandsSeparator) {
-              return cursorPos;
-            }
+            if (!this.thousandsSeparator) return cursorPos;
 
             switch (direction) {
               case DIRECTION.NONE:
@@ -4522,7 +4251,7 @@
           */
 
         }, {
-          key: 'doValidate',
+          key: "doValidate",
           value: function doValidate(flags) {
             var regexp = flags.input ? this._numberRegExpInput : this._numberRegExp; // validate as string
 
@@ -4536,44 +4265,34 @@
                 this.max == null || this.max <= 0 || this.number <= this.max);
             }
 
-            return valid && _get(_getPrototypeOf(MaskedNumber.prototype), 'doValidate', this).call(this, flags);
+            return valid && _get(_getPrototypeOf(MaskedNumber.prototype), "doValidate", this).call(this, flags);
           }
           /**
             @override
           */
 
         }, {
-          key: 'doCommit',
+          key: "doCommit",
           value: function doCommit() {
             if (this.value) {
               var number = this.number;
               var validnum = number; // check bounds
 
-              if (this.min != null) {
-                validnum = Math.max(validnum, this.min);
-              }
-              if (this.max != null) {
-                validnum = Math.min(validnum, this.max);
-              }
-              if (validnum !== number) {
-                this.unmaskedValue = String(validnum);
-              }
+              if (this.min != null) validnum = Math.max(validnum, this.min);
+              if (this.max != null) validnum = Math.min(validnum, this.max);
+              if (validnum !== number) this.unmaskedValue = String(validnum);
               var formatted = this.value;
-              if (this.normalizeZeros) {
-                formatted = this._normalizeZeros(formatted);
-              }
-              if (this.padFractionalZeros) {
-                formatted = this._padFractionalZeros(formatted);
-              }
+              if (this.normalizeZeros) formatted = this._normalizeZeros(formatted);
+              if (this.padFractionalZeros) formatted = this._padFractionalZeros(formatted);
               this._value = formatted;
             }
 
-            _get(_getPrototypeOf(MaskedNumber.prototype), 'doCommit', this).call(this);
+            _get(_getPrototypeOf(MaskedNumber.prototype), "doCommit", this).call(this);
           }
           /** */
 
         }, {
-          key: '_normalizeZeros',
+          key: "_normalizeZeros",
           value: function _normalizeZeros(value) {
             var parts = this._removeThousandsSeparators(value).split(this.radix); // remove leading zeros
 
@@ -4582,16 +4301,12 @@
               return sign + num;
             }); // add leading zero
 
-            if (value.length && !/\d$/.test(parts[0])) {
-              parts[0] = parts[0] + '0';
-            }
+            if (value.length && !/\d$/.test(parts[0])) parts[0] = parts[0] + '0';
 
             if (parts.length > 1) {
               parts[1] = parts[1].replace(/0*$/, ''); // remove trailing zeros
 
-              if (!parts[1].length) {
-                parts.length = 1;
-              } // remove fractional
+              if (!parts[1].length) parts.length = 1; // remove fractional
             }
 
             return this._insertThousandsSeparators(parts.join(this.radix));
@@ -4599,15 +4314,11 @@
           /** */
 
         }, {
-          key: '_padFractionalZeros',
+          key: "_padFractionalZeros",
           value: function _padFractionalZeros(value) {
-            if (!value) {
-              return value;
-            }
+            if (!value) return value;
             var parts = value.split(this.radix);
-            if (parts.length < 2) {
-              parts.push('');
-            }
+            if (parts.length < 2) parts.push('');
             parts[1] = parts[1].padEnd(this.scale, '0');
             return parts.join(this.radix);
           }
@@ -4616,29 +4327,29 @@
           */
 
         }, {
-          key: 'unmaskedValue',
+          key: "unmaskedValue",
           get: function get() {
             return this._removeThousandsSeparators(this._normalizeZeros(this.value)).replace(this.radix, '.');
           },
           set: function set(unmaskedValue) {
-            _set(_getPrototypeOf(MaskedNumber.prototype), 'unmaskedValue', unmaskedValue.replace('.', this.radix), this, true);
+            _set(_getPrototypeOf(MaskedNumber.prototype), "unmaskedValue", unmaskedValue.replace('.', this.radix), this, true);
           }
           /**
             @override
           */
 
         }, {
-          key: 'typedValue',
+          key: "typedValue",
           get: function get() {
             return Number(this.unmaskedValue);
           },
           set: function set(n) {
-            _set(_getPrototypeOf(MaskedNumber.prototype), 'unmaskedValue', String(n), this, true);
+            _set(_getPrototypeOf(MaskedNumber.prototype), "unmaskedValue", String(n), this, true);
           }
           /** Parsed Number */
 
         }, {
-          key: 'number',
+          key: "number",
           get: function get() {
             return this.typedValue;
           },
@@ -4651,7 +4362,7 @@
           */
 
         }, {
-          key: 'allowNegative',
+          key: "allowNegative",
           get: function get() {
             return this.signed || this.min != null && this.min < 0 || this.max != null && this.max < 0;
           }
@@ -4673,7 +4384,7 @@
     /** Masking by RegExp */
 
     var MaskedRegExp =
-      /* #__PURE__*/
+      /*#__PURE__*/
       function (_Masked) {
         _inherits(MaskedRegExp, _Masked);
 
@@ -4684,20 +4395,18 @@
         }
 
         _createClass(MaskedRegExp, [{
-          key: '_update',
+          key: "_update",
 
           /**
             @override
             @param {Object} opts
           */
           value: function _update(opts) {
-            if (opts.mask) {
-              opts.validate = function (value) {
-                return value.search(opts.mask) >= 0;
-              };
-            }
+            if (opts.mask) opts.validate = function (value) {
+              return value.search(opts.mask) >= 0;
+            };
 
-            _get(_getPrototypeOf(MaskedRegExp.prototype), '_update', this).call(this, opts);
+            _get(_getPrototypeOf(MaskedRegExp.prototype), "_update", this).call(this, opts);
           }
         }]);
 
@@ -4708,7 +4417,7 @@
     /** Masking by custom Function */
 
     var MaskedFunction =
-      /* #__PURE__*/
+      /*#__PURE__*/
       function (_Masked) {
         _inherits(MaskedFunction, _Masked);
 
@@ -4719,18 +4428,16 @@
         }
 
         _createClass(MaskedFunction, [{
-          key: '_update',
+          key: "_update",
 
           /**
             @override
             @param {Object} opts
           */
           value: function _update(opts) {
-            if (opts.mask) {
-              opts.validate = opts.mask;
-            }
+            if (opts.mask) opts.validate = opts.mask;
 
-            _get(_getPrototypeOf(MaskedFunction.prototype), '_update', this).call(this, opts);
+            _get(_getPrototypeOf(MaskedFunction.prototype), "_update", this).call(this, opts);
           }
         }]);
 
@@ -4740,7 +4447,7 @@
 
     /** Dynamic mask for choosing apropriate mask in run-time */
     var MaskedDynamic =
-      /* #__PURE__*/
+      /*#__PURE__*/
       function (_Masked) {
         _inherits(MaskedDynamic, _Masked);
 
@@ -4768,9 +4475,9 @@
 
 
         _createClass(MaskedDynamic, [{
-          key: '_update',
+          key: "_update",
           value: function _update(opts) {
-            _get(_getPrototypeOf(MaskedDynamic.prototype), '_update', this).call(this, opts);
+            _get(_getPrototypeOf(MaskedDynamic.prototype), "_update", this).call(this, opts);
 
             if ('mask' in opts) {
               // mask could be totally dynamic with only `dispatch` option
@@ -4784,7 +4491,7 @@
           */
 
         }, {
-          key: '_appendCharRaw',
+          key: "_appendCharRaw",
           value: function _appendCharRaw() {
             var details = this._applyDispatch.apply(this, arguments);
 
@@ -4797,7 +4504,7 @@
             return details;
           }
         }, {
-          key: '_applyDispatch',
+          key: "_applyDispatch",
           value: function _applyDispatch() {
             var appended = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
             var flags = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
@@ -4839,7 +4546,7 @@
             return details;
           }
         }, {
-          key: '_appendPlaceholder',
+          key: "_appendPlaceholder",
           value: function _appendPlaceholder() {
             var details = this._applyDispatch.apply(this, arguments);
 
@@ -4854,7 +4561,7 @@
           */
 
         }, {
-          key: 'doDispatch',
+          key: "doDispatch",
           value: function doDispatch(appended) {
             var flags = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
             return this.dispatch(appended, this, flags);
@@ -4864,26 +4571,24 @@
           */
 
         }, {
-          key: 'doValidate',
+          key: "doValidate",
           value: function doValidate() {
-            var _get2; var _this$currentMask2;
+            var _get2, _this$currentMask2;
 
             for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
               args[_key] = arguments[_key];
             }
 
-            return (_get2 = _get(_getPrototypeOf(MaskedDynamic.prototype), 'doValidate', this)).call.apply(_get2, [this].concat(args)) && (!this.currentMask || (_this$currentMask2 = this.currentMask).doValidate.apply(_this$currentMask2, args));
+            return (_get2 = _get(_getPrototypeOf(MaskedDynamic.prototype), "doValidate", this)).call.apply(_get2, [this].concat(args)) && (!this.currentMask || (_this$currentMask2 = this.currentMask).doValidate.apply(_this$currentMask2, args));
           }
           /**
             @override
           */
 
         }, {
-          key: 'reset',
+          key: "reset",
           value: function reset() {
-            if (this.currentMask) {
-              this.currentMask.reset();
-            }
+            if (this.currentMask) this.currentMask.reset();
             this.compiledMasks.forEach(function (m) {
               return m.reset();
             });
@@ -4893,7 +4598,7 @@
           */
 
         }, {
-          key: 'remove',
+          key: "remove",
 
           /**
             @override
@@ -4905,7 +4610,7 @@
               var _this$currentMask3;
 
               details.aggregate((_this$currentMask3 = this.currentMask).remove.apply(_this$currentMask3, arguments)) // update with dispatch
-                  .aggregate(this._applyDispatch());
+                .aggregate(this._applyDispatch());
             }
 
             return details;
@@ -4915,7 +4620,7 @@
           */
 
         }, {
-          key: 'extractInput',
+          key: "extractInput",
 
           /**
             @override
@@ -4930,73 +4635,72 @@
           */
 
         }, {
-          key: 'extractTail',
+          key: "extractTail",
           value: function extractTail() {
-            var _this$currentMask5; var _get3;
+            var _this$currentMask5, _get3;
 
             for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
               args[_key2] = arguments[_key2];
             }
 
-            return this.currentMask ? (_this$currentMask5 = this.currentMask).extractTail.apply(_this$currentMask5, args) : (_get3 = _get(_getPrototypeOf(MaskedDynamic.prototype), 'extractTail', this)).call.apply(_get3, [this].concat(args));
+            return this.currentMask ? (_this$currentMask5 = this.currentMask).extractTail.apply(_this$currentMask5, args) : (_get3 = _get(_getPrototypeOf(MaskedDynamic.prototype), "extractTail", this)).call.apply(_get3, [this].concat(args));
           }
           /**
             @override
           */
 
         }, {
-          key: 'doCommit',
+          key: "doCommit",
           value: function doCommit() {
-            if (this.currentMask) {
-              this.currentMask.doCommit();
-            }
+            if (this.currentMask) this.currentMask.doCommit();
 
-            _get(_getPrototypeOf(MaskedDynamic.prototype), 'doCommit', this).call(this);
+            _get(_getPrototypeOf(MaskedDynamic.prototype), "doCommit", this).call(this);
           }
           /**
             @override
           */
 
         }, {
-          key: 'nearestInputPos',
+          key: "nearestInputPos",
           value: function nearestInputPos() {
-            var _this$currentMask6; var _get4;
+            var _this$currentMask6, _get4;
 
             for (var _len3 = arguments.length, args = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
               args[_key3] = arguments[_key3];
             }
 
-            return this.currentMask ? (_this$currentMask6 = this.currentMask).nearestInputPos.apply(_this$currentMask6, args) : (_get4 = _get(_getPrototypeOf(MaskedDynamic.prototype), 'nearestInputPos', this)).call.apply(_get4, [this].concat(args));
+            return this.currentMask ? (_this$currentMask6 = this.currentMask).nearestInputPos.apply(_this$currentMask6, args) : (_get4 = _get(_getPrototypeOf(MaskedDynamic.prototype), "nearestInputPos", this)).call.apply(_get4, [this].concat(args));
           }
         }, {
-          key: 'value',
+          key: "value",
           get: function get() {
             return this.currentMask ? this.currentMask.value : '';
           },
           set: function set(value) {
-            _set(_getPrototypeOf(MaskedDynamic.prototype), 'value', value, this, true);
+            _set(_getPrototypeOf(MaskedDynamic.prototype), "value", value, this, true);
           }
           /**
             @override
           */
 
         }, {
-          key: 'unmaskedValue',
+          key: "unmaskedValue",
           get: function get() {
             return this.currentMask ? this.currentMask.unmaskedValue : '';
           },
           set: function set(unmaskedValue) {
-            _set(_getPrototypeOf(MaskedDynamic.prototype), 'unmaskedValue', unmaskedValue, this, true);
+            _set(_getPrototypeOf(MaskedDynamic.prototype), "unmaskedValue", unmaskedValue, this, true);
           }
           /**
             @override
           */
 
         }, {
-          key: 'typedValue',
+          key: "typedValue",
           get: function get() {
-            return this.currentMask ? this.currentMask.typedValue : '';
-          }, // probably typedValue should not be used with dynamic
+              return this.currentMask ? this.currentMask.typedValue : '';
+            } // probably typedValue should not be used with dynamic
+            ,
           set: function set(value) {
             var unmaskedValue = String(value); // double check it
 
@@ -5012,14 +4716,14 @@
           */
 
         }, {
-          key: 'isComplete',
+          key: "isComplete",
           get: function get() {
             return !!this.currentMask && this.currentMask.isComplete;
           }
         }, {
-          key: 'state',
+          key: "state",
           get: function get() {
-            return Object.assign({}, _get(_getPrototypeOf(MaskedDynamic.prototype), 'state', this), {
+            return Object.assign({}, _get(_getPrototypeOf(MaskedDynamic.prototype), "state", this), {
               _rawInputValue: this.rawInputValue,
               compiledMasks: this.compiledMasks.map(function (m) {
                 return m.state;
@@ -5029,10 +4733,10 @@
             });
           },
           set: function set(state) {
-            var compiledMasks = state.compiledMasks;
-            var currentMaskRef = state.currentMaskRef;
-            var currentMask = state.currentMask;
-            var maskedState = _objectWithoutProperties(state, ['compiledMasks', 'currentMaskRef', 'currentMask']);
+            var compiledMasks = state.compiledMasks,
+              currentMaskRef = state.currentMaskRef,
+              currentMask = state.currentMask,
+              maskedState = _objectWithoutProperties(state, ["compiledMasks", "currentMaskRef", "currentMask"]);
 
             this.compiledMasks.forEach(function (m, mi) {
               return m.state = compiledMasks[mi];
@@ -5043,12 +4747,12 @@
               this.currentMask.state = currentMask;
             }
 
-            _set(_getPrototypeOf(MaskedDynamic.prototype), 'state', maskedState, this, true);
+            _set(_getPrototypeOf(MaskedDynamic.prototype), "state", maskedState, this, true);
           }
         }, {
-          key: 'overwrite',
+          key: "overwrite",
           get: function get() {
-            return this.currentMask ? this.currentMask.overwrite : _get(_getPrototypeOf(MaskedDynamic.prototype), 'overwrite', this);
+            return this.currentMask ? this.currentMask.overwrite : _get(_getPrototypeOf(MaskedDynamic.prototype), "overwrite", this);
           },
           set: function set(overwrite) {
             console.warn('"overwrite" option is not available in dynamic mask, use this option in siblings');
@@ -5059,9 +4763,7 @@
       }(Masked);
     MaskedDynamic.DEFAULTS = {
       dispatch: function dispatch(appended, masked, flags) {
-        if (!masked.compiledMasks.length) {
-          return;
-        }
+        if (!masked.compiledMasks.length) return;
         var inputValue = masked.rawInputValue; // simulate input
 
         var inputs = masked.compiledMasks.map(function (m, index) {
@@ -5144,7 +4846,8 @@
     });
 
   })));
-  // # sourceMappingURL=imask.js.map
+  //# sourceMappingURL=imask.js.map
+
 
   window.iMaskJS = IMask;
 })();
