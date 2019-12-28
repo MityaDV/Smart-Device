@@ -1,6 +1,10 @@
 'use strict';
 
 var buttonOpenPopup = document.querySelector('.btn--call');
+var btnScrollDown = document.querySelector('.promo__scroll-button');
+var btnPromoConsultation = document.querySelector('.promo__button');
+var pageOverlay = document.querySelector('.overlay');
+
 var modal = document.querySelector('.modal-js');
 if (modal) {
   var buttonClosePopup = modal.querySelector('.modal__button-close');
@@ -8,8 +12,9 @@ if (modal) {
   var nameUser = modal.querySelector('[name=username]');
   var phoneUser = modal.querySelector('[name=userphone]');
   var questionUser = modal.querySelector('[name=userquestion]');
+  var modalInputPhone = modal.querySelector('#modaluser-phone');
 }
-var pageOverlay = document.querySelector('.overlay');
+
 var footer = document.querySelector('.footer');
 if (footer) {
   var footerNav = footer.querySelector('.footer__navigation');
@@ -17,8 +22,11 @@ if (footer) {
   var footerToggleNav = footer.querySelector('.footer__toggle--navigation');
   var footerToggleContact = footer.querySelector('.footer__toggle--contact');
 }
-var btnScrollDown = document.querySelector('.promo__scroll-button');
-var btnPromoConsultation = document.querySelector('.promo__button');
+
+var sectionContact = document.querySelector('#contact');
+if (sectionContact) {
+  var formInputPhone = sectionContact.querySelector('#user-phone');
+}
 
 var isStorageSupport = true;
 var storage = '';
@@ -90,6 +98,7 @@ var onCLickOverlay = function () {
 };
 
 // логика открытия popup
+
 if (modal) {
   var openPopup = function (evt) {
     evt.preventDefault();
@@ -110,7 +119,6 @@ if (modal) {
     document.addEventListener('keydown', onPopupEscPress);
   };
 }
-
 
 // логика закрытия popup
 
@@ -147,6 +155,7 @@ var formValidation = function (evt) {
 };
 
 // навешиваем события на элементы
+
 if (buttonOpenPopup) {
   buttonOpenPopup.addEventListener('click', openPopup);
 }
@@ -184,4 +193,20 @@ btnPromoConsultation.addEventListener('click', function (evt) {
     behavior: 'smooth',
     block: 'start'
   });
+});
+
+// маска телефона
+
+function onEnterPhone(elem) {
+  window.iMaskJS(elem, {
+    mask: '+7 (000) 000 00 00'
+  });
+}
+
+formInputPhone.addEventListener('input', function () {
+  onEnterPhone(formInputPhone);
+});
+
+modalInputPhone.addEventListener('input', function () {
+  onEnterPhone(modalInputPhone);
 });
