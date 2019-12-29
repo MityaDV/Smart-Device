@@ -18,7 +18,7 @@
     }
 
     var check = function (it) {
-      return it && it.Math == Math && it;
+      return it && it.Math === Math && it;
     }; // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
 
 
@@ -83,13 +83,13 @@
       // eslint-disable-next-line no-prototype-builtins
       return !Object('z').propertyIsEnumerable(0);
     }) ? function (it) {
-        return classofRaw(it) == 'String' ? split.call(it, '') : Object(it);
+        return classofRaw(it) === 'String' ? split.call(it, '') : Object(it);
       } : Object;
 
     // `RequireObjectCoercible` abstract operation
     // https://tc39.github.io/ecma262/#sec-requireobjectcoercible
     var requireObjectCoercible = function (it) {
-      if (it == undefined) {
+      if (it === undefined) {
         throw TypeError('Can\'t call method on ' + it);
       }
       return it;
@@ -391,7 +391,7 @@
     // https://tc39.github.io/ecma262/#sec-tolength
 
     var toLength = function (argument) {
-      return argument > 0 ? min(toInteger(argument), 0x1FFFFFFFFFFFFF) : 0; // 2 ** 53 - 1 == 9007199254740991
+      return argument > 0 ? min(toInteger(argument), 0x1FFFFFFFFFFFFF) : 0; // 2 ** 53 - 1 === 9007199254740991
     };
 
     var max = Math.max;
@@ -508,7 +508,7 @@
 
     var isForced = function (feature, detection) {
       var value = data[normalize(feature)];
-      return value == POLYFILL ? true : value == NATIVE ? false : typeof detection === 'function' ? fails(detection) : !!detection;
+      return value === POLYFILL ? true : value === NATIVE ? false : typeof detection === 'function' ? fails(detection) : !!detection;
     };
 
     var normalize = isForced.normalize = function (string) {
@@ -672,7 +672,7 @@
       var str = String(requireObjectCoercible(this));
       var result = '';
       var n = toInteger(count);
-      if (n < 0 || n == Infinity) {
+      if (n < 0 || n === Infinity) {
         throw RangeError('Wrong number of repetitions');
       }
 
@@ -697,7 +697,7 @@
         var fillStr = fillString === undefined ? ' ' : String(fillString);
         var intMaxLength = toLength(maxLength);
         var fillLen; var stringFiller;
-        if (intMaxLength <= stringLength || fillStr == '') {
+        if (intMaxLength <= stringLength || fillStr === '') {
           return S;
         }
         fillLen = intMaxLength - stringLength;
@@ -872,7 +872,7 @@
     }
 
     function _objectWithoutPropertiesLoose(source, excluded) {
-      if (source == null) {
+      if (source === null) {
         return {};
       }
       var target = {};
@@ -891,7 +891,7 @@
     }
 
     function _objectWithoutProperties(source, excluded) {
-      if (source == null) {
+      if (source === null) {
         return {};
       }
 
@@ -1137,7 +1137,7 @@
         var dateA = a instanceof Date;
         var dateB = b instanceof Date;
         if (dateA && dateB) {
-          return a.getTime() == b.getTime();
+          return a.getTime() === b.getTime();
         }
         if (dateA != dateB) {
           return false;
@@ -1145,7 +1145,7 @@
         var regexpA = a instanceof RegExp;
         var regexpB = b instanceof RegExp;
         if (regexpA && regexpB) {
-          return a.toString() == b.toString();
+          return a.toString() === b.toString();
         }
         if (regexpA != regexpB) {
           return false;
@@ -1821,7 +1821,7 @@
     /** Get Masked class by mask type */
 
     function maskedClass(mask) {
-      if (mask == null) {
+      if (mask === null) {
         throw new Error('mask property should be defined');
       } // $FlowFixMe
 
@@ -2241,7 +2241,7 @@
             }
             var lastChunk = this.chunks[this.chunks.length - 1];
             var extendLast = lastChunk && ( // if stops are same or tail has no stop
-              lastChunk.stop === tailChunk.stop || tailChunk.stop == null) && // if tail chunk goes just after last chunk
+              lastChunk.stop === tailChunk.stop || tailChunk.stop === null) && // if tail chunk goes just after last chunk
               tailChunk.from === lastChunk.from + lastChunk.toString().length;
 
             if (tailChunk instanceof ContinuousTailDetails) {
@@ -2254,11 +2254,11 @@
                 this.chunks.push(tailChunk);
               }
             } else if (tailChunk instanceof ChunksTailDetails) {
-              if (tailChunk.stop == null) {
+              if (tailChunk.stop === null) {
                 // unwrap floating chunks to parent, keeping `from` pos
                 var firstTailChunk;
 
-                while (tailChunk.chunks.length && tailChunk.chunks[0].stop == null) {
+                while (tailChunk.chunks.length && tailChunk.chunks[0].stop === null) {
                   firstTailChunk = tailChunk.chunks.shift();
                   firstTailChunk.from += tailChunk.from;
                   this.extend(firstTailChunk);
@@ -2687,7 +2687,7 @@
             var _this3 = this;
 
             var details = new ChangeDetails();
-            if (this.lazy && toBlockIndex == null) {
+            if (this.lazy && toBlockIndex === null) {
               return details;
             }
 
@@ -3362,7 +3362,7 @@
               args[_key] = arguments[_key];
             }
 
-            return (_get2 = _get(_getPrototypeOf(MaskedDate.prototype), 'doValidate', this)).call.apply(_get2, [this].concat(args)) && (!this.isComplete || this.isDateExist(this.value) && date != null && (this.min == null || this.min <= date) && (this.max == null || date <= this.max));
+            return (_get2 = _get(_getPrototypeOf(MaskedDate.prototype), 'doValidate', this)).call.apply(_get2, [this].concat(args)) && (!this.isComplete || this.isDateExist(this.value) && date != null && (this.min === null || this.min <= date) && (this.max === null || date <= this.max));
           }
           /** Checks if date is exists */
 
@@ -3456,7 +3456,7 @@
 
           /** Safely sets element selection */
           value: function select(start, end) {
-            if (start == null || end == null || start === this.selectionStart && end === this.selectionEnd) {
+            if (start === null || end === null || start === this.selectionStart && end === this.selectionEnd) {
               return;
             }
 
@@ -3794,7 +3794,7 @@
         _createClass(InputMask, [{
           key: 'maskEquals',
           value: function maskEquals(mask) {
-            return mask == null || mask === this.masked.mask || mask === Date && this.masked instanceof MaskedDate;
+            return mask === null || mask === this.masked.mask || mask === Date && this.masked instanceof MaskedDate;
           }
         }, {
           key: '_bindEvents',
@@ -3913,7 +3913,7 @@
         }, {
           key: 'updateCursor',
           value: function updateCursor(cursorPos) {
-            if (cursorPos == null) {
+            if (cursorPos === null) {
               return;
             }
             this.cursorPos = cursorPos; // also queue change cursor for mobile browsers
@@ -4517,8 +4517,8 @@
               // validate as number
               var number = this.number;
               valid = valid && !isNaN(number) && ( // check min bound for negative values
-                this.min == null || this.min >= 0 || this.min <= this.number) && ( // check max bound for positive values
-                this.max == null || this.max <= 0 || this.number <= this.max);
+                this.min === null || this.min >= 0 || this.min <= this.number) && ( // check max bound for positive values
+                this.max === null || this.max <= 0 || this.number <= this.max);
             }
 
             return valid && _get(_getPrototypeOf(MaskedNumber.prototype), 'doValidate', this).call(this, flags);
