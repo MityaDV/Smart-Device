@@ -22,7 +22,7 @@
     }; // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
 
 
-    var global_1 = // eslint-disable-next-line no-undef
+    var globalOne = // eslint-disable-next-line no-undef
       check(typeof globalThis === 'object' && globalThis) || check(typeof window === 'object' && window) || check(typeof self === 'object' && self) || check(typeof commonjsGlobal === 'object' && commonjsGlobal) || // eslint-disable-next-line no-new-func
       Function('return this')();
 
@@ -133,7 +133,7 @@
       return hasOwnProperty.call(it, key);
     };
 
-    var document$1 = global_1.document; // typeof document.createElement is 'object' in old IE
+    var document$1 = globalOne.document; // typeof document.createElement is 'object' in old IE
 
     var EXISTS = isObject(document$1) && isObject(document$1.createElement);
 
@@ -217,16 +217,16 @@
 
     var setGlobal = function (key, value) {
       try {
-        createNonEnumerableProperty(global_1, key, value);
+        createNonEnumerableProperty(globalOne, key, value);
       } catch (error) {
-        global_1[key] = value;
+        globalOne[key] = value;
       }
 
       return value;
     };
 
     var SHARED = '__core-js_shared__';
-    var store = global_1[SHARED] || setGlobal(SHARED, {});
+    var store = globalOne[SHARED] || setGlobal(SHARED, {});
     var sharedStore = store;
 
     var functionToString = Function.toString; // this helper broken in `3.4.1-3.4.4`, so we can't use `shared` helper
@@ -239,7 +239,7 @@
 
     var inspectSource = sharedStore.inspectSource;
 
-    var WeakMap = global_1.WeakMap;
+    var WeakMap = globalOne.WeakMap;
     var nativeWeakMap = typeof WeakMap === 'function' && /native code/.test(inspectSource(WeakMap));
 
     var shared = createCommonjsModule(function (module) {
@@ -267,7 +267,7 @@
 
     var hiddenKeys = {};
 
-    var WeakMap$1 = global_1.WeakMap;
+    var WeakMap$1 = globalOne.WeakMap;
     var set; var get; var has$1;
 
     var enforce = function (it) {
@@ -346,7 +346,7 @@
           enforceInternalState(value).source = TEMPLATE.join(typeof key === 'string' ? key : '');
         }
 
-        if (O === global_1) {
+        if (O === globalOne) {
           if (simple) {
             O[key] = value;
           } else {
@@ -369,14 +369,14 @@
       });
     });
 
-    var path = global_1;
+    var path = globalOne;
 
     var aFunction = function (variable) {
       return typeof variable === 'function' ? variable : undefined;
     };
 
     var getBuiltIn = function (namespace, method) {
-      return arguments.length < 2 ? aFunction(path[namespace]) || aFunction(global_1[namespace]) : path[namespace] && path[namespace][method] || global_1[namespace] && global_1[namespace][method];
+      return arguments.length < 2 ? aFunction(path[namespace]) || aFunction(globalOne[namespace]) : path[namespace] && path[namespace][method] || globalOne[namespace] && globalOne[namespace][method];
     };
 
     var ceil = Math.ceil;
@@ -544,11 +544,11 @@
       var FORCED; var target; var key; var targetProperty; var sourceProperty; var descriptor;
 
       if (GLOBAL) {
-        target = global_1;
+        target = globalOne;
       } else if (STATIC) {
-        target = global_1[TARGET] || setGlobal(TARGET, {});
+        target = globalOne[TARGET] || setGlobal(TARGET, {});
       } else {
-        target = (global_1[TARGET] || {}).prototype;
+        target = (globalOne[TARGET] || {}).prototype;
       }
 
       if (target) {
