@@ -21,7 +21,7 @@
     background-image: url("../img/bg-header-tablet@1x.png"), url("../img/bg-header-delta@1x.png");
     background-repeat: no-repeat, no-repeat;
     background-position: center, center bottom 123px;
-    background-size: cover, 197%;
+    background-size: cover, cover;
   }
 
   @media (max-width: $width_viewport_tablet) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
@@ -29,7 +29,7 @@
     background-image: url("../img/bg-header-tablet@2x.png"), url("../img/bg-header-delta@2x.png");
     background-repeat: no-repeat, no-repeat;
     background-position: center, center bottom 123px;
-    background-size: cover, 197%;
+    background-size: cover, cover;
   }
 
   @media (max-width: $width_viewport_mobile) {
