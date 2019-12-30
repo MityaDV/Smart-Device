@@ -180,14 +180,17 @@
   cursor: pointer;
   opacity: 0.5;
 
+  @media (max-width: $width_viewport_desktop_s) {
+    left: -16px;
+  }
+
+  @media (max-width: $width_viewport_tablet) {
+    display: none;
+  }
+
   &:hover {
     color: $color_blue_sky;
 
     opacity: 1;
-  }
-
-
-  @media (max-width: $width_viewport_tablet) {
-    display: none;
   }
 }
