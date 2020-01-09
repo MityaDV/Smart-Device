@@ -2,75 +2,75 @@
 @import "vars.scss";
 
 .promo {
-  padding: 229px 0 274px;
+  padding: 200px 0 274px;
 
   background-color: transparent;
   background-image: url("../img/circuit-desktop@1x.png");
   background-repeat: no-repeat;
-  background-position: top 63% right 15%;
+  background-position: top 57% right 15%;
   background-size: auto;
 
   @media (max-width: 1585px) {
-    background-position: top 63% right 3%;
+    background-position: top 57% right 3%;
   }
 
   @media (max-width: 1410px) {
-    background-position: top 63% right -13%;
+    background-position: top 57% right -13%;
   }
 
   @media (max-width: 1310px) {
-    background-position: top 63% right -36%;
+    background-position: top 57% right -36%;
   }
 
   @media (max-width: 1210px) {
-    background-position: top 63% right -68%;
+    background-position: top 57% right -68%;
   }
 
   @media (max-width: 1110px) {
-    background-position: top 63% right -113%;
+    background-position: top 57% right -113%;
   }
 
   @media (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
     background-color: transparent;
     background-image: url("../img/circuit-desktop@2x.png");
     background-repeat: no-repeat;
-    background-position: top 63% right 15%;
+    background-position: top 57% right 15%;
     background-size: 36.7%;
   }
 
   @media (max-width: 1585px) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
-    background-position: top 63% right 3%;
+    background-position: top 57% right 3%;
     background-size: 44%;
   }
 
   @media (max-width: 1410px) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
-    background-position: top 63% right -13%;
+    background-position: top 57% right -13%;
     background-size: 51%;
   }
 
   @media (max-width: 1310px) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
-    background-position: top 63% right -36%;
+    background-position: top 57% right -36%;
     background-size: 56%;
   }
 
   @media (max-width: 1210px) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
-    background-position: top 63% right -68%;
+    background-position: top 57% right -68%;
     background-size: 60%;
   }
 
   @media (max-width: 1110px) and (min-resolution: $retina_dpi) and (min-resolution: $retina_dppx) {
-    background-position: top 63% right -113%;
+    background-position: top 57% right -113%;
     background-size: 66%;
   }
 
 
   @media (max-width: $width_viewport_tablet) {
-    padding: 118px 0 163px;
+    padding: 96px 0 163px;
 
     background-color: transparent;
     background-image: url("../img/circuit-tablet@1x.png");
     background-repeat: no-repeat;
-    background-position: top 16% right;
+    background-position: top 8% right;
     background-size: auto;
   }
 
@@ -78,17 +78,17 @@
     background-color: transparent;
     background-image: url("../img/circuit-tablet@2x.png");
     background-repeat: no-repeat;
-    background-position: top 16% right;
+    background-position: top 8% right;
     background-size: 34%;
   }
 
   @media (max-width: $width_viewport_mobile) {
-    padding: 230px 0 70px;
+    padding: 213px 0 70px;
 
     background-color: transparent;
     background-image: url("../img/circuit-mobile@1x.png");
     background-repeat: no-repeat;
-    background-position: top 10% right;
+    background-position: top 5% right;
     background-size: 60%;
   }
 
@@ -100,7 +100,7 @@
     background-color: transparent;
     background-image: url("../img/circuit-mobile@2x.png");
     background-repeat: no-repeat;
-    background-position: top 10% right;
+    background-position: top 5% right;
     background-size: 60%;
   }
 
